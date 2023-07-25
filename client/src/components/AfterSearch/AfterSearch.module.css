@@ -14,7 +14,7 @@
 
 .productCard {
   z-index:9;
-  background-color: #00ffc33a;
+  background-color: #48ddbb87;
   border: 2px solid var(--common-text-color);
   border-radius: 15px;
   padding: var(--common-padding);
@@ -64,24 +64,13 @@
 
 .detailButton {
   z-index:10;
-  background-color: var(--common-text-color);
   border: none;
-  border-radius: 20px;
-  padding: 10px;
-  font-weight: var(--common-font-weight);
-  font-size: var(--common-font-size);
-  background-color: var(--common-bg-color);
   color: var(--common-text-color);
-  cursor: pointer;
   margin-top: var(--common-margin);
-  transition: var(--common-transition);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 80%;
 }
 
-.detailButton:hover, .detailButton:focus, .detailButton:hover .button-icon, .detailButton:focus .button-icon {
+.detailButton:hover .button-icon, .detailButton:focus .button-icon {
   background-color: var(--common-text-color);
   color: var(--common-bg-color);
   outline: none;
@@ -89,11 +78,6 @@
 
 .detailButton:hover {
   width: 90%;
-}
-
-.detailButton:active {
-  transform: scale(0.98);
-  color: var(--common-bg-color);
 }
 
 .icon {
@@ -119,22 +103,10 @@
 
 .cartButton, .buyButton {
   z-index:10;
-  background-color: var(--common-text-color);
-  border: none;
-  border-radius: 20px;
-  padding: 10px;
-  font-weight: var(--common-font-weight);
-  font-size: var(--common-font-size);
-  background-color: var(--common-bg-color);
-  color: var(--common-text-color);
-  cursor: pointer;
-  transition: var(--common-transition);
   display: flex;
   justify-content: center;
   align-items: center;
   width:40%;
-  
-
 }
 .cartButton {
   background-color:rgb(57, 146, 57);
@@ -146,7 +118,7 @@
 
 .buyButton {
   color:rgb(252, 222, 222);
-  background-color:rgb(146, 57, 57);
+  
 }
 .cartButton:hover, .buyButton:hover,
 .cartButton:focus, .buyButton:focus,
@@ -154,16 +126,8 @@
 .cartButton:focus .button-icon, .buyButton:focus .button-icon {
   background-color: var(--common-text-color);
   color: var(--common-bg-color);
-  outline: none;
   width:60%;
 }
-
-.cartButton:active, .buyButton:active {
-  transform: scale(0.98);
-  color: var(--common-bg-color);
-}
-
-
 
 
 @keyframes appear {

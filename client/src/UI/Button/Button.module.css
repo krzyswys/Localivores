@@ -1,0 +1,30 @@
+.button {
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: var(--common-transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-weight: var(--common-font-weight);
+    font-size: var(--common-font-size);
+    background-color: var(--common-bg-color);
+  }
+  button{
+    color:white;
+  }
+  .button:hover, .button:focus {
+    background-color: #fff;
+    color: var(--common-bg-color);
+    outline: none;
+  }
+  
+  .button:active {
+    transform: scale(1.02);
+    color: var(--common-bg-color);
+  }
+  
+
+  

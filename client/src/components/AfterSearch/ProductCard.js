@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './AfterSearch.module.css';
+import classes from './AfterSearch.module.css';
 import { FaTag, FaStore, FaMapMarkerAlt, FaInfoCircle, FaShoppingCart, FaPlus } from 'react-icons/fa';
-
+import Button from '../../UI/Button/Button'
 const MAX_LENGTH = 20; 
 
 const ProductCard = ({ product }) => {
@@ -13,17 +13,17 @@ const ProductCard = ({ product }) => {
     };
     
     return (
-        <div className={styles.productCard}>
-            <h2 className={styles.productTitle}><FaTag className={styles.icon} /> {formatString(product.product_name)}</h2> 
-            <p className={styles.productDescription}>{formatString(product.product_description)}</p>
-            <p className={styles.productPrice}>Cena: {product.product_price}</p>
-            <p className={styles.shopName}><FaStore className={styles.icon} />{formatString(product.shop_name)}</p> 
-            <p className={styles.shopAddress}><FaMapMarkerAlt className={styles.icon} />{formatString(product.shop_address)}</p>
-            <button className={styles.detailButton}><FaInfoCircle className={styles['button-icon']} />Show details</button>
-            <div className={styles.buttonContainer}>
+        <div className={classes.productCard}>
+            <h2 className={classes.productTitle}><FaTag className={classes.icon} /> {formatString(product.product_name)}</h2> 
+            <p className={classes.productDescription}>{formatString(product.product_description)}</p>
+            <p className={classes.productPrice}>Cena: {product.product_price}</p>
+            <p className={classes.shopName}><FaStore className={classes.icon} />{formatString(product.shop_name)}</p> 
+            <p className={classes.shopAddress}><FaMapMarkerAlt className={classes.icon} />{formatString(product.shop_address)}</p>
+            <Button className={classes.detailButton}><FaInfoCircle className={classes['button-icon']} />Show details</Button>
+            <div className={classes.buttonContainer}>
                 
-                <button className={styles.cartButton}><FaShoppingCart className={styles['button-icon']} /><FaPlus className={styles['button-icon']} /></button>
-                <button className={styles.buyButton}>Buy!</button>
+                <Button className={classes.cartButton}><FaShoppingCart className={classes['button-icon']} /><FaPlus className={classes['button-icon']} /></Button>
+                <Button className={classes.buyButton}>Buy!</Button>
             </div>
         </div>
     );
