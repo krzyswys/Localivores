@@ -18,7 +18,7 @@
   .button:hover, .button:focus {
     background-color: #fff;
     color: var(--common-bg-color);
-    outline: none;
+    outline:2px solid var(--common-bg-color);
   }
   
   .button:active {
