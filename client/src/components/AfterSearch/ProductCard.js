@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './AfterSearch.module.css';
-import { FaTag, FaStore, FaMapMarkerAlt, FaInfoCircle } from 'react-icons/fa';
+import { FaTag, FaStore, FaMapMarkerAlt, FaInfoCircle, FaShoppingCart, FaPlus } from 'react-icons/fa';
 
 const MAX_LENGTH = 20; 
 
@@ -20,6 +20,11 @@ const ProductCard = ({ product }) => {
             <p className={styles.shopName}><FaStore className={styles.icon} />{formatString(product.shop_name)}</p> 
             <p className={styles.shopAddress}><FaMapMarkerAlt className={styles.icon} />{formatString(product.shop_address)}</p>
             <button className={styles.detailButton}><FaInfoCircle className={styles['button-icon']} />Show details</button>
+            <div className={styles.buttonContainer}>
+                
+                <button className={styles.cartButton}><FaShoppingCart className={styles['button-icon']} /><FaPlus className={styles['button-icon']} /></button>
+                <button className={styles.buyButton}>Buy!</button>
+            </div>
         </div>
     );
 };

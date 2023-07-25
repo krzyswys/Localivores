@@ -1,13 +1,4 @@
-:root {
-  --common-margin: 20px;
-  --common-padding: 20px;
-  --common-font-size: 14px;
-  --common-transition: all 0.3s ease;
-  --common-bg-color: #1B5044;
-  --common-text-color: #FFFFFF;
-  --common-border-color: #1b5044a7;
-  --common-font-weight: 700;
-}
+
 
 .productList {
   display: flex;
@@ -22,6 +13,7 @@
 }
 
 .productCard {
+  z-index:9;
   background-color: #00ffc33a;
   border: 2px solid var(--common-text-color);
   border-radius: 15px;
@@ -71,6 +63,7 @@
 }
 
 .detailButton {
+  z-index:10;
   background-color: var(--common-text-color);
   border: none;
   border-radius: 20px;
@@ -116,6 +109,62 @@
   color: var(--common-text-color);
   transform: translateY(-1px);
 }
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.cartButton, .buyButton {
+  z-index:10;
+  background-color: var(--common-text-color);
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  font-weight: var(--common-font-weight);
+  font-size: var(--common-font-size);
+  background-color: var(--common-bg-color);
+  color: var(--common-text-color);
+  cursor: pointer;
+  transition: var(--common-transition);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:40%;
+  
+
+}
+.cartButton {
+  background-color:rgb(57, 146, 57);
+}
+.cartButton>*{
+  color:rgb(170, 255, 170);
+
+}
+
+.buyButton {
+  color:rgb(252, 222, 222);
+  background-color:rgb(146, 57, 57);
+}
+.cartButton:hover, .buyButton:hover,
+.cartButton:focus, .buyButton:focus,
+.cartButton:hover .button-icon, .buyButton:hover .button-icon,
+.cartButton:focus .button-icon, .buyButton:focus .button-icon {
+  background-color: var(--common-text-color);
+  color: var(--common-bg-color);
+  outline: none;
+  width:60%;
+}
+
+.cartButton:active, .buyButton:active {
+  transform: scale(0.98);
+  color: var(--common-bg-color);
+}
+
+
+
 
 @keyframes appear {
   to {
