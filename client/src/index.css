@@ -10,6 +10,7 @@ body{
     --common-font-size: 14px;
     --common-transition: all 0.3s ease;
     --common-bg-color: #1B5044;
+    --common-lighter-bg-color: #0c8267;
     --common-text-color: #FFFFFF;
     --common-border-color: #1b5044a7;
     --common-font-weight: 700;
