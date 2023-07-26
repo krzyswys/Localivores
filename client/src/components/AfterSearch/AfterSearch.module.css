@@ -13,6 +13,7 @@
 }
 
 .productCard {
+  position:relative;
   z-index:9;
   background-color: #48ddbb87;
   border: 2px solid var(--common-text-color);
@@ -30,6 +31,8 @@
   box-shadow: 14px 11px 17px -14px rgba(66, 68, 90, 1);
   transition: var(--common-transition);
   cursor: pointer;
+  text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
+  box-sizing:border-box;
 }
 
 .productCard:hover {
@@ -129,6 +132,36 @@
   width:60%;
 }
 
+
+.img-container{
+  width: 100%;
+  height:100%;
+  overflow:hidden;
+}
+.productImage{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:-1;
+  width: 100%;
+  height: 100%;
+  border-radius:15px;
+  object-fit: cover;
+  margin-bottom: var(--common-margin);
+  transition: var(--common-transition);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 55%, 0 48%);
+clip-path: polygon(0 0, 100% 0, 100% 55%, 0 48%);
+overflow:hidden;
+filter: brightness(30%);
+opacity:0.6;
+transition:all 0.5s ease-in-out;
+}
+
+.productCard:hover .productImage{
+  opacity:0.8;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
 
 @keyframes appear {
   to {

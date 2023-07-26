@@ -27,6 +27,10 @@ const ProductCard = ({ product }) => {
         <React.Fragment>
         {showModal &&<ProductModal onClose={closeModal} data={product} />}
         <div className={classes.productCard} onClick={openModal}>
+            <div className={classes['img-container']} >
+            <img className={classes.productImage} src={product.picture} alt={product.product_name} />
+            </div>
+            
             <h2 className={classes.productTitle}><FaTag className={classes.icon} /> {formatString(product.product_name)}</h2> 
             <p className={classes.productDescription}>{formatString(product.product_description)}</p>
             <p className={classes.productPrice}>Cena: {product.product_price}</p>
