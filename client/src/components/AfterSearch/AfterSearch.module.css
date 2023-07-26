@@ -88,7 +88,7 @@
 
 .icon {
   font-size: 20px;
-  color: var(--common-bg-color);
+  color: var(--common-lighter-bg-color);
   margin-right: 3px;
   transform: translateY(3px);
 }
