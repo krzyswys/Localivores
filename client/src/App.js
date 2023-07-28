@@ -1,9 +1,11 @@
-
+import React from 'react';
+import AfterSearch from './components/AfterSearch/AfterSearch';
+import './index.css';
 function App() {
   return (
-    <div>
+    <AfterSearch>
       React working
-    </div>
+    </AfterSearch>
   );
 }
 
