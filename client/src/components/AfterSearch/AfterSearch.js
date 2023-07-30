@@ -143,6 +143,8 @@ const AfterSearch = () => {
     const filterClasses = `${classes.filters} ${isFilterActive ? classes.active : ''}`
     const filterMess = !isFilterActive ? `Show filters` : `Hide filters`;
     return (
+   <React.Fragment>
+        <div className={classes.count}>Found {filteredProducts.length} results</div>
     <div className={classes.productList}>
     <div className={filterClasses}>
         
@@ -172,6 +174,7 @@ const AfterSearch = () => {
         ))}
     </div>
 </div>
+</React.Fragment>
 
     );
 };

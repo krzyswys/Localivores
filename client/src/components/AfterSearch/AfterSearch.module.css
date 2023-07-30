@@ -122,6 +122,10 @@
   font-weight: bold;
   text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
   color:white;
+  text-align:center;
+  margin-top:2rem;
+  padding:1rem;
+  border-bottom:3px solid white;
 }
 .productCard {
   position:relative;
