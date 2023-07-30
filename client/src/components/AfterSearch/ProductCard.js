@@ -36,7 +36,7 @@ const ProductCard = ({ product }) => {
             <p className={classes.shopName}><FaStore className={classes.icon} />{formatString(product.shop_name)}</p> 
             <p className={classes.shopAddress}><FaMapMarkerAlt className={classes.icon} />{formatString(product.shop_address)}</p>
             <Card>
-            <ReactStars count={5} value={product.shop_rate} edit={false} size={18} color1={'white'} color2={'yellow'}/>
+            <ReactStars count={5} value={+product.shop_rate} edit={false} size={18} color1={'white'} color2={'yellow'}/>
             </Card>
             <Button className={classes.detailButton} onClick={openModal}><FaInfoCircle className={classes['button-icon']} />Show details</Button>
             <div className={classes.buttonContainer}>
