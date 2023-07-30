@@ -3,6 +3,7 @@
 import React,{useState,useEffect} from 'react';
 import ProductCard from './ProductCard';
 import classes from './AfterSearch.module.css';
+import Button from '../../UI/Button/Button';
 
 const dummyData = [
     {
@@ -58,6 +59,40 @@ const dummyData = [
         shop_opening_hours: "8:30-21:00",
         shop_longitude: "21.0144",
         shop_latitude: "52.2321",
+    },{
+        product_id: "g4",
+        product_name: "Applee",
+        product_description: "Fresh Apple",
+        product_price: "3.59",
+        product_weight: "150g",
+        production_date: "2023-06-01",
+        product_discount: "5%",
+        product_origin: "Spain",
+        shop_rate:'5',
+        product_expiration_date: "2023-08-30",
+        shop_name: "GreenGrocer",
+        picture:"https://picsum.photos/300",
+        shop_address: "Red Street 6, Warsaw",
+        shop_opening_hours: "8:30-21:00",
+        shop_longitude: "21.0144",
+        shop_latitude: "52.2321",
+    },{
+        product_id: "g5",
+        product_name: "Applee",
+        product_description: "Fresh Apple",
+        product_price: "3.59",
+        product_weight: "150g",
+        production_date: "2023-06-01",
+        product_discount: "5%",
+        product_origin: "Spain",
+        shop_rate:'5',
+        product_expiration_date: "2023-08-30",
+        shop_name: "GreenGrocer",
+        picture:"https://picsum.photos/300",
+        shop_address: "Red Street 6, Warsaw",
+        shop_opening_hours: "8:30-21:00",
+        shop_longitude: "21.0144",
+        shop_latitude: "52.2321",
     },
 ];
 
@@ -71,6 +106,11 @@ const AfterSearch = () => {
         shop_rate: 0, 
         price: { min: 0, max: 0 } 
     });
+    const [isFilterActive, setIsFilterActive] = useState(false);
+
+    const activeFilterHandler = () => {
+        setIsFilterActive(prevActive => !prevActive);
+    }
 
     useEffect(() => {
         // znajdujemy najniższą i najwyższą cenę wśród produktów
@@ -99,14 +139,15 @@ const AfterSearch = () => {
         return ()=>{clearTimeout(identifier);}
         
     }, [filter]);
-
+    //if isFilterActive is true, then filterClasses = classes.filters + ' ' + classes.active else just classes.filters
+    const filterClasses = `${classes.filters} ${isFilterActive ? classes.active : ''}`
+    const filterMess = !isFilterActive ? `Show filters` : `Hide filters`;
     return (
     <div className={classes.productList}>
-    <div className={classes.count}>Total products found: {filteredProducts.length}</div>
-    <div className={classes.filters}>
-        <div className={classes.row}>
-        Filters:
-        </div>
+    <div className={filterClasses}>
+        
+        <Button  onClick={activeFilterHandler} className={classes.row}>{filterMess}</Button>
+        
         <div className={classes.row}>
         <div className={classes.column}>
         <input type="text" placeholder="Product Name" onChange={(e) => setFilter({ ...filter, product_name: e.target.value })} />
@@ -122,9 +163,10 @@ const AfterSearch = () => {
         <input id="Price_From" type="number" placeholder="Price From" value={filter.price.min} onChange={(e) => setFilter({ ...filter, price: { ...filter.price, min: e.target.value } })} />
         <label  htmlFor="Price_To">To</label>
         <input id="Price_To" type="number" placeholder="Price To" value={filter.price.max} onChange={(e) => setFilter({ ...filter, price: { ...filter.price, max: e.target.value } })} />
-        </div>
+        </div> 
     </div>
     <div className={classes.results}>
+    
         {filteredProducts.map(product => (
             <ProductCard key={product.product_id} product={product} />
         ))}
