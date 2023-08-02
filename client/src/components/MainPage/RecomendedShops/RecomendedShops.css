@@ -1,0 +1,34 @@
+iframe {
+    width: 40vw;
+    height: 70vh;
+    border: 0px;
+    outline: none;
+    margin: 0px;
+    border-radius: 15px;
+}
+
+.mapnshops-container {
+    padding: 0 2vw 0 2vw;
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(175deg, #ffffff 40%, #ffffff 80%);
+
+}
+
+.shop-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50vw;
+    height: 80vh;
+}
+
+.shop-slider h3 {
+    color: #00a082;
+    font-size: 36px;
+
+}
