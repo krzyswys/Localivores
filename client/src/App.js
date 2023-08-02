@@ -1,8 +1,8 @@
-
+import MainPage from "./components/MainPage/MainPage";
 function App() {
   return (
     <div>
-      React working
+      <MainPage></MainPage>
     </div>
   );
 }
