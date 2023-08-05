@@ -9,7 +9,7 @@ import lombok.Data;
 public @Data class Extras {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long extras_id;
 
     @Column(name = "GMO")
     private boolean gmo;

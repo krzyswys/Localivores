@@ -9,17 +9,17 @@ import lombok.Data;
 public @Data class PaymentMethod {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long payment_method_id;
 
-    @Column(name = "credit_card_number")
-    private String creditCardNumber;
+    @Column(name = "credit_card")
+    private boolean creditCard;
 
     @Column(name = "paypal")
-    private int paypal;
+    private boolean paypal;
 
     @Column(name = "google_pay")
-    private int googlePay;
+    private boolean googlePay;
 
     @Column(name = "apple_pay")
-    private int applePay;
+    private boolean applePay;
 }
