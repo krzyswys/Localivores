@@ -1,0 +1,125 @@
+.joinus-container {
+    padding: 0 2vw 0 2vw;
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: linear-gradient(175deg, #f2da3d 30%, #efb924 80%);
+}
+
+.joinus-element-container {
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.joinus-image-container {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    border-radius: 100%;
+    box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 1);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #3ea11b;
+}
+
+
+
+.joinus-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 3;
+
+}
+
+.image1 {
+    background-image: url("../../../assets/StockImages/alex-hudson-m3I92SgM3Mk-unsplash.jpg");
+    /* background-image: url("nrd-D6Tu_L3chLE-unsplash.jpg"); */
+    /* background-image: url("renate-vanaga-2pV2LwPVP9A-unsplash.jpg"); */
+    background-size: cover;
+    background-position: center;
+}
+
+.image2 {
+    background-image: url("../../../assets/StockImages/sincerely-media-EtyBBUByPSQ-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.image3 {
+    background-image: url("../../../assets/StockImages/lucian-alexe-afDu-GuxjjM-unsplash.jpg");
+    background-size: cover;
+    background-position: right;
+}
+
+.joinus-text {
+    margin-top: 2%;
+    text-align: center;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.joinus-button {
+    font-size: large;
+    border-radius: 50px;
+    border: none;
+    padding: 5% 2% 5% 2%;
+    width: 80%;
+    transition: 0.2s;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.315);
+}
+
+.joinus-button:hover {
+    scale: 102%;
+    cursor: pointer;
+}
+
+
+.visual {
+    position: absolute;
+
+    scale: 150%;
+    z-index: 1;
+}
+
+
+
+.hiddenAnim-joinus {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 0.3s;
+}
+
+.showAnim-joinus {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: all 0.3s;
+}
+
+.showAnim-joinus:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.showAnim-joinus:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.hiddenAnim-joinus:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.hiddenAnim-joinus:nth-child(3) {
+    transition-delay: 0.2s;
+}

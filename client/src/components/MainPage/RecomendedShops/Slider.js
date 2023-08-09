@@ -38,14 +38,11 @@ const AnimatedSlider = ({ items }) => {
         const deltaX = startXRef.current - event.clientX;
         if (Math.abs(deltaX) > window.innerWidth * 0.1) {
             const counter = Math.round(deltaX / (window.innerWidth * 0.1))
-            // for (let i = 0; i < counter; i++) {
             if (deltaX > 0) {
                 nextItem();
             } else {
                 prevItem();
             }
-            // }
-
         }
         const sliderContainer = sliderContainerRef.current;
         sliderContainer.style.transition = `transform ${TRANSITION_DURATION}ms ease-in-out`;

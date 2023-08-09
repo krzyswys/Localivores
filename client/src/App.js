@@ -1,17 +1,19 @@
 import MainPage from "./components/MainPage/MainPage";
+import React from 'react';
+import './index.css';
+import AfterSearch from "./components/AfterSearch/AfterSearch"
+
 function App() {
   return (
     <div>
       <MainPage></MainPage>
     </div>
-import React from 'react';
-import AfterSearch from './components/AfterSearch/AfterSearch';
-import './index.css';
-function App() {
-  return (
-    <AfterSearch>
-      React working
-    </AfterSearch>
+    // import AfterSearch from './components/AfterSearch/AfterSearch';
+    // function App() {
+    //   return (
+    // <AfterSearch>
+    //   React working
+    // </AfterSearch>
   );
 }
 
