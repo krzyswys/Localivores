@@ -5,6 +5,10 @@ import AfterSearch from "./components/AfterSearch/AfterSearch"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AccountSettings from "./components/MainPage/Header/AccountSettings/AccountSettings";
 import AccountLinksList from "./components/MainPage/Header/AccountLinksList/AccountLinksList";
+import AccountStartShop from "./components/MainPage/Header/AccountBecomePages/AccountStartShop";
+import AccountBecomeDriver from "./components/MainPage/Header/AccountBecomePages/AccountBecomeDriver";
+import AccountReportProblem from "./components/MainPage/Header/AccountReportProblem/AccountReportProblem";
+
 
 const App = () => {
 
@@ -22,6 +26,20 @@ const App = () => {
             <AccountSettings
             />
           } />
+          <Route path='/account-start-shop' element={
+            <AccountStartShop
+            />
+          } />
+
+          <Route path='/account-become-driver' element={
+            <AccountBecomeDriver
+            />
+          } />
+          <Route path='/account-report-problem' element={
+            <AccountReportProblem
+            />
+          } />
+
 
         </Route>
         <Route path='/after' element={<AfterSearch />}></Route>
