@@ -1,0 +1,120 @@
+.account-menu-container {
+    background-color: white;
+    width: 25vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.account-inner-menu-container {
+    background-color: white;
+    width: 25vw;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.459);
+}
+
+.account-headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    padding: 2%;
+    margin-top: 10%;
+    font-size: 1.9em;
+}
+
+.account-name {
+    margin-left: 2%;
+    color: #00a082;
+    font-weight: bold;
+}
+
+.account-line {
+    width: 90%;
+    height: 2px;
+    background-color: #00a082;
+    margin: 2% 0% 2% 0%;
+}
+
+.account-options-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 10%;
+
+}
+
+.account-option-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 1% 0 1% 0;
+    text-decoration: none;
+    color: black;
+}
+
+.account-option-hover-underline {
+    width: 0;
+    height: 1px;
+    transition: width 0.2s ease-in-out;
+    background-color: #00a082;
+}
+
+
+
+.account-option-container p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2%;
+    font-size: 1.5em;
+    width: 100%;
+}
+
+.account-option-container:hover {
+    cursor: pointer;
+}
+
+.account-option-container:hover .account-option-hover-underline {
+    cursor: pointer;
+    width: 70%;
+}
+
+
+.account-options-icon {
+    margin-right: 4%;
+}
+
+.logout-account {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2%;
+    font-size: 1.5em;
+    width: 60%;
+    margin-right: -20%;
+    color: #cb5151;
+    font-weight: bold;
+    border-top: 1px solid gray;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.logout-account:hover {
+    cursor: pointer;
+    background-color: #cb93935b;
+}
+
+.account-settings-container {
+    z-index: 6;
+}

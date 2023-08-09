@@ -1,0 +1,362 @@
+.account-settings-menu-container {
+    background-color: white;
+    width: 25vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.go-back-icon {
+    position: absolute;
+    left: 2%;
+    top: 1%;
+    font-size: 1.5em;
+}
+
+.account-settings-inner-menu-container {
+    background-color: white;
+    width: 25vw;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.459);
+}
+
+.account-settings-headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    padding: 2%;
+    margin-top: 10%;
+    font-size: 1.9em;
+}
+
+.account-settings-name {
+    margin-right: 2%;
+    color: #00a082;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.account-settings-line {
+    width: 90%;
+    height: 2px;
+    background-color: #00a082;
+    margin: 2% 0% 2% 0%;
+}
+
+.account-settings-options-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 10%;
+}
+
+.account-settings-option-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 1% 0 1% 0;
+    text-decoration: none;
+    color: black;
+}
+
+.account-settings-option-container p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2%;
+    font-size: 1.5em;
+    width: 100%;
+}
+
+
+.input-container {
+    position: relative;
+    width: 80%;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    transition: border 0.2s ease-in-out;
+
+}
+
+.input-container input:focus {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #646464;
+    outline: none;
+
+}
+
+.input-container .placeholder {
+    position: absolute;
+    top: 70%;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-100%);
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: top 0.2s, font-size 0.2s, color 0.2s;
+    font-size: 16px;
+    color: #aaa;
+}
+
+.input-container .placeholder.focused {
+    top: 0;
+    font-size: 12px;
+    color: #00a082;
+    border: none;
+    outline: none;
+}
+
+.password-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.password-container .input-container {
+    margin: 3% 0 3% 0;
+}
+
+.password-toggle {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-right: 10px;
+    width: 100%;
+}
+
+.password-toggle button {
+    border: none;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.account-eye-icon {
+    color: #aaa;
+    font-size: 1.3em;
+}
+
+.account-settings-payments-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.arrow-icon {
+    font-size: 1.5em;
+    color: #00a082;
+    transition: transform 0.2s ease;
+
+}
+
+.arrow-icon.off {
+    transform: rotateZ(0deg);
+
+}
+
+.arrow-icon.on {
+    transform: rotateZ(90deg);
+
+}
+
+.account-settings-payments-title p {
+
+    width: fit-content;
+}
+
+.account-settings-payments-title:hover {
+    cursor: pointer;
+
+}
+
+.account-settings-payments {
+    width: 100%;
+}
+
+
+.account-settings-payment-method {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid rgba(224, 224, 224, 0.6);
+    background-color: rgb(214, 214, 214, 0.6);
+    margin: 1%;
+    padding: 1px 4% 1px 1px;
+    font-size: 0.7em;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.account-settings-payment-method :hover {
+    scale: 101%;
+    cursor: pointer;
+}
+
+
+
+
+
+
+.notification-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 80%;
+    position: relative;
+}
+
+.toggle-btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 15px;
+    position: relative;
+    padding: 1%;
+}
+
+.toggle-btn>p {
+    z-index: 5;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account-settings-button-slider {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    z-index: 4;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-radius 0.3s ease;
+}
+
+.account-settings-button-slider.on {
+    transform: translateX(0%);
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #00a082;
+    color: white;
+}
+
+.account-settings-button-slider.off {
+    transform: translateX(100%);
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: rgb(55, 54, 54);
+    color: white;
+}
+
+@keyframes animateBorderRadius {
+    from {
+        border-radius: 15px 0 0 15px;
+    }
+
+    to {
+        border-radius: 15px 5px 5px 15px;
+    }
+}
+
+@keyframes animateBackgroundColor {
+    from {
+        background-color: rgb(55, 54, 54);
+    }
+
+    to {
+        background-color: #00a082;
+    }
+}
+
+@keyframes animateTransform {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.hoverAction:hover {
+    cursor: pointer;
+}
+
+.account-settings-button-slider.on {
+    animation: animateBorderRadius 0.3s ease, animateBackgroundColor 0.3s ease, animateTransform 0.3s ease;
+}
+
+.account-settings-button-slider.off {
+    animation: animateBorderRadius 0.3s ease, animateBackgroundColor 0.3s ease, animateTransform 0.3s ease;
+}
+
+.account-privacy-policy {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.account-privacy-policy>p {
+    font-size: 0.7em;
+    padding: 0;
+    margin: 0;
+    text-decoration: underline;
+    width: fit-content;
+}
+
+.account-privacy-policy:hover {
+    cursor: pointer;
+    color: #00a082;
+}
+
+.account-external-link-icon {
+    font-size: 0.7em;
+}
