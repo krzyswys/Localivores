@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom';
 
 const AccountReportProblem = () => {
     const [problemDescription, setproblemDescription] = useState('');
+    const topics = ['UI', 'Data', 'Delivery', 'Account', 'Payments'];
+    const [selectedTopic, setSelectedTopic] = useState('Topics');
+    const [isTopicListOpen, setTopicListOpen] = useState(false);
 
     const handleproblemDescriptionChange = (e) => {
         setproblemDescription(e.target.value);
@@ -28,21 +31,20 @@ const AccountReportProblem = () => {
             placeholder.classList.remove('focused');
         }
     };
-    const topics = ['UI', 'Data', 'Delivery', 'Account', 'Payments'];
-    const [selectedTopic, setSelectedTopic] = useState('');
 
-    const handleTopicChange = (event) => {
-        setSelectedTopic(event.target.value);
+    const handleTopicChange = (topic) => {
+        setSelectedTopic(topic);
     };
-    const handleCategoryClick = (category) => {
-        setSelectedCategory(category);
-        setCategoryListOpen(false);
+
+    const handleTopicClick = (topic) => {
+        setSelectedTopic(topic);
+        setTopicListOpen(false);
     };
-    const handleCategoryListClick = () => {
-        setCategoryListOpen(!isCategoryListOpen);
+
+    const handleTopicListClick = () => {
+        setTopicListOpen(!isTopicListOpen);
     };
-    const [isCategoryListOpen, setCategoryListOpen] = useState(false);
-    const [selectedCategory, setSelectedCategory] = useState('Categories');
+
 
     return (
         <div className='account-report-menu-container' onClick={(e) => e.stopPropagation()}>
@@ -55,13 +57,13 @@ const AccountReportProblem = () => {
                 <div className='account-report-options-container'>
 
                     <div className='select-report-topic-container'>
-                        <div className='select-report-topic' onClick={handleCategoryListClick}>
-                            <p id="selectReportText">{selectedCategory}</p>
-                            <GoTriangleRight className={isCategoryListOpen ? "triangle-open" : "triangle-closed"} />
-                            <ul id="list" className={isCategoryListOpen ? "open" : "closed"}>
-                                <li className='report-options' onClick={() => handleCategoryClick('all categories')}>all categories</li>
-                                {topics.map((category, index) => (
-                                    <li key={index} className='report-options' onClick={() => handleCategoryClick(category)}>{category}</li>
+                        <div className='select-report-topic' onClick={handleTopicListClick}>
+                            <p id="selectReportText">{selectedTopic}</p>
+                            <GoTriangleRight className={isTopicListOpen ? "triangle-open" : "triangle-closed"} />
+                            <ul id="list" className={isTopicListOpen ? "open" : "closed"}>
+                                <li className='report-options' onClick={() => handleTopicClick('Topics')}>Topics</li>
+                                {topics.map((topic, index) => (
+                                    <li key={index} className='report-options' onClick={() => handleTopicChange(topic)}>{topic}</li>
                                 ))}
                             </ul>
                         </div>
