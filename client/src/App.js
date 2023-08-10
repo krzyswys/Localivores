@@ -8,7 +8,7 @@ import AccountLinksList from "./components/MainPage/Header/AccountLinksList/Acco
 import AccountStartShop from "./components/MainPage/Header/AccountBecomePages/AccountStartShop";
 import AccountBecomeDriver from "./components/MainPage/Header/AccountBecomePages/AccountBecomeDriver";
 import AccountReportProblem from "./components/MainPage/Header/AccountReportProblem/AccountReportProblem";
-
+import AccountPromos from "./components/MainPage/Header/AccountPromos/AccountPromos";
 
 const App = () => {
 
@@ -37,6 +37,10 @@ const App = () => {
           } />
           <Route path='/account-report-problem' element={
             <AccountReportProblem
+            />
+          } />
+          <Route path='/account-promos' element={
+            <AccountPromos
             />
           } />
 

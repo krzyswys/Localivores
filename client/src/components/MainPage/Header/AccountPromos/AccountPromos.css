@@ -1,0 +1,135 @@
+.account-promo-menu-container {
+    background-color: white;
+    width: 25vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.go-back-icon {
+    position: absolute;
+    left: 2%;
+    top: 1%;
+    font-size: 1.5em;
+}
+
+.account-promo-inner-menu-container {
+    background-color: white;
+    width: 25vw;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.459);
+}
+
+.account-promo-headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    padding: 2%;
+    margin-top: 10%;
+    font-size: 1.9em;
+}
+
+.account-promo-name {
+    margin: 0 2% 0 2%;
+    color: #00a082;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.account-promo-line {
+    width: 90%;
+    height: 2px;
+    background-color: #00a082;
+    margin: 2% 0% 2% 0%;
+}
+
+.account-promo-options-container {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 0%;
+}
+
+.input-promo-go-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-promo-container {
+    position: relative;
+    width: 80%;
+}
+
+.input-promo-container.promoCodeEntered input {
+    position: relative;
+    border: 2px solid #00a082;
+    border-radius: 5px;
+}
+
+.input-promo-container input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    transition: border 0.2s ease-in-out;
+
+}
+
+.input-promo-container input:focus {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #646464;
+    outline: none;
+
+}
+
+.input-promo-container .placeholder {
+    position: absolute;
+    top: 70%;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-100%);
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: top 0.2s, font-size 0.2s, color 0.2s;
+    font-size: 16px;
+    color: #aaa;
+}
+
+.input-promo-container .placeholder.focused {
+    top: 0;
+    font-size: 12px;
+    color: #00a082;
+    border: none;
+    outline: none;
+}
+
+.promo-apply-icon {
+    color: #00a082;
+    font-size: 1.2em;
+    transform-origin: all 0.2s ease;
+}
+
+.promo-apply-icon:hover {
+    scale: 110%;
+    cursor: pointer;
+}
