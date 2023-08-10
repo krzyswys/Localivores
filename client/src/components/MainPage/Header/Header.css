@@ -1,3 +1,13 @@
+.main-header-container {
+    background-color: white;
+    z-index: 3;
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .searchBar-container {
     background: linear-gradient(177deg, #a3f09c 20%, #87ec89 75%);
     z-index: 3;
@@ -33,6 +43,66 @@
     color: #00a082;
     text-shadow: 5px 10px 2px white;
 }
+
+.account-wrapper {
+    position: relative;
+    width: 20vw;
+}
+
+.account-container {
+    position: fixed;
+    width: 25vw;
+    top: 0;
+    padding-top: 2vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 5;
+}
+
+.open-account-menu-button {
+    font-size: 46px;
+    color: #00a082;
+    background: none;
+    transition: 0.1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 14%;
+}
+
+.open-account-menu-button:hover {
+    scale: 102%;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.animated-div {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    /* right: -100vw; */
+    width: 102vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.508);
+    background-color: rgba(0, 0, 0, 0.373);
+}
+
+.account-menu-container {
+    background-color: white;
+    width: 25vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+
 
 .account {
     margin-right: -14%;
@@ -247,4 +317,29 @@
 .separator {
     color: gray;
 
+}
+
+
+
+/* Dodaj animację w CSS */
+.content-transition-enter {
+    opacity: 0;
+    filter: blur(10px);
+}
+
+.content-transition-enter-active {
+    opacity: 1;
+    filter: blur(0);
+    transition: opacity 300ms, filter 300ms;
+}
+
+.content-transition-exit {
+    opacity: 1;
+    filter: blur(0);
+}
+
+.content-transition-exit-active {
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 300ms, filter 300ms;
 }
