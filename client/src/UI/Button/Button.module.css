@@ -8,7 +8,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
     font-weight: var(--common-font-weight);
     font-size: var(--common-font-size);
     background-color: var(--common-bg-color);
@@ -27,5 +26,7 @@
     color: var(--common-bg-color);
   }
   
+
+ 
 
   

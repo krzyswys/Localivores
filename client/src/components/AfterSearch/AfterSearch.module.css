@@ -1,3 +1,38 @@
+:root {
+  --transition-time: 0.3s;
+}
+
+.backIcon {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  background: rgb(255, 255, 255);
+  border: 3px solid var(--common-bg-color);
+  box-sizing: border-box;
+  padding: 2px 25px;
+  border-radius: 5rem; /* Pełne okrągłe kształty */
+  display: flex;
+  align-items: center; /* Wyrównanie pionowe */
+  justify-content: center; /* Wyrównanie poziome */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Delikatny cień */
+  transition: all var(--transition-time); /* Płynne przejście */
+}
+
+.backIcon:hover {
+  background: var(--common-border-color); /* Kolor tła podczas najeżdżania */
+  transform: scale(1.05); /* Delikatne powiększenie przycisku podczas najeżdżania */
+}
+
+.backIcon svg {
+  color: var(--common-bg-color);
+  transform: scale(1.2);
+}
+
+.backIcon:hover svg {
+  color: rgb(255, 255, 255); /* Kolor ikony podczas najeżdżania */
+}
+
 .productList {
   display: flex;
     flex-direction: row;
@@ -42,7 +77,7 @@
 
 .row:first-child{
   width:8rem;
-  margin-left:22rem;
+  margin-left:20rem;
   border-radius: 0 15px 15px 0 ;
   transition:all 0.8s ease;
 }
