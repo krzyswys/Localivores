@@ -1,0 +1,163 @@
+.body {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    position: relative;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+/* ----------MAP&SHOPSLIDER------------- */
+
+.spacerr {
+    width: 100%;
+}
+
+.wave1 {
+    width: 100%;
+    background-image: url("../../assets/Waves/wave-haikei.svg");
+    aspect-ratio: 960/100;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* ---------------JOIN US SECTION ------------- */
+.wave2 {
+    width: 100%;
+    background-image: url("../../assets/Waves/stacked-waves-haikei.svg");
+    aspect-ratio: 960/100;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+}
+
+.wave2 p {
+    position: absolute;
+    font-size: 1.3em;
+    margin-bottom: -2%;
+    padding: 0 1% 0 1%;
+    background-color: rgba(255, 255, 255, 0.752);
+    height: 10px;
+    line-height: 11px;
+    border-radius: 10px;
+}
+
+
+
+/*-------------------aboutus--------------------*/
+.wave3 {
+    width: 100%;
+    background-image: url("../../assets/Waves/stacked-waves-haikei4.svg");
+    aspect-ratio: 960/100;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.aboutus-container {
+    padding: 0 2vw 0 2vw;
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(175deg, #f2613d 30%, #ef3f24 80%);
+}
+
+.aboutus-text {
+    width: 40vw;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+
+}
+
+.aboutus-text h2 {
+    padding-bottom: 4%;
+
+}
+
+.aboutus-text p {
+    text-align: center;
+    font-size: 28px;
+    color: white;
+    font-weight: 500;
+}
+
+.aboutus-image-container {
+    width: 40vw;
+    height: 80vh;
+    background-image: url("../../assets/StockImages/renate-vanaga-2pV2LwPVP9A-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.343);
+}
+
+.hiddenAnim-aboutus {
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 0.3s;
+}
+
+.showAnim-aboutus {
+    opacity: 1;
+    filter: blur(0);
+    transition: all 0.3s;
+}
+
+.showAnim-aboutus:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.hiddenAnim-aboutus:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+
+
+/* ---------------FOOTER------------------ */
+.wave4 {
+    width: 100%;
+    background-image: url("../../assets/Waves/stacked-waves-haikei2.svg");
+    aspect-ratio: 960/100;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+.disclaimer {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.647);
+    width: 100%;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.wave5 {
+    width: 100%;
+    background-image: url("../../assets/Waves/layered-waves-haikei.svg");
+    aspect-ratio: 960/100;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

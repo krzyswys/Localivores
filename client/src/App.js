@@ -1,11 +1,56 @@
+import MainPage from "./components/MainPage/MainPage";
 import React from 'react';
-import AfterSearch from './components/AfterSearch/AfterSearch';
 import './index.css';
-function App() {
+import AfterSearch from "./components/AfterSearch/AfterSearch"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AccountSettings from "./components/MainPage/Header/AccountSettings/AccountSettings";
+import AccountLinksList from "./components/MainPage/Header/AccountLinksList/AccountLinksList";
+import AccountStartShop from "./components/MainPage/Header/AccountBecomePages/AccountStartShop";
+import AccountBecomeDriver from "./components/MainPage/Header/AccountBecomePages/AccountBecomeDriver";
+import AccountReportProblem from "./components/MainPage/Header/AccountReportProblem/AccountReportProblem";
+import AccountPromos from "./components/MainPage/Header/AccountPromos/AccountPromos";
+
+const App = () => {
+
   return (
-    <AfterSearch>
-      React working
-    </AfterSearch>
+    <Router>
+
+      <Routes>
+        <Route path='/' element={<MainPage />}>
+          <Route path='/menu' element={
+            <AccountLinksList
+            />
+          }>
+          </Route>
+          <Route path='/account-settings' element={
+            <AccountSettings
+            />
+          } />
+          <Route path='/account-start-shop' element={
+            <AccountStartShop
+            />
+          } />
+
+          <Route path='/account-become-driver' element={
+            <AccountBecomeDriver
+            />
+          } />
+          <Route path='/account-report-problem' element={
+            <AccountReportProblem
+            />
+          } />
+          <Route path='/account-promos' element={
+            <AccountPromos
+            />
+          } />
+
+
+        </Route>
+        <Route path='/after' element={<AfterSearch />}></Route>
+
+      </Routes>
+    </Router>
+
   );
 }
 

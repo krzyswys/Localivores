@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
 
-body{
+body {
     background-color: #2C916C;
 }
 
@@ -14,4 +14,4 @@ body{
     --common-text-color: #FFFFFF;
     --common-border-color: #1b5044a7;
     --common-font-weight: 700;
-  }
+}
