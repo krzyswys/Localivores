@@ -3,7 +3,7 @@
 .auth-form {
 	position: relative;
 	min-height: 100vh;
-	background-color: #E1E8EE;
+	background-color: rgb(198, 233, 217);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -16,10 +16,10 @@
 	background-color: #222;
 	border-radius: 15px;
 	height: 550px;
-	width: 350px;
+	width: 40rem;
 	position: relative;
 	overflow: hidden;
-	
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 	&::after {
 		content: '';
 		opacity: .8;
@@ -72,7 +72,7 @@
 			text-align: center;
 			
 			span {
-				color: rgba(0,0,0,0.4);
+				color: rgb(31, 52, 31);
 				opacity: 0;
 				visibility: hidden;
 				-webkit-transition: all .3s ease;
@@ -82,6 +82,7 @@
 		.form-holder {
 			border-radius: 15px;
 			background-color: #fff;
+			border: 3px solid rgb(22, 68, 23);
 			overflow: hidden;
 			margin-top: 50px;
 			opacity: 1;
@@ -99,20 +100,39 @@
 				border-bottom: 1px solid #eee;
 				width: 100%;
 				font-size: 12px;
-				
+				color:#1B5044;
+				font-weight:bold;
 				&:last-child {
 					border-bottom: 0;
 				}
 				&::-webkit-input-placeholder {
-					color: rgba(0,0,0,0.4);
+					color: #0c826688;
 				}
+
+			}
+			.invalid{
+				background-color:rgb(254, 194, 194);
+				color:rgb(114, 1, 1);
+				border-top:2px solid rgb(114, 1, 1);
+				border-bottom:1px dotted rgba(114, 1, 1, 0.205);
+				&::-webkit-input-placeholder {
+					color: rgba(114, 1, 1, 0.545);
+				}
+
+			}
+			.error-text{
+				color:rgb(114, 1, 1);
+				font-size: 12px;
+				font-weight: bold;
+				padding-top: 5px;
+				padding-bottom: 10px;
+				text-align: center;
+				background-color:rgb(254, 194, 194);
 			}
 		}
 		
 		.submit-btn {
-			background-color: rgba(0,0,0,0.4);
 			color: rgba(256,256,256,0.7);
-			border:0;
 			border-radius: 15px;
 			display: block;
 			margin: 15px auto; 
@@ -127,7 +147,19 @@
 			
 			&:hover {
 				transition: all .3s ease;
-				background-color: rgba(0,0,0,0.8);
+				background-color:white;
+				color:var(--common-bg-color);
+				transform: scaleX(1.05);
+			}
+			&:disabled{
+				background-color: #ccc;
+				color: #666;
+				cursor: not-allowed;
+				&:hover{
+					transform:none;
+					background-color: #ccc;
+					color: #666;
+				}
 			}
 		}
 	}
@@ -141,7 +173,7 @@
 		background-color: #fff;
 		z-index: 5;
 		-webkit-transition: all .3s ease;
-		
+		color:#0c8267;
 		&::before {
 			content: '';
 			position: absolute;
@@ -166,12 +198,12 @@
 			-webkit-transition: all .3s ease;
 			
 			.form-title {
-				color: #000;
+				color: var(--common-bg-lighter-color);
 				font-size: 1.7em;
 				text-align: center;
 
 				span {
-					color: rgba(0,0,0,0.4);
+					color: var(--common-bg-lighter-color);
 					opacity: 0;
 			    visibility: hidden;
 				  -webkit-transition: all .3s ease;
@@ -181,7 +213,7 @@
 			.form-holder {
 				border-radius: 15px;
 				background-color: #fff;
-				border: 1px solid #eee;
+				border: 3px solid var(--common-lighter-bg-color);
 				overflow: hidden;
 				margin-top: 50px;
 				opacity: 1;
@@ -199,18 +231,38 @@
 					border-bottom: 1px solid #eee;
 					width: 100%;
 					font-size: 12px;
-
+					color:#1B5044;
+					font-weight:bold;
 					&:last-child {
 						border-bottom: 0;
 					}
 					&::-webkit-input-placeholder {
-						color: rgba(0,0,0,0.4);
+						color: #0c826688;
 					}
+				}
+				.invalid{
+					background-color:rgb(254, 194, 194);
+					color:rgb(114, 1, 1);
+					border-top:2px solid rgb(114, 1, 1);
+					border-bottom:1px dotted rgba(114, 1, 1, 0.205);
+					&::-webkit-input-placeholder {
+						color: rgba(114, 1, 1, 0.545);
+					}
+	
+				}
+				.error-text{
+					color:rgb(114, 1, 1);
+					font-size: 12px;
+					font-weight: bold;
+					padding-top: 5px;
+					padding-bottom: 10px;
+					text-align: center;
+					background-color:rgb(254, 194, 194);
 				}
 			}
 
 			.submit-btn {
-				background-color: #6B92A4;
+				background-color: var(--common-lighter-bg-color);
 				color: rgba(256,256,256,0.7);
 				border:0;
 				border-radius: 15px;
@@ -227,7 +279,21 @@
 
 				&:hover {
 					transition: all .3s ease;
-					background-color: rgba(0,0,0,0.8);
+					background-color:var(--common-bg-color);
+					transform: scaleX(1.05);
+					color:white;
+			
+				}
+				&:disabled{
+					background-color: #ccc;
+					color: #666;
+					cursor: not-allowed;
+					&:hover{
+						transform:none;
+						outline:none;
+						background-color: #ccc;
+						color: #666;
+					}
 				}
 			}
 		}
@@ -264,5 +330,13 @@
 			visibility: visible;
 			-webkit-transition: all .3s ease;
 		}
+	}
+}
+
+
+
+@media screen and (max-width:768px) {
+	.form-structor{
+		width:20rem;
 	}
 }

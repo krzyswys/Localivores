@@ -6,7 +6,7 @@ import { RiAccountCircleFill } from 'react-icons/ri';
 import { Outlet } from 'react-router-dom';
 import './Header.css';
 import { useNavigate } from 'react-router-dom';
-
+import Logo from '../../../UI/Logo/Logo';
 
 const locations = ["Kraków", "Warszawa", "Wrocław", "Gdańsk"]
 const categories = ["dairy", "vegetables", "fruits", "meat", "bakery"]
@@ -167,7 +167,7 @@ const Header = () => {
 
             <div className='searchBar-container ' style={divStyle}>
                 <header className='header'>
-                    <div className='logo'>LOCALIVORES</div>
+                    <Logo/>
                     {/* <div className='account'> */}
                     <div className='account-wrapper'>
                         <div className='account-container'>
