@@ -31,6 +31,28 @@
 		background-color:var(--common-lighter-bg-color);
 		
 	}
+	label{
+		display:block;
+	}
+	.password-container {
+		position: relative;
+	  }
+	  
+	  .visibility-icon {
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: #888;
+		font-size: 1.2em;
+	  }
+	  
+	  .visibility-icon:hover {
+		color: #555;
+	  }
 	
 	.signup {
 		position: absolute;
@@ -88,6 +110,9 @@
 			opacity: 1;
 			visibility: visible;
 			-webkit-transition: all .3s ease;
+
+			
+			  
 			
 			.input {
 				border: 0;
@@ -111,7 +136,7 @@
 
 			}
 			.invalid{
-				background-color:rgb(254, 194, 194);
+				background-color:rgb(255, 233, 233);
 				color:rgb(114, 1, 1);
 				border-top:2px solid rgb(114, 1, 1);
 				border-bottom:1px dotted rgba(114, 1, 1, 0.205);
@@ -120,6 +145,7 @@
 				}
 
 			}
+			
 			.error-text{
 				color:rgb(114, 1, 1);
 				font-size: 12px;
@@ -127,7 +153,7 @@
 				padding-top: 5px;
 				padding-bottom: 10px;
 				text-align: center;
-				background-color:rgb(254, 194, 194);
+				background-color:rgb(255, 233, 233);
 			}
 		}
 		
@@ -241,7 +267,7 @@
 					}
 				}
 				.invalid{
-					background-color:rgb(254, 194, 194);
+					background-color:rgb(255, 233, 233);
 					color:rgb(114, 1, 1);
 					border-top:2px solid rgb(114, 1, 1);
 					border-bottom:1px dotted rgba(114, 1, 1, 0.205);
@@ -257,7 +283,7 @@
 					padding-top: 5px;
 					padding-bottom: 10px;
 					text-align: center;
-					background-color:rgb(254, 194, 194);
+					background-color:rgb(255, 233, 233);
 				}
 			}
 
