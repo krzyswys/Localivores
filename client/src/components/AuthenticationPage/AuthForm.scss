@@ -274,14 +274,29 @@
 			display: flex;
 			align-items: center;
 			margin: 10px 0;
-		  
+			font-size:12px;
+			font-weight:bold;
 			label {
 			  margin-left: 5px;
 			  font-size: 0.9em;
 			  cursor: pointer;
 			}
+			input[type="checkbox"] {
+				scale:0.8; // Hide the default checkbox
+			}
 		  }
-		  
+		  .forget-password{
+			font-size:12px;
+			position:relative;
+			font-weight:bold;
+			cursor:pointer;
+		}
+
+		  .details-container{
+			display:flex;
+			justify-content: space-between;
+		  }
+			
 		
 		.center {
 			position: absolute;

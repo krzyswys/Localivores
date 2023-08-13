@@ -60,7 +60,9 @@ const Login = ({
           >
             Please enter a valid password.
           </Label>
+          
         </div>
+        <div className="details-container">
         <div className="remember-me-wrapper">
           <input
             type="checkbox"
@@ -70,6 +72,10 @@ const Login = ({
           />
           <label htmlFor="rememberMe">Remember Me</label>
         </div>
+        <span className="forget-password">Forgot password?</span>
+        </div>
+        
+
         <Button className="google-btn">
           <div className="google-icon">
             <FcGoogle />
