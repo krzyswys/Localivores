@@ -1,24 +1,29 @@
-import React from 'react';
-import InputField from './InputField';
-import Label from './Label';
-import PasswordContainer from './PasswordContainer';
+import React from "react";
+import InputField from "./InputField";
+import Label from "./Label";
+import PasswordContainer from "./PasswordContainer";
 import Button from "../../UI/Button/Button";
-import './AuthForm.scss'
+import { FcGoogle } from "react-icons/fc";
+import {useState} from "react";
+import "./AuthForm.scss";
 const Login = ({
-    isLogin, 
-    enteredEmail, 
-    emailChangeHandler,
-    emailBlurHandler,
-    emailHasError,
-    enteredPassword,
-    passwordChangeHandler,
-    passwordBlurHandler,
-    passwordHasError,
-    isPasswordVisible,
-    setIsPasswordVisible,
-    loginIsValid,
-    changeAuth
+  isLogin,
+  enteredEmail,
+  emailChangeHandler,
+  emailBlurHandler,
+  emailHasError,
+  enteredPassword,
+  passwordChangeHandler,
+  passwordBlurHandler,
+  passwordHasError,
+  isPasswordVisible,
+  setIsPasswordVisible,
+  loginIsValid,
+  changeAuth,
 }) => {
+  const [isRemembered, setIsRemembered] = useState(false);
+
+  
   return (
     <div className={isLogin ? "login" : "login slide-up"}>
       <div className="center">
@@ -56,16 +61,29 @@ const Login = ({
             Please enter a valid password.
           </Label>
         </div>
-        <Button
-          type="submit"
-          className="submit-btn"
-          disabled={!loginIsValid}
-        >
+        <div className="remember-me-wrapper">
+          <input
+            type="checkbox"
+            id="rememberMe"
+            checked={isRemembered}
+            onChange={() => setIsRemembered((prev) => !prev)}
+          />
+          <label htmlFor="rememberMe">Remember Me</label>
+        </div>
+        <Button className="google-btn">
+          <div className="google-icon">
+            <FcGoogle />
+          </div>
+          <span className="google-text">Login with Google</span>
+        </Button>
+        
+
+        <Button type="submit" className="submit-btn" disabled={!loginIsValid}>
           Log in
         </Button>
       </div>
     </div>
   );
-}
+};
 
 export default Login;

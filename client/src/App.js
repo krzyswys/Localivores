@@ -10,9 +10,11 @@ import AccountBecomeDriver from "./components/MainPage/Header/AccountBecomePages
 import AccountReportProblem from "./components/MainPage/Header/AccountReportProblem/AccountReportProblem";
 import AccountPromos from "./components/MainPage/Header/AccountPromos/AccountPromos";
 import AuthForm from "./components/AuthenticationPage/AuthForm";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 const App = () => {
 
   return (
+  
     <Router>
 
       <Routes>
@@ -50,7 +52,7 @@ const App = () => {
         <Route path='/auth' element={<AuthForm />}></Route>
       </Routes>
     </Router>
-
+  
   );
 }
 
