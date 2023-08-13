@@ -9,7 +9,7 @@ import AccountStartShop from "./components/MainPage/Header/AccountBecomePages/Ac
 import AccountBecomeDriver from "./components/MainPage/Header/AccountBecomePages/AccountBecomeDriver";
 import AccountReportProblem from "./components/MainPage/Header/AccountReportProblem/AccountReportProblem";
 import AccountPromos from "./components/MainPage/Header/AccountPromos/AccountPromos";
-
+import AuthForm from "./components/AuthenticationPage/AuthForm";
 const App = () => {
 
   return (
@@ -47,7 +47,7 @@ const App = () => {
 
         </Route>
         <Route path='/after' element={<AfterSearch />}></Route>
-
+        <Route path='/auth' element={<AuthForm />}></Route>
       </Routes>
     </Router>
 
