@@ -20,6 +20,9 @@
 	position: relative;
 	overflow: hidden;
 	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+	
+	
+
 	&::after {
 		content: '';
 		opacity: .8;
@@ -31,6 +34,56 @@
 		background-color:var(--common-lighter-bg-color);
 		
 	}
+
+	.google-btn {
+		display: flex;
+		align-items: center;
+		background-color: #94b9f4;
+		padding: 8px;
+		border-radius: 25px;
+		margin-top:1rem;
+		overflow: hidden;
+		width: max-content;
+		max-width: 50px; // or the width of the icon
+		transition: max-width 0.4s ease-out;
+		position:relative;
+		border:none;
+		 outline:3px solid var(--common-bg-color);
+		
+		&:hover {
+		  max-width: 250px; // adjust according to your needs
+		}
+	  
+		.google-icon {
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  position:absolute;
+		  scale:1.5;
+		}
+	  
+		.google-text {
+		  display: flex;
+		  align-items: center;
+		  opacity: 0;
+		  color:var(--common-bg-color);
+		  white-space: nowrap;
+		  transition: opacity 0.4s ease-in,transform 0.35s ease-in-out 0.1s;
+		  padding-left: 8px; // spacing between the icon and text
+		  transform:translateX(-100%);
+		}
+	  
+		&:hover .google-text {
+		  opacity: 1;
+		  transform:translateX(0);
+		}
+		&:hover .google-icon {
+			position:static;
+		}
+	  }
+	  
+	  
+
 	label{
 		display:block;
 	}
@@ -86,6 +139,10 @@
 			opacity: 1;
 			visibility: visible;
 			-webkit-transition: all .3s ease;
+		}
+		.google-btn {
+			background-color: #94b9f4; // white background
+			outline: 3px solid var(common-lighter-bg-color);
 		}
 		
 		.form-title {
@@ -213,6 +270,33 @@
 			z-index: 4;
 			-webkit-transition: all .3s ease;
 		}
+		.remember-me-wrapper {
+			display: flex;
+			align-items: center;
+			margin: 10px 0;
+			font-size:12px;
+			font-weight:bold;
+			label {
+			  margin-left: 5px;
+			  font-size: 0.9em;
+			  cursor: pointer;
+			}
+			input[type="checkbox"] {
+				scale:0.8; // Hide the default checkbox
+			}
+		  }
+		  .forget-password{
+			font-size:12px;
+			position:relative;
+			font-weight:bold;
+			cursor:pointer;
+		}
+
+		  .details-container{
+			display:flex;
+			justify-content: space-between;
+		  }
+			
 		
 		.center {
 			position: absolute;
