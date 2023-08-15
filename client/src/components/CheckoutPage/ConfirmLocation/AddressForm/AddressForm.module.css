@@ -19,12 +19,18 @@
   .address-form-container .input {
     display: block;
     width: 12rem;
+    
     padding: 8px;
     border: 2px solid rgb(235, 255, 233);
     outline: none;
     border-radius: 8px;
     margin-bottom: 15px;
     background-color: var(--common-lighter-bg-color);
+  }
+
+  textarea{
+  max-width:12rem;
+  resize: none;
   }
   
   .address-form-container .input:focus {

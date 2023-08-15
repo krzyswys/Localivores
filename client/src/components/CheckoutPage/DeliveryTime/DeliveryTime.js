@@ -1,10 +1,17 @@
 import React from "react";
-import "./DeliveryTime.css";
+import classes from "./DeliveryTime.module.css";
 
 const DeliveryTime = () => {
   return (
-    <div className="delivery-time-container">
+    <div  className={classes["delivery-time-container"]}>
       <h2>Estimated Time: 45 mins</h2>
+      <div className={classes["priority-container"]}>
+      <input type="checkbox" id="priority-checkbox" className={classes["priority-checkbox"]} />
+        <label htmlFor="priority-checkbox" className={classes["priority-label"]}>
+          Give higher priority
+        </label>
+        
+      </div>
     </div>
   );
 };

@@ -1,0 +1,51 @@
+.delivery-time-container {
+  text-align: center;  
+}
+
+.priority-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 15px;
+  padding: 5px 25px;
+  height:2.2em;
+  cursor: pointer;
+  background: rgb(255, 151, 151);
+  border: 2px solid rgb(152, 0, 0);
+  color: rgb(160, 0, 0);
+  width: 15rem;
+  gap: 10px;
+
+}
+
+.priority-label {
+  position: relative;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.priority-label::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: rgb(116, 0, 0);
+  transition: width 0.3s ease-in-out;
+}
+
+.priority-checkbox {
+  cursor: pointer;
+}
+
+.priority-checkbox:checked ~ .priority-label {
+  transform: scaleX(1.1) translateX(18px);
+  color: rgb(116, 0, 0);
+}
+
+.priority-checkbox:checked ~ .priority-label::before {
+  width: 100%;
+}
