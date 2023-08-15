@@ -10,7 +10,7 @@ const dummyData = [
     product_price: "2.99",
     product_weight: "150g",
     production_date: "2023-05-10",
-    product_discount: "10%",
+    product_discount: "0%",
     product_origin: "Poland",
     product_expiration_date: "2023-08-10",
     shop_name: "Local Farmer",
@@ -94,19 +94,61 @@ const dummyData = [
     shop_latitude: "52.2321",
   },
 ];
-
-
 const OrderList = () => {
+  const handleDelete = (productId) => {
+    // Implement your delete logic here
+  };
+  const calculateActualPrice = (price, discount) => {
+    const priceValue = parseFloat(price);
+    const discountDecimal = parseFloat(discount) / 100;
+    const discountValue = priceValue * discountDecimal;
+    const actualPrice = priceValue - discountValue;
+    return actualPrice.toFixed(2);
+  };
   return (
     <div className={classes["order-list-container"]}>
       <h2>Order List</h2>
-      <ul>
-        <li>Item 1 - $10</li>
-        <li>Item 2 - $5</li>
-        <li>Item 3 - $15</li>
-      </ul>
+      <div className={classes.productList}>
+        {dummyData.map((product) => {
+          const actualPrice = calculateActualPrice(product.product_price, product.product_discount);
+          const showDiscount = actualPrice !== product.product_price;
+
+          return (
+            <div key={product.product_id} className={classes.productCard}>
+              <img src={product.picture} alt={product.product_name} className={classes.productImage} />
+              <div className={classes.productInfo}>
+                <h2 className={classes.productName}>{product.product_name}</h2>
+                <div className={classes.productDetails}>
+                  <p className={classes.productDescription}>{product.product_description}</p>
+                </div>
+                <div className={classes.productDetails}>
+                  <p  className={classes.price} style={showDiscount ? { textDecoration: 'line-through' } : {}}>Price: {product.product_price} USD</p>
+                  <p className={classes.weight}>Weight: {product.product_weight}</p>
+                </div>
+                
+                  <div className={classes.productDetails}>
+                   {showDiscount && <p className={classes.discount}>Discount {product.product_discount}</p>}
+                   <p className={classes.shopAddress}>{product.shop_address}</p>
+                  </div>
+                
+                
+                  <div className={classes.productDetails}>
+                  {showDiscount && <p className={classes.actualPrice}>Actual Price: {actualPrice} USD</p>}
+                  <p className={classes.expirationDate}>Expiration Date: {product.product_expiration_date}</p>
+                  </div>
+                
+                <div className={classes.productDetails}>
+                  <p className={classes.amount}>Amount: {1} </p>
+                  <button className={classes.button} onClick={() => handleDelete(product.product_id)}>Delete</button>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
+
 
 export default OrderList;

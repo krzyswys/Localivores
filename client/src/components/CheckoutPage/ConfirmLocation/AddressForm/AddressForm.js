@@ -11,7 +11,7 @@ const AddressForm = () => {
         </label>
         <label>
           Delivery Type:
-          <select   className={classes.input} >
+          <select  className={classes.input} >
             <option value="door">To Door</option>
             <option value="outside">Pick Up Outside</option>
           </select>

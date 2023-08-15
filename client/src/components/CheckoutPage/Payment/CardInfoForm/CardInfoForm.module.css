@@ -24,7 +24,6 @@
     width: 48%;
     font-size:10px;
     font-weight:bold;
-    color: var(--common-lighter-bg-color);
   }
   
   .payment-input,.payment-button {

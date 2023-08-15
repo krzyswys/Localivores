@@ -9,20 +9,25 @@
     font-weight:bold;
     margin-bottom: 5px;
     font-size:10px;
-    color: var(--common-lighter-bg-color);
+  
+  }
+  select.input{
+    color:white;
+    font-weight:bold;
   }
   
   .address-form-container .input {
     display: block;
     width: 12rem;
     padding: 8px;
-    border: 2px solid var(--common-lighter-bg-color);
+    border: 2px solid rgb(235, 255, 233);
     outline: none;
     border-radius: 8px;
     margin-bottom: 15px;
+    background-color: var(--common-lighter-bg-color);
   }
   
   .address-form-container .input:focus {
-    border-color: var(--common-focus-color);
+    border-color: rgb(235, 255, 233);
   }
   
