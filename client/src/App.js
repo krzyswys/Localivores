@@ -11,9 +11,11 @@ import AccountReportProblem from "./components/MainPage/Header/AccountReportProb
 import AccountPromos from "./components/MainPage/Header/AccountPromos/AccountPromos";
 import AuthForm from "./components/AuthenticationPage/AuthForm";
 import SingleShopPage from "./components/SingleShopPage/SingleShopPage";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 const App = () => {
 
   return (
+  
     <Router>
 
       <Routes>
@@ -53,7 +55,7 @@ const App = () => {
         <Route path='/single' element={<SingleShopPage />}></Route>
       </Routes>
     </Router>
-
+  
   );
 }
 

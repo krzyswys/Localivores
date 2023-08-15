@@ -3,6 +3,7 @@ import InputField from './InputField';
 import Label from './Label';
 import PasswordContainer from './PasswordContainer';
 import Button from "../../UI/Button/Button";
+import {FcGoogle} from "react-icons/fc";
 import './AuthForm.scss'
 const Signup = ({
     isLogin, 
@@ -85,6 +86,13 @@ const Signup = ({
           errorMsg="Passwords don't match."
         />
       </div>
+
+      <Button className="google-btn">
+          <div className="google-icon">
+            <FcGoogle />
+          </div>
+          <span className="google-text">Signup with Google</span>
+        </Button>
       <Button
         type="submit"
         className="submit-btn"
