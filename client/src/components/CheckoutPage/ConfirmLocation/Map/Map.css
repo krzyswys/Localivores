@@ -1,0 +1,10 @@
+.map-container{
+   max-width:220px;
+   
+}
+
+  
+  .map-container >*{
+    width:200px;
+    height:200px;
+  }

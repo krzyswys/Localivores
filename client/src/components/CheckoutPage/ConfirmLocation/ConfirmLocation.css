@@ -1,0 +1,9 @@
+.confirm-location-container {
+    display: flex;
+    justify-content: center;
+    flex-direction:row;
+    margin-bottom: 20px;
+    gap:1rem;
+    
+  }
+  
