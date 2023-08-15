@@ -7,20 +7,19 @@ const AddressForm = () => {
       <form>
         <label>
           Address:
-          <input type="text" name="address" />
+          <input   className={classes.input}  type="text" name="address" />
         </label>
         <label>
           Delivery Type:
-          <select>
+          <select   className={classes.input} >
             <option value="door">To Door</option>
             <option value="outside">Pick Up Outside</option>
           </select>
         </label>
         <label>
           Delivery Note:
-          <textarea name="note" />
+          <textarea   className={classes.input}  name="note" />
         </label>
-        <input type="submit" value="Confirm" />
       </form>
     </div>
   );

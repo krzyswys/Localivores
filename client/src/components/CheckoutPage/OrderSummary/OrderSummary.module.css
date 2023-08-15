@@ -1,15 +1,14 @@
 .order-summary-container {
     border: 1px solid #ddd;
     padding: 15px;
-    margin-bottom: 20px;
   }
   
-  ul {
+  .order-summary-container ul {
     list-style-type: none;
     padding: 0;
   }
   
-  li {
+  .order-summary-container li {
     margin-bottom: 5px;
   }
   

@@ -1,9 +1,9 @@
 import React from "react";
-import "./OrderSummary.css";
+import classes from "./OrderSummary.module.css";
 
 const OrderSummary = () => {
   return (
-    <div className="order-summary-container">
+    <div className={classes["order-summary-container"]}>
       <h2>Order Summary</h2>
       <p>You ordered from:</p>
       <ul>

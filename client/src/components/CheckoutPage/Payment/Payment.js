@@ -1,10 +1,10 @@
 import React from "react";
 import CardInfoForm from "./CardInfoForm/CardInfoForm";
-import "./Payment.css";
+import classes from "./Payment.module.css";
 
 const Payment = () => {
   return (
-    <div className="payment-container">
+    <div className={classes["payment-container"]}>
       <h2>Payment</h2>
       <CardInfoForm />
     </div>

@@ -4,12 +4,12 @@
     margin-bottom: 20px;
   }
   
-  ul {
+  .order-list-container ul {
     list-style-type: none;
     padding: 0;
   }
   
-  li {
+  .order-list-container li {
     margin-bottom: 5px;
   }
   
