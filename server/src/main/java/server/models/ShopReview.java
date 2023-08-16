@@ -10,7 +10,7 @@ import java.util.Date;
 public @Data class ShopReview {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long shop_review_id;
+    private Long id;
 
     @Column(name = "rating")
     private int rating;

@@ -10,7 +10,7 @@ import java.util.List;
 public @Data class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long user_id;
+    private Long id;
 
     @OneToMany(mappedBy = "user")
     private List<ShopReview> reviews;

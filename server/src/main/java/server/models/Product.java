@@ -11,7 +11,7 @@ import java.util.List;
 public @Data class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long product_id;
+    private Long id;
 
     //relacja jeden sklep do wielu produktów
     @ManyToOne

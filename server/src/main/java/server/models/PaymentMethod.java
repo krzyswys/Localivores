@@ -9,7 +9,7 @@ import lombok.Data;
 public @Data class PaymentMethod {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long payment_method_id;
+    private Long id;
 
     @Column(name = "credit_card")
     private boolean creditCard;
@@ -22,4 +22,11 @@ public @Data class PaymentMethod {
 
     @Column(name = "apple_pay")
     private boolean applePay;
+
+    public PaymentMethod(boolean creditCard, boolean paypal, boolean googlePay, boolean applePay) {
+        this.creditCard = creditCard;
+        this.paypal = paypal;
+        this.googlePay = googlePay;
+        this.applePay = applePay;
+    }
 }

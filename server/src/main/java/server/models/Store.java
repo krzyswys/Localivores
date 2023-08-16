@@ -10,7 +10,7 @@ import java.util.List;
 public @Data class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long store_id;
+    private Long id;
 
     @Column(name = "name")
     private String name;

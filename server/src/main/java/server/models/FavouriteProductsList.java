@@ -8,7 +8,7 @@ import lombok.Data;
 public @Data class FavouriteProductsList {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long favourite_products_list_id;
+    private Long id;
 
 
 }

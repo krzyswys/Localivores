@@ -21,7 +21,7 @@ public class ExtrasController {
     public ResponseEntity<List<Extras>> getAllExtras(){
         try{
 
-            List<Extras> extras = new ArrayList<Extras>(extrasRepository.findAll());
+            List<Extras> extras = new ArrayList<>(extrasRepository.findAll());
 
             if (extras.isEmpty()){
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
