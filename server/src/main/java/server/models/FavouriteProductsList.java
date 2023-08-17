@@ -18,4 +18,13 @@ public @Data class FavouriteProductsList {
 
     @OneToMany(mappedBy = "favouriteProductsList")
     private List<Product> products;
+
+    public FavouriteProductsList(User user, List<Product> products) {
+        this.user = user;
+        this.products = products;
+    }
+
+    public FavouriteProductsList() {
+
+    }
 }

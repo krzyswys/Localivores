@@ -33,11 +33,10 @@ public class FavouriteProductsController{
         }
     }
 
-
     @PostMapping("/favourite-products")
     public ResponseEntity<FavouriteProductsList> createFavouriteProductsList(@RequestBody FavouriteProductsList favouriteProductsList){
         try{
-            FavouriteProductsList _favouriteProductsList = favouriteProductsListRepository.save(new FavouriteProductsList());
+            FavouriteProductsList _favouriteProductsList = favouriteProductsListRepository.save(new FavouriteProductsList(favouriteProductsList.getUser(), favouriteProductsList.getProducts()));
             return new ResponseEntity<>(_favouriteProductsList, HttpStatus.CREATED);
         } catch (Exception e){
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);

@@ -44,7 +44,7 @@ public @Data class Product {
     @JoinColumn(name = "favourite_products")
     private FavouriteProductsList favouriteProductsList;
 
-    public Product(Store store, String description, Double price, Double weight, Double discount, String origin, Date expirationDate, Extras extras) {
+    public Product(Store store, String description, Double price, Double weight, Double discount, String origin, Date expirationDate, Extras extras, FavouriteProductsList favouriteProductsList) {
         this.store = store;
         this.description = description;
         this.price = price;
@@ -53,6 +53,7 @@ public @Data class Product {
         this.origin = origin;
         this.expirationDate = expirationDate;
         this.extras = extras;
+        this.favouriteProductsList = favouriteProductsList;
     }
 
     public Product() {
