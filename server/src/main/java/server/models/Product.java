@@ -40,4 +40,22 @@ public @Data class Product {
     @JoinColumn(name = "extras_id")
     private Extras extras;
 
+    @ManyToOne
+    @JoinColumn(name = "favourite_products")
+    private FavouriteProductsList favouriteProductsList;
+
+    public Product(Store store, String description, Double price, Double weight, Double discount, String origin, Date expirationDate, Extras extras) {
+        this.store = store;
+        this.description = description;
+        this.price = price;
+        this.weight = weight;
+        this.discount = discount;
+        this.origin = origin;
+        this.expirationDate = expirationDate;
+        this.extras = extras;
+    }
+
+    public Product() {
+
+    }
 }

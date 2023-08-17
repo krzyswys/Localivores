@@ -29,4 +29,15 @@ public @Data class ShopReview {
     @JoinColumn(name = "store_id")
     private Store store;
 
+    public ShopReview(int rating, String description, Date date, User user, Store store) {
+        this.rating = rating;
+        this.description = description;
+        this.date = date;
+        this.user = user;
+        this.store = store;
+    }
+
+    public ShopReview() {
+
+    }
 }

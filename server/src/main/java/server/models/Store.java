@@ -39,4 +39,19 @@ public @Data class Store {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private User user;
+
+    public Store(String name, String address, String openingHours, double discounts, double longitude, double latitude, List<Product> productList, List<ShopReview> shopReviews, User user) {
+        this.name = name;
+        this.address = address;
+        this.openingHours = openingHours;
+        this.discounts = discounts;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.productList = productList;
+        this.shopReviews = shopReviews;
+        this.user = user;
+    }
+
+    public Store() {
+    }
 }

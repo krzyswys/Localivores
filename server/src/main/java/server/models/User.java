@@ -35,5 +35,19 @@ public @Data class User {
 
     @Column(name = "role")
     private String role;
+
+    public User(List<ShopReview> reviews, String firstName, String lastName, String email, String password, String phoneNumber, String address, String role) {
+        this.reviews = reviews;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.role = role;
+    }
+
+    public User() {
+    }
 }
 
