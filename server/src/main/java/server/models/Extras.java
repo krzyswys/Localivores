@@ -14,11 +14,11 @@ public @Data class Extras {
     @Column(name = "GMO")
     private boolean gmo;
 
-    public Extras(boolean gmo){
+    public Extras(boolean gmo) {
         this.gmo = gmo;
     }
 
-    public Extras(){
+    public Extras() {
 
     }
 }
