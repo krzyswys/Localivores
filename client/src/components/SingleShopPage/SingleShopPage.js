@@ -8,6 +8,7 @@ import { BsCalendar2Week } from 'react-icons/bs'
 import { MdWhatshot } from 'react-icons/md'
 import { CiApple } from 'react-icons/ci'
 import { LiaCarrotSolid } from 'react-icons/lia'
+import { Link, Outlet } from 'react-router-dom';
 
 
 
@@ -45,28 +46,33 @@ const SingleShopPage = () => {
 
             <div className={classes.menu_products_container}>
                 <div className={classes.about_shop_links}>
-                    <div className={classes.about_shop_link}>Products</div>
+                    <Link to="/shop-products" className={classes.about_shop_link}>Products</Link>
                     <div className={classes.about_shop_link}>Reviews</div>
-                    <div className={classes.about_shop_link}>Gallery</div>
+                    <Link to="/shop-gallery" className={classes.about_shop_link}>Gallery</Link>
                     <div className={classes.about_shop_link}>News</div>
                     <div className={classes.about_shop_link}>About us</div>
                     <div className={classes.about_shop_link}>Contact</div>
                     <div className={classes.about_shop_link}>Deliveries</div>
+
                 </div>
                 <div className={classes.categories_info_block}>
                     <p>Categories</p>
                 </div>
-                <div className={classes.categories_list_column}>
-                    <div className={classes.categories_list_block}><MdWhatshot /><p>Bestsellers</p></div>
-                    <div className={classes.categories_list_block}><TbShoppingCartDiscount /><p>Discounted</p></div>
-                    <div className={classes.categories_list_block}><LiaCarrotSolid /><p>Vegetables</p></div>
-                    <div className={classes.categories_list_block}><CiApple /><p>Fruits</p></div>
-                    <div className={classes.categories_list_block}><LuMilk /><p>Dairy</p></div>
-                    <div className={classes.categories_list_block}><GiSteak /><p>Meat</p></div>
-                </div>
-                <div className={classes.router_page}>
 
+                <div className={classes.categories_list_column}>
+                    <div className={classes.categories_list_inner_column}>
+                        <div className={classes.categories_list_block}><MdWhatshot /><p>Bestsellers</p></div>
+                        <div className={classes.categories_list_block}><TbShoppingCartDiscount /><p>Discounted</p></div>
+                        <div className={classes.categories_list_block}><LiaCarrotSolid /><p>Vegetables</p></div>
+                        <div className={classes.categories_list_block}><CiApple /><p>Fruits</p></div>
+                        <div className={classes.categories_list_block}><LuMilk /><p>Dairy</p></div>
+                        <div className={classes.categories_list_block}><GiSteak /><p>Meat</p></div>
+
+                    </div>
                 </div>
+                <Outlet className={classes.router_page}>
+
+                </Outlet>
 
 
             </div>

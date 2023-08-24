@@ -11,14 +11,29 @@ import AccountReportProblem from "./components/MainPage/Header/AccountReportProb
 import AccountPromos from "./components/MainPage/Header/AccountPromos/AccountPromos";
 import AuthForm from "./components/AuthenticationPage/AuthForm";
 import SingleShopPage from "./components/SingleShopPage/SingleShopPage";
+import ShopProductsPage from "./components/SingleShopPage/ShopProductsPage/ShopProductsPage";
+import ShopGalleryPage from "./components/SingleShopPage/ShopGalleryPage/ShopGalleryPage";
+
+
 const App = () => {
 
   return (
     <Router>
 
       <Routes>
-        {/* <Route path='/' element={<MainPage />}> */}
         <Route path='/' element={<SingleShopPage />}>
+          <Route path='/shop-products' element={
+            <ShopProductsPage
+            />
+          } />
+          <Route path='/shop-gallery' element={
+            <ShopGalleryPage
+            />
+          } />
+
+
+        </Route>
+        <Route path='/' element={<MainPage />}>
           <Route path='/menu' element={
             <AccountLinksList
             />
@@ -48,6 +63,8 @@ const App = () => {
 
 
         </Route>
+
+
         <Route path='/after' element={<AfterSearch />}></Route>
         <Route path='/auth' element={<AuthForm />}></Route>
         <Route path='/single' element={<SingleShopPage />}></Route>
