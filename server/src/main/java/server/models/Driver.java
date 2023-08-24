@@ -2,33 +2,25 @@ package server.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.NoArgsConstructor;
+import server.utils.VehicleType;
 
 import java.util.List;
 
 
 @Entity
-@Builder
+//@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "drivers")
-public class Drivers {
+public class Driver extends User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    //********************************************
-    //userID
-    //********************************************
-
     @Column(name = "vehicle_type")
-    private String vehicleType;
+    private VehicleType vehicleType;
 
     @Column(name = "availability")
     private Boolean availability;
-
-    @OneToMany(mappedBy = "driver")
-    private List<Orders> orders;
-
 }

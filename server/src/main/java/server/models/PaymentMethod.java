@@ -20,19 +20,14 @@ public class PaymentMethod {
     private Long id;
 
     @Column(name = "credit_card")
-    @Nullable
     private Boolean creditCard;
 
-
     @Column(name = "paypal")
-    @Nullable
     private Boolean paypal;
 
     @Column(name = "google_pay")
-    @Nullable
     private Boolean googlePay;
 
     @Column(name = "apple_pay")
-    @Nullable
     private Boolean applePay;
 }

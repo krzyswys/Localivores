@@ -1,6 +1,5 @@
 package server.models;
 
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,6 +9,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Builder
 @Data
 @AllArgsConstructor
@@ -22,6 +22,9 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<ShopReview> reviews;
+
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
 
     @Column(name = "first_name")
     private String firstName;
@@ -40,9 +43,5 @@ public class User {
 
     @Column(name = "address")
     private String address;
-
-    @Column(name = "role")
-    private String role;
-
 }
 

@@ -1,7 +1,6 @@
 package server.models;
 
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,11 +19,11 @@ public @Data class OrderItems {
 
     @ManyToOne
     @JoinColumn(name = "order_id")
-    private Orders order;
+    private Order order;
 
-    //****************
-    //product_id
-    //****************
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
     @Column(name = "quantity")
     private Integer quantity;

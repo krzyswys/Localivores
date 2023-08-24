@@ -1,12 +1,12 @@
 package server.models;
 
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import server.utils.OrderStatus;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -17,25 +17,21 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "orders")
-public @Data class Orders {
+public @Data class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "payment_id")
-    private Payments paymentId;
+    private Payment payment;
 
-    //********************************
-    //userID
-    //********************************
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "invoice_id")
+    private Invoice invoice;
 
     @OneToMany(mappedBy = "order")
     private List<OrderItems> orderItems;
-
-    //********************************
-    //driverID
-    //********************************
 
     @Column(name = "order_date")
     private Date orderDate;
@@ -44,12 +40,16 @@ public @Data class Orders {
     private Date deliveryDate;
 
     @Column(name = "order_status")
-    private String orderStatus;
+    private OrderStatus orderStatus;
 
     @Column(name = "delivery_cost", precision = 10, scale = 2)
-    private BigDecimal delivery_cost;
+    private BigDecimal deliveryCost;
 
     @ManyToOne
     @JoinColumn(name = "driver_id")
-    private Drivers driver;
+    private Driver driver;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

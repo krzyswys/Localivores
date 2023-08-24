@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import server.utils.PaymentStatus;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -14,7 +15,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "payments")
-public @Data class Payments {
+public @Data class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -23,8 +24,8 @@ public @Data class Payments {
     private BigDecimal amount;
 
     @Column(name = "payment_date")
-    private Date payment_date;
+    private Date paymentDate;
 
     @Column(name = "payment_status")
-    private String payment_status;
+    private PaymentStatus paymentStatus;
 }

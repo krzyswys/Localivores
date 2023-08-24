@@ -1,8 +1,7 @@
 package server.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import server.models.Extras;
-import server.models.Invoices;
+import server.models.Invoice;
 
-public interface InvoicesRepository extends JpaRepository<Invoices, Long> {
+public interface InvoicesRepository extends JpaRepository<Invoice, Long> {
 }

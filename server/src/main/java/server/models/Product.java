@@ -1,11 +1,13 @@
 package server.models;
 
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +22,6 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    //relacja jeden sklep do wielu produktów
     @ManyToOne
     @JoinColumn(name = "store_id")
     private Store store;
@@ -28,8 +29,8 @@ public class Product {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "price")
-    private Double price;
+    @Column(name = "price", precision = 10, scale = 2)
+    private BigDecimal price;
 
     @Column(name = "weight")
     private Double weight;
@@ -43,6 +44,9 @@ public class Product {
     @Column(name = "expiration_date")
     private Date expirationDate;
 
+    @Column(name = "quantity")
+    private Integer quantity;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "extras_id")
     private Extras extras;
@@ -50,4 +54,7 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "favourite_products")
     private FavouriteProductsList favouriteProductsList;
+
+    @OneToMany(mappedBy = "product")
+    private List<OrderItems> orderItems;
 }

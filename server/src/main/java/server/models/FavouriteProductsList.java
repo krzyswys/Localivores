@@ -11,7 +11,7 @@ import java.util.List;
 @Builder
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor(force = true)
 public class FavouriteProductsList {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,7 +19,6 @@ public class FavouriteProductsList {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
-    @NonNull
     private User user;
 
     @OneToMany(mappedBy = "favouriteProductsList")
