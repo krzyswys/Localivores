@@ -2,25 +2,22 @@ package server.models;
 
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 @Entity
+@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "extras")
-public @Data class Extras {
+public class Extras {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "GMO")
-    private boolean gmo;
+    private Boolean gmo;
 
-    public Extras(boolean gmo){
-        this.gmo = gmo;
-    }
-
-    public Extras(){
-
-    }
 }
 
 

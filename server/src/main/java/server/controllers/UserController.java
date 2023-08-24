@@ -12,12 +12,11 @@ import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:8080")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/users")
 public class UserController {
-    @Autowired
     UserRepository userRepository;
 
-    @GetMapping("/users")
+    @GetMapping
     public ResponseEntity<List<User>> getUsers(){
         try {
             List<User> users = new ArrayList<>(userRepository.findAll());
@@ -32,7 +31,7 @@ public class UserController {
         }
     }
 
-    @PostMapping("/users")
+    @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user){
         try {
             User _user = userRepository.save(new User(user.getReviews(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getPassword(), user.getPhoneNumber(), user.getAddress(), user.getRole()));

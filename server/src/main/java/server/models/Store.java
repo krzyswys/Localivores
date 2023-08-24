@@ -1,13 +1,20 @@
 package server.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
+@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "stores")
-public @Data class Store {
+public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -22,13 +29,13 @@ public @Data class Store {
     private String openingHours;
 
     @Column(name = "discount")
-    private double discounts;
+    private Double discounts;
 
     @Column(name = "longitude")
-    private double longitude;
+    private Double longitude;
 
     @Column(name = "latitude")
-    private double latitude;
+    private Double latitude;
 
     @OneToMany(mappedBy = "store")
     List<Product> productList;
@@ -40,18 +47,5 @@ public @Data class Store {
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Store(String name, String address, String openingHours, double discounts, double longitude, double latitude, List<Product> productList, List<ShopReview> shopReviews, User user) {
-        this.name = name;
-        this.address = address;
-        this.openingHours = openingHours;
-        this.discounts = discounts;
-        this.longitude = longitude;
-        this.latitude = latitude;
-        this.productList = productList;
-        this.shopReviews = shopReviews;
-        this.user = user;
-    }
 
-    public Store() {
-    }
 }

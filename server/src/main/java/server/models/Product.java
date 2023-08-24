@@ -1,14 +1,21 @@
 package server.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
 
 @Entity
+@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "products")
-public @Data class Product {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -43,20 +50,4 @@ public @Data class Product {
     @ManyToOne
     @JoinColumn(name = "favourite_products")
     private FavouriteProductsList favouriteProductsList;
-
-    public Product(Store store, String description, Double price, Double weight, Double discount, String origin, Date expirationDate, Extras extras, FavouriteProductsList favouriteProductsList) {
-        this.store = store;
-        this.description = description;
-        this.price = price;
-        this.weight = weight;
-        this.discount = discount;
-        this.origin = origin;
-        this.expirationDate = expirationDate;
-        this.extras = extras;
-        this.favouriteProductsList = favouriteProductsList;
-    }
-
-    public Product() {
-
-    }
 }

@@ -37,7 +37,7 @@ public class ExtrasController {
     @PostMapping("/extras")
     public ResponseEntity<Extras> createExtras(@RequestBody Extras extras){
         try{
-            Extras _extras = extrasRepository.save(new Extras(extras.isGmo()));
+            Extras _extras = extrasRepository.save(Extras.builder().gmo(extras.getGmo()).build());
             return new ResponseEntity<>(_extras, HttpStatus.CREATED);
         }
         catch (Exception e){

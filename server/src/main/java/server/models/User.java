@@ -1,13 +1,21 @@
 package server.models;
 
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
+@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "users")
-public @Data class User {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -36,18 +44,5 @@ public @Data class User {
     @Column(name = "role")
     private String role;
 
-    public User(List<ShopReview> reviews, String firstName, String lastName, String email, String password, String phoneNumber, String address, String role) {
-        this.reviews = reviews;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
-        this.address = address;
-        this.role = role;
-    }
-
-    public User() {
-    }
 }
 
