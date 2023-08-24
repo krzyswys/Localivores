@@ -1,9 +1,10 @@
 .order-summary-container {
-    border: 1px solid #ddd;
+    border: 1px solid rgb(50,50,50);
     padding: 15px;
     font-size:14px;
     padding:10px;
     margin-top:-15px;
+    color:black;
   }
   
   .order-summary-container ul {
@@ -23,11 +24,13 @@
   .shopItem {
     display: inline-block;
     margin-right: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid rgb(50,50,50);
     padding: 15px;
     border-radius: 5px;
     background: rgb(12,130,103);
     background: radial-gradient(circle, rgba(12,130,103,1) 0%, rgba(27,80,68,1) 100%);
+    color:white;
+    font-weight:bold;
   }
   
   .shopName {
@@ -55,7 +58,7 @@
   
   .order-summary-container {
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid rgb(50,50,50);
     border-radius: 5px;
     width: 100%;
   }

@@ -9,10 +9,10 @@
     font-weight:bold;
     margin-bottom: 5px;
     font-size:10px;
-  
+    color:black;
   }
   select.input{
-    color:white;
+    color:rgb(50, 50, 50);
     font-weight:bold;
   }
   
@@ -21,11 +21,11 @@
     width: 12rem;
     
     padding: 8px;
-    border: 2px solid rgb(235, 255, 233);
+    border: 2px solid rgb(50, 50, 50);
     outline: none;
     border-radius: 8px;
     margin-bottom: 15px;
-    background-color: var(--common-lighter-bg-color);
+    background-color: rgb(243, 255, 252);
   }
 
   textarea{
@@ -34,6 +34,6 @@
   }
   
   .address-form-container .input:focus {
-    border-color: rgb(235, 255, 233);
+    border-color: rgb(50, 50, 50);
   }
   
