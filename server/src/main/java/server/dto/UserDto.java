@@ -7,10 +7,10 @@ import java.util.List;
 public class UserDto {
     private Long id;
     private List<ShopReviewDto> reviews;
+    private List<OrderDto> orders;
     private String firstName;
     private String lastName;
     private String email;
     private String phoneNumber;
     private String address;
-    private String role;
 }
