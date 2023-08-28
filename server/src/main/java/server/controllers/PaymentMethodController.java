@@ -1,43 +1,15 @@
-//package server.controllers;
-//
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.http.HttpStatus;
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.web.bind.annotation.*;
-//import server.models.PaymentMethod;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//@CrossOrigin(origins = "http://localhost:8080")
-//@RestController
-//@RequestMapping("/api")
-//public class PaymentMethodController {
-//    @Autowired
-//    PaymentMethodRepository paymentMethodRepository;
-//
-//    @GetMapping("/payment-methods")
-//    public ResponseEntity<List<PaymentMethod>> getAllPaymentMethods() {
-//        try {
-//            List<PaymentMethod> paymentMethods = new ArrayList<>(paymentMethodRepository.findAll());
-//
-//            if (paymentMethods.isEmpty()){
-//                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//            }
-//            return new ResponseEntity<>(paymentMethods, HttpStatus.OK);
-//
-//        } catch (Exception e){
-//            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-//    }
-//
-//    @PostMapping("/payment-methods")
-//    public ResponseEntity<PaymentMethod> createPaymentMethod(@RequestBody PaymentMethod paymentMethod){
-//        try{
-//            PaymentMethod _paymentMethod = paymentMethodRepository.save(new PaymentMethod(paymentMethod.isCreditCard(), paymentMethod.isPaypal(), paymentMethod.isGooglePay(), paymentMethod.isApplePay()));
-//            return new ResponseEntity<>(_paymentMethod, HttpStatus.CREATED);
-//        } catch (Exception e){
-//            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-//    }
-//}
+package server.controllers;
+
+import org.springframework.web.bind.annotation.*;
+import server.dto.PaymentMethodDto;
+import server.models.PaymentMethod;
+import server.services.CommonService;
+
+@RestController
+@RequestMapping("/api/paymentmethod")
+public class PaymentMethodController extends CommonController<PaymentMethodDto, PaymentMethod> {
+
+    public PaymentMethodController(CommonService<PaymentMethodDto, PaymentMethod> commonService) {
+        super(commonService);
+    }
+}

@@ -6,11 +6,11 @@ import lombok.*;
 import java.util.List;
 
 @jakarta.persistence.Entity
-@Table(name = "favourite_products_list")
 @Builder
 @Data
 @AllArgsConstructor
-@NoArgsConstructor(force = true)
+@NoArgsConstructor
+@Table(name = "favourite_products_list")
 public class FavouriteProductsList implements Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
