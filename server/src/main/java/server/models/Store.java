@@ -8,13 +8,13 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Entity
+@jakarta.persistence.Entity
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "stores")
-public class Store {
+public class Store implements Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

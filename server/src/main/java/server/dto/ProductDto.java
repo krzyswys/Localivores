@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
-public class ProductDto {
+public class ProductDto implements Dto {
     private Long id;
     private StoreDto store;
     private String description;

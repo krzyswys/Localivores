@@ -10,12 +10,12 @@ import server.utils.PaymentStatus;
 import java.math.BigDecimal;
 import java.util.Date;
 
-@Entity
+@jakarta.persistence.Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "payments")
-public @Data class Payment {
+public @Data class Payment implements Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

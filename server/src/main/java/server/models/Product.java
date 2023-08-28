@@ -1,7 +1,6 @@
 package server.models;
 
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,13 +10,13 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-@Entity
+@jakarta.persistence.Entity
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "products")
-public class Product {
+public class Product implements Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

@@ -1,6 +1,5 @@
 package server.models;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,13 +7,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-@Entity
+@jakarta.persistence.Entity
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "payment_methods")
-public class PaymentMethod {
+public class PaymentMethod implements Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

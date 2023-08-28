@@ -4,7 +4,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class StoreDto {
+public class StoreDto implements Dto {
     private Long id;
     private String name;
     private String address;

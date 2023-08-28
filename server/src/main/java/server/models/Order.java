@@ -12,12 +12,12 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-@Entity
+@jakarta.persistence.Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "orders")
-public @Data class Order {
+public @Data class Order implements Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

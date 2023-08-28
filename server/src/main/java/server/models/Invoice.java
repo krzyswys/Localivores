@@ -9,12 +9,12 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@Entity
+@jakarta.persistence.Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "invoices")
-public @Data class Invoice {
+public @Data class Invoice implements Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

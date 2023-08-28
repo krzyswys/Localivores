@@ -8,13 +8,13 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@Entity
+@jakarta.persistence.Entity
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "shop_reviews")
-public class ShopReview {
+public class ShopReview implements Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

@@ -4,13 +4,13 @@ package server.models;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
+@jakarta.persistence.Entity
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "extras")
-public class Extras {
+public class Extras implements Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

@@ -9,7 +9,7 @@ import server.utils.OrderStatus;
 
 
 @Data
-public class OrderDto {
+public class OrderDto implements Dto {
     private Long id;
     private PaymentDto payment;
     private InvoiceDto invoice;

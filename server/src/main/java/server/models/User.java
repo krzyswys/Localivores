@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Entity
+@jakarta.persistence.Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "users")
-public class User {
+public class User implements Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -44,4 +44,3 @@ public class User {
     @Column(name = "address")
     private String address;
 }
-

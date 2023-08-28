@@ -5,8 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import server.utils.VehicleType;
 
-import java.util.List;
-
 
 @Entity
 //@Builder

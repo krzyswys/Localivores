@@ -2,17 +2,16 @@ package server.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.lang.NonNull;
 
 import java.util.List;
 
-@Entity
+@jakarta.persistence.Entity
 @Table(name = "favourite_products_list")
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
-public class FavouriteProductsList {
+public class FavouriteProductsList implements Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

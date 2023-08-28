@@ -4,7 +4,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class FavouriteProductsListDto {
+public class FavouriteProductsListDto implements Dto {
     private Long id;
     private UserDto user;
     private List<ProductDto> products;

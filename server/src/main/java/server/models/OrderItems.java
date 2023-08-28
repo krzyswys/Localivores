@@ -7,12 +7,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+@jakarta.persistence.Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "order_items")
-public @Data class OrderItems {
+public @Data class OrderItems implements Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

@@ -4,7 +4,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class ShopReviewDto {
+public class ShopReviewDto implements Dto {
     private Long id;
     private Integer rating;
     private String description;
