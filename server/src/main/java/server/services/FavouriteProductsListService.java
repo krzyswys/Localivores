@@ -10,7 +10,8 @@ import server.repositories.CommonRepository;
 @Service
 @Slf4j
 public class FavouriteProductsListService extends CommonService<FavouriteProductsListDto, FavouriteProductsList> {
-//    public FavouriteProductsListService(CommonMapper<FavouriteProductsListDto, FavouriteProductsList> commonMapper, CommonRepository<FavouriteProductsList, Long> commonRepository) {
-//        super(commonMapper, commonRepository);
-//    }
+    public FavouriteProductsListService(CommonMapper<FavouriteProductsListDto, FavouriteProductsList> commonMapper, CommonRepository<FavouriteProductsList, Long> commonRepository) {
+        super(commonMapper, commonRepository);
+    }
+
 }
