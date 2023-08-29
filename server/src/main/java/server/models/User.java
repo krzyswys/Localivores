@@ -41,6 +41,16 @@ public class User implements Model {
     @Column(name = "phone_number")
     private String phoneNumber;
 
+    @Column(name = "apartment_number")
+    private String apartmentNumber;
+
     @Column(name = "address")
     private String address;
+
+    @Column(name = "city")
+    private String city;
+
+    @Column(name = "postal_code")
+    private String postalCode;
+
 }

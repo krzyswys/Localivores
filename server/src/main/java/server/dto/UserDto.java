@@ -1,5 +1,6 @@
 package server.dto;
 
+import jakarta.persistence.Column;
 import lombok.Data;
 import java.util.List;
 
@@ -12,5 +13,8 @@ public class UserDto implements Dto {
     private String lastName;
     private String email;
     private String phoneNumber;
+    private String apartmentNumber;
     private String address;
+    private String city;
+    private String postalCode;
 }
