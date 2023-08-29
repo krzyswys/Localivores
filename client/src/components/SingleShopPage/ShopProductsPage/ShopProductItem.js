@@ -78,7 +78,8 @@ const ShopProductItem = () => {
 
             <animated.div
                 className={classes.product_hidden_section}
-                style={hiddenSectionAnimation} onClick={(event) => event.stopPropagation()}
+                // style={hiddenSectionAnimation} 
+                onClick={(event) => event.stopPropagation()}
             >
                 <div className={classes.dates_container}>
                     <div className={classes.date_container}>

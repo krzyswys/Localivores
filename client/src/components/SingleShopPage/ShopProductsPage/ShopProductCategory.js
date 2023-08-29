@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import classes from "./SingleShopPage.module.css";
+import classes from "./ShopProductsPage.module.css";
 
-const Category = ({ title, items }) => {
+const Category = ({ title, categoryIcon, items }) => {
     const [expanded, setExpanded] = useState(false);
 
     const toggleExpanded = () => {
@@ -11,7 +11,7 @@ const Category = ({ title, items }) => {
     return (
         <div className={classes.category_container}>
             <p onClick={toggleExpanded} className={classes.category_header}>
-                <p>{title}</p>
+                <p>{title}&nbsp;{categoryIcon}</p>
             </p>
             <div className={classes.items_container} >
                 {items.map((item, index) => (

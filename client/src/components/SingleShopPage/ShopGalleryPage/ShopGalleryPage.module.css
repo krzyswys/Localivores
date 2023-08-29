@@ -1,29 +1,16 @@
-.grid_container {
-
-    padding: 0px;
+.SAP {
+    width: 100%;
+    height: fit-content;
+    /* position: relative; */
 }
 
-.grid-item {
-    background-color: #3498db;
-    border: 1px solid #2980b9;
-}
+.slider_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: black; */
+    z-index: 5;
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(25, 25px);
-    grid-template-rows: repeat(4, 25px);
-    gap: 2px;
-}
-
-.grid-item {
-    width: 25px;
-    height: 25px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    cursor: pointer;
-}
-
-.grid-item.connected {
-    background-color: #87CEEB;
-    /* Kolor dla połączonych divów */
 }

@@ -13,7 +13,8 @@ import AuthForm from "./components/AuthenticationPage/AuthForm";
 import SingleShopPage from "./components/SingleShopPage/SingleShopPage";
 import ShopProductsPage from "./components/SingleShopPage/ShopProductsPage/ShopProductsPage";
 import ShopGalleryPage from "./components/SingleShopPage/ShopGalleryPage/ShopGalleryPage";
-
+import { ImageProvider } from "./components/SingleShopPage/ShopGalleryPage/ImageContext";
+import ShopReviewsPage from "./components/SingleShopPage/ShopReviewsPage/ShopReviewsPage";
 
 const App = () => {
 
@@ -26,8 +27,16 @@ const App = () => {
             <ShopProductsPage
             />
           } />
-          <Route path='/shop-gallery' element={
-            <ShopGalleryPage
+          <Route
+            path='/shop-gallery'
+            element={
+              <ImageProvider >
+                <ShopGalleryPage />
+              </ImageProvider>
+            }
+          />
+          <Route path='/shop-reviews' element={
+            <ShopReviewsPage
             />
           } />
 

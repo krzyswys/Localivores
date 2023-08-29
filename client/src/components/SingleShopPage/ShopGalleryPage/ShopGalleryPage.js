@@ -1,34 +1,39 @@
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
 import classes from "./ShopGalleryPage.module.css";
 import Grid from './Grid.js';
+import { useImageContext } from './ImageContext';
+import GallerySlider from './Slider/GallerySlider';
+
 const ShopGalleryPage = () => {
-    const numberOfDivs = 25; // zmieniłem to na całkowitą liczbę divów
-    const generateRandomSize = () => {
-        const minWidth = 100;
-        const maxWidth = 300;
-        const minHeight = 100;
-        const maxHeight = 300;
+    const generateImageLink = (id, width, height) => `https://picsum.photos/id/${id}/${width}/${height}`;
 
-        const width = Math.floor(Math.random() * (maxWidth - minWidth + 1)) + minWidth;
-        const height = Math.floor(Math.random() * (maxHeight - minHeight + 1)) + minHeight;
-
-        return { width: `${width}px`, height: `${height}px` };
-    };
-
-    const divs = Array.from({ length: numberOfDivs }).map((_, i) => {
-        const size = generateRandomSize();
-        return <div key={i} className={classes.grid_item} style={{ ...size, margin: '0px' }}></div>;
+    const imageLinks = Array(23).fill(null).map((_, index) => {
+        let randomId = Math.floor(Math.random() * 50);
+        let width = Math.floor(Math.random() * 601) + 400;
+        let height = Math.floor(Math.random() * 601) + 400;
+        return generateImageLink(randomId, width, height);
     });
 
+    const { selectedImage } = useImageContext();
+    useEffect(() => {
+        console.log(selectedImage)
+    }, [selectedImage]);
+    const memoizedImageLinks = useMemo(() => imageLinks, []);
+
     return (
-        <div width={100 + "%"} height={100 + 'vh'}>
-            <Grid />
+
+        <div className={classes.SAP}>
+            <Grid imageLinks={memoizedImageLinks} />
+            {selectedImage !== null && (
+                <div className={classes.slider_container}>
+                    <GallerySlider imageLinks={memoizedImageLinks} startIndex={selectedImage} />
+                </div>
+            )}
         </div>
-        // <div className={classes.grid_container} style={{ display: 'flex', flexWrap: 'wrap' }}>
-        //     {divs}
-        // </div>
+
     );
 };
 
 export default ShopGalleryPage;
+
 
