@@ -25,6 +25,9 @@ public class Product implements Model {
     @JoinColumn(name = "store_id")
     private Store store;
 
+    @Column(name = "name")
+    private String name;
+
     @Column(name = "description")
     private String description;
 
@@ -46,13 +49,12 @@ public class Product implements Model {
     @Column(name = "quantity")
     private Integer quantity;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "extras_id")
     private Extras extras;
 
-    @ManyToOne
-    @JoinColumn(name = "favourite_products")
-    private FavouriteProductsList favouriteProductsList;
+    @OneToMany(mappedBy = "product")
+    private List<FavouriteProductsList> favouriteProductsList;
 
     @OneToMany(mappedBy = "product")
     private List<OrderItems> orderItems;

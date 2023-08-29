@@ -26,6 +26,9 @@ public class User implements Model {
     @OneToMany(mappedBy = "user")
     private List<Order> orders;
 
+    @OneToMany(mappedBy = "user")
+    private List<FavouriteProductsList> favouriteProductsLists;
+
     @Column(name = "first_name")
     private String firstName;
 
@@ -41,6 +44,16 @@ public class User implements Model {
     @Column(name = "phone_number")
     private String phoneNumber;
 
+    @Column(name = "apartment_number")
+    private String apartmentNumber;
+
     @Column(name = "address")
     private String address;
+
+    @Column(name = "city")
+    private String city;
+
+    @Column(name = "postal_code")
+    private String postalCode;
+
 }

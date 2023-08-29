@@ -22,11 +22,18 @@ public class Store implements Model {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "adress")
+    @Column(name = "apartment_number")
+    private String apartmentNumber;
+
+    @Column(name = "address")
     private String address;
 
-    @Column(name = "opening_hours")
-    private String openingHours;
+    @Column(name = "city")
+    private String city;
+
+    @Column(name = "postal_code")
+    private String postalCode;
+
 
     @Column(name = "discount")
     private Double discounts;
@@ -42,6 +49,9 @@ public class Store implements Model {
 
     @OneToMany(mappedBy = "store")
     List<ShopReview> shopReviews;
+
+    @OneToMany(mappedBy = "store")
+    private List<OpeningHours> openingHour;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
