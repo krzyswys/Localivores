@@ -10,6 +10,7 @@ import java.util.List;
 @Data
 public class ProductDto implements Dto {
     private Long id;
+    private String name;
     private StoreDto store;
     private String description;
     private BigDecimal price;
@@ -20,4 +21,5 @@ public class ProductDto implements Dto {
     private Integer quantity;
     private ExtrasDto extras;
     private List<FavouriteProductsList> favouriteProductsList;
+
 }
