@@ -2,6 +2,8 @@ package server.dto;
 
 import jakarta.persistence.Column;
 import lombok.Data;
+import server.models.OpeningHours;
+
 import java.util.List;
 
 @Data
@@ -12,11 +14,11 @@ public class StoreDto implements Dto {
     private String address;
     private String city;
     private String postalCode;
-    private String openingHours;
     private Double discounts;
     private Double longitude;
     private Double latitude;
     private List<ProductDto> productList;
     private List<ShopReviewDto> shopReviews;
+    private List<OpeningHours> openingHours;
     private UserDto user;
 }

@@ -34,8 +34,6 @@ public class Store implements Model {
     @Column(name = "postal_code")
     private String postalCode;
 
-    @Column(name = "opening_hours")
-    private String openingHours;
 
     @Column(name = "discount")
     private Double discounts;
@@ -51,6 +49,9 @@ public class Store implements Model {
 
     @OneToMany(mappedBy = "store")
     List<ShopReview> shopReviews;
+
+    @OneToMany(mappedBy = "store")
+    private List<OpeningHours> openingHour;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
