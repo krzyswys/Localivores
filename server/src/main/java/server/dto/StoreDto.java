@@ -19,6 +19,6 @@ public class StoreDto implements Dto {
     private Double latitude;
     private List<ProductDto> productList;
     private List<ShopReviewDto> shopReviews;
-    private List<OpeningHours> openingHours;
+    private List<OpeningHoursDto> openingHours;
     private UserDto user;
 }

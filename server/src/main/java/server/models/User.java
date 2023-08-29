@@ -26,6 +26,9 @@ public class User implements Model {
     @OneToMany(mappedBy = "user")
     private List<Order> orders;
 
+    @OneToMany(mappedBy = "user")
+    private List<FavouriteProductsList> favouriteProductsLists;
+
     @Column(name = "first_name")
     private String firstName;
 

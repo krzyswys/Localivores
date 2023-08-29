@@ -50,9 +50,8 @@ public class Product implements Model {
     @JoinColumn(name = "extras_id")
     private Extras extras;
 
-    @ManyToOne
-    @JoinColumn(name = "favourite_products")
-    private FavouriteProductsList favouriteProductsList;
+    @OneToMany(mappedBy = "product")
+    private List<FavouriteProductsList> favouriteProductsList;
 
     @OneToMany(mappedBy = "product")
     private List<OrderItems> orderItems;

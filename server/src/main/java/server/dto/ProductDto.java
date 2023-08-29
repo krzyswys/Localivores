@@ -1,8 +1,11 @@
 package server.dto;
 
 import lombok.Data;
+import server.models.FavouriteProductsList;
+
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Data
 public class ProductDto implements Dto {
@@ -16,5 +19,5 @@ public class ProductDto implements Dto {
     private Date expirationDate;
     private Integer quantity;
     private ExtrasDto extras;
-    private FavouriteProductsListDto favouriteProductsList;
+    private List<FavouriteProductsList> favouriteProductsList;
 }
