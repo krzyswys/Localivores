@@ -10,6 +10,7 @@ import AccountBecomeDriver from "./components/MainPage/Header/AccountBecomePages
 import AccountReportProblem from "./components/MainPage/Header/AccountReportProblem/AccountReportProblem";
 import AccountPromos from "./components/MainPage/Header/AccountPromos/AccountPromos";
 import AuthForm from "./components/AuthenticationPage/AuthForm";
+import SingleShopPage from "./components/SingleShopPage/SingleShopPage";
 import { GoogleOAuthProvider } from '@react-oauth/google';
 const App = () => {
 
@@ -18,7 +19,8 @@ const App = () => {
     <Router>
 
       <Routes>
-        <Route path='/' element={<MainPage />}>
+        {/* <Route path='/' element={<MainPage />}> */}
+        <Route path='/' element={<SingleShopPage />}>
           <Route path='/menu' element={
             <AccountLinksList
             />
@@ -50,6 +52,7 @@ const App = () => {
         </Route>
         <Route path='/after' element={<AfterSearch />}></Route>
         <Route path='/auth' element={<AuthForm />}></Route>
+        <Route path='/single' element={<SingleShopPage />}></Route>
       </Routes>
     </Router>
   
