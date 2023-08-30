@@ -1,0 +1,131 @@
+.order-list-container {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .productCard > *{
+    color:white;
+    font-size:12px;
+  }
+.discount{
+  font-size:12px;
+}
+
+
+  
+  
+  .order-list-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .order-list-container li {
+    margin-bottom: 5px;
+  }
+  
+
+  .price,.actualPrice,.amount{
+    font-size:14px;
+    font-weight:bold;
+  }
+
+  
+  .productList {
+    max-height: 16em;
+    overflow-y: scroll;
+  }
+  
+  .productCard {
+    border-radius:4px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    position:relative;
+    z-index:1;
+    overflow:hidden;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(66, 68, 90, 1);
+-moz-box-shadow: 0px 0px 8px 0px rgba(66, 68, 90, 1);
+box-shadow: 0px 0px 8px 0px rgba(66, 68, 90, 1);
+  }
+  
+
+  
+  .productImage {
+    width:100%;
+    outline:2px solid  rgb(89, 89, 89);
+    border-radius:3px;
+    margin-right: 10px;
+    position:absolute;
+    z-index:2;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    filter: brightness(0.5) blur(6px);
+    transition: width 800ms ease-in-out;
+  }
+
+  .productCard > *:not(.productImage) {
+    z-index:3;
+  }
+
+  .productCard:hover{
+    .productImage{
+      width:120%;
+    }
+  }
+  
+  .productInfo {
+    flex: 1;
+  }
+ 
+  .productCard .productName {
+    font-size: 1.5em;
+    border-bottom: 1px solid white;
+    color:white;
+  }
+  
+  .productDescription {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size:12px;
+  }
+
+  
+  .productDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px 2px;
+  }
+  
+  
+  .bottom{
+    display:flex;
+    overflow:hidden;;
+    flex-grow:1;
+    justify-content:space-between;
+    margin-top:4px;
+  }
+
+  .button{
+    width:5rem;
+    color:rgb(255, 151, 151);
+    background:rgba(231, 84, 84, 0.232);
+    outline:none;
+    border:2px solid rgb(247, 70, 70);
+    border-radius:4px;
+    font-weight:bold;
+    font-size:14px;
+    align-self:flex-end;
+    padding:5px 1em;
+    margin-right:0.6rem;
+    cursor:pointer;
+    transition:background 100ms ease-in-out,color 100ms ease-in-out;
+  }
+
+  .button:hover{
+    background:rgba(231, 84, 84, 0.432);
+    color:white;
+  }

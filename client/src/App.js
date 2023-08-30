@@ -12,6 +12,7 @@ import AccountPromos from "./components/MainPage/Header/AccountPromos/AccountPro
 import AuthForm from "./components/AuthenticationPage/AuthForm";
 import SingleShopPage from "./components/SingleShopPage/SingleShopPage";
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import Checkout from "./components/CheckoutPage/Checkout" 
 const App = () => {
 
   return (
@@ -52,6 +53,7 @@ const App = () => {
         </Route>
         <Route path='/after' element={<AfterSearch />}></Route>
         <Route path='/auth' element={<AuthForm />}></Route>
+        <Route path='/checkout' element={<Checkout />}></Route>
         <Route path='/single' element={<SingleShopPage />}></Route>
       </Routes>
     </Router>
