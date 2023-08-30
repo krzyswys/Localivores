@@ -1,31 +1,35 @@
-.coolinput {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  position: static;
-  max-width: 240px;
-}
-
-.coolinput label.text {
-  font-size: 0.75rem;
-  color: #818CF8;
-  font-weight: 700;
+.inputBox {
   position: relative;
-  top: 0.5rem;
-  margin: 0 0 0 7px;
-  padding: 0 3px;
-  background: #e8e8e8;
-  width: fit-content;
 }
 
-.coolinput input[type=text].input {
-  padding: 11px 10px;
-  font-size: 0.75rem;
-  border: 2px #818CF8 solid;
-  border-radius: 5px;
-  background: #e8e8e8;
+.inputBox input {
+  width: 100%;
+    padding: 8px;
+    margin-bottom: 2px;
+    border: 1px solid rgb(50,50,50);
+    border-radius: 4px;
+  
 }
 
-.coolinput input[type=text].input:focus {
-  outline: none;
+.inputBox span {
+  position: absolute;
+  left: 0;
+  padding:8px;
+  pointer-events: none;
+  font-size: 1em;
+  transition: 0.4s cubic-bezier(0.05, 0.81, 0, 0.93);
+  color: black;
+  letter-spacing: 0.1em;
+}
+
+.inputBox input:focus ~ span,
+.inputBox input:valid ~ span {
+  font-size: 0.6em;
+  transform: translateX(14px) translateY(-7.5px);
+  padding: 0 5px;
+  border: 1px solid rgb(50,50,50);
+    border-radius: 4px;
+  background: white;
+  letter-spacing: 0em;
+ 
 }
