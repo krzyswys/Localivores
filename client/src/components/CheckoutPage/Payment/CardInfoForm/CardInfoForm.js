@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./CardInfoForm.module.css";
-
+import CheckoutInput from "../../CheckoutInput";
 const CardInfoForm = () => {
   return (
     
@@ -10,6 +10,12 @@ const CardInfoForm = () => {
             Card Number:
             <input className={classes["payment-input"]} type="text" name="cardNumber" />
           </label>
+          <CheckoutInput 
+            type="text"
+            name="cardNumber"
+            label="Card Number"
+            classes="payment-input"
+           />
           <label>
             Expiry Date:
             <input className={classes["payment-input"]} type="text" name="expiryDate" />

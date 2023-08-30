@@ -35,17 +35,7 @@
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.priority-label::before {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  height: 2px;
-  width: 0%;
-  background: rgb(116, 0, 0);
-  transition: width 0.3s ease-in-out;
-  transform:translateY(-3px);
-}
+
 
 .priority-checkbox {
   cursor: pointer;
