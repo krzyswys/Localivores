@@ -1,0 +1,244 @@
+.SSP {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(245, 241, 157);
+}
+
+
+.shop_header_container {
+    width: 100vw;
+    height: 30vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.shop_slider_container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 80%;
+    background-image: url('../../assets/StockImages/josh-wilburne-KZuX70oDBKA-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.shop_info_container {
+    position: absolute;
+    bottom: 0px;
+    width: 90%;
+    height: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.shop_info {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    background-color: #ffffffd2;
+    backdrop-filter: blur(5px);
+    padding: 1%;
+    /* background-color: #3dcfb5; */
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.666);
+}
+
+
+.reviews_counter_container {
+    position: absolute;
+    top: 3%;
+    right: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+
+}
+
+.review_number {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: gold;
+    font-size: 1.3em;
+}
+
+.review_count {
+    font-size: 0.6em;
+    text-align: end;
+}
+
+.shop_name {
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    font-size: 36px;
+    width: 30%;
+    text-align: center;
+    color: #00a082;
+
+
+}
+
+.opening_hours_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 30%;
+
+}
+
+.opening_hours_container>div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 2%;
+
+}
+
+.shop_delivery {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 30%;
+}
+
+.shop_delivery>p {
+    padding: 0 1% 0 1%;
+}
+
+.shop_icon {
+    color: #00a082;
+    font-size: 1.3em;
+}
+
+.shop_short_descrption {
+    margin-top: 1%;
+    color: rgba(103, 103, 103, 0.94);
+
+}
+
+.extras_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 60%;
+    position: absolute;
+    right: 1%;
+    bottom: 10%;
+    font-size: 1.2em;
+    color: #00a082;
+}
+
+
+.shop_map {
+    height: 100%;
+    width: auto;
+}
+
+/* ------------------------------------ */
+.menu_products_container {
+    margin-top: 1%;
+    width: 100vw;
+    height: 70vh;
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: 0fr 1fr;
+    grid-template-rows: 1fr 30fr;
+    grid-template-areas:
+        "categories_info_block about-shop-links"
+        "categories-list-column router-page";
+}
+
+.about_shop_links {
+    grid-area: about-shop-links;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid gray;
+
+}
+
+.about_shop_link {
+    max-width: 200px;
+    padding: 1%;
+    text-align: center;
+}
+
+.categories_info_block {
+    grid-area: categories_info_block;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    border-right: 1px solid gray;
+
+}
+
+.categories_info_block>p {
+    width: 80%;
+    text-align: start;
+    font-size: 1.3em;
+    color: #00a082;
+    padding-bottom: 1%;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.542);
+
+}
+
+.categories_list_column {
+    grid-area: categories-list-column;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: start;
+    width: 10vw;
+    padding-bottom: 60%;
+    height: 100%;
+    font-size: 1.0em;
+    border-right: 1px solid gray;
+
+}
+
+.categories_list_block {
+    width: 80%;
+    padding: 4%;
+    border-radius: 5px 10px 10px 5px;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.categories_list_block>p {
+    margin: 0 2% 0 1%;
+}
+
+.categories_list_block:hover {
+    background-color: #00a082;
+    color: white;
+    cursor: pointer;
+
+}
+
+.router_page {
+    grid-area: router-page;
+    width: 100%;
+    height: 100%;
+}
