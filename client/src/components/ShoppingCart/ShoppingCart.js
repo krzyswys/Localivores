@@ -81,6 +81,25 @@ const dummyData = [
     shop_longitude: "21.0144",
     shop_latitude: "52.2321",
   },
+  {
+    product_id: "g5",
+    product_name: "Appleeuiu",
+    product_description: "Fresh Apple",
+    product_price: "3.59",
+    product_weight: "150",
+    production_date: "2023-06-01",
+    product_discount: "5",
+    product_origin: "Spain",
+    shop_rate: "5",
+    quantity: "2",
+    product_expiration_date: "2023-08-30",
+    shop_name: "Biedronka",
+    picture: "https://picsum.photos/300",
+    shop_address: "Red Street 6, Warsaw",
+    shop_opening_hours: "8:30-21:00",
+    shop_longitude: "21.0144",
+    shop_latitude: "52.2321",
+  },
 ];
 
 const ShoppingCart = () => {
@@ -124,19 +143,19 @@ const ShoppingCart = () => {
               Show {infoColumn === "weight" ? "price" : "weight"}
             </span>
           </span>
-          <span>Quantity</span>
+          <span className={styles.quantityHeader}>Quantity</span>
         </div>
-        
-        {cart.map((item) => (
-          <CartItem
-            key={item.product_id}
-            item={item}
-            removeFromCart={removeFromCart}
-            addToCart={addToCart}
-            infoColumn={infoColumn}
-          />
-        ))}
-
+        <div className={styles.cartInfo}>
+          {cart.map((item) => (
+            <CartItem
+              key={item.product_id}
+              item={item}
+              removeFromCart={removeFromCart}
+              addToCart={addToCart}
+              infoColumn={infoColumn}
+            />
+          ))}
+        </div>
         <div className={styles.footer}>
           <span className={styles.total}>Total: {totalAmount}</span>
           <button className={styles.purchaseButton}>PURCHASE</button>

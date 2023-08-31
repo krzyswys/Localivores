@@ -26,7 +26,16 @@
     background-color:rgba(50, 50, 50, 0.623);
    border:3px solid var(--light-green-background);
    border-radius:8px;
-   overflow:hidden;
+  }
+  .cartInfo{
+    width:100%;
+    height:fit-content;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    gap:1em;
+    
   }
   
   .header, .cartItem {
@@ -34,7 +43,9 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-items: left;
     width: 100%;
-    
+  }
+  .header{
+    height:3em;
   }
   .productInfo{
     position:relative;
@@ -118,6 +129,7 @@
     justify-content: center;
     flex-direction:row;
     gap:1em;
+    
   }
 
   .productInfo,.units{
@@ -213,3 +225,82 @@
     background-color: var(--common-lighter-bg-color);
   }
   
+
+
+@media screen and (max-width:800px){
+  /*everywhere where font-size was used before, it should be smaller*/
+
+  
+  .header, .cartItem {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .header > *, .cartItem > *,.footer > * {
+    padding: 0.5rem 0;
+  }
+  .header >*:first-child, .cartItem >*:first-child {
+    padding-left: 0.5rem;
+  }
+  .cartItem>*:first-child:after{
+    left:0.5rem;
+  }
+  .cartItem > *::after {
+    width:max(4em,100%);
+  }
+  .quantity{
+    gap:0.5em;
+    margin: 0 auto;
+    background:var(--green-background);
+    border-radius:6px;
+    padding: 0.2rem 0.5rem;
+    
+  }
+  .toggler{
+    font-size:8px;
+    padding: 0.1rem 0.3rem;
+  }
+  .total{
+    font-size:16px;
+  }
+  .quantityHeader{
+    display:none;
+  }
+  .header{
+    font-size:12px;
+    height:6em;
+  }
+  .purchaseButton {
+    height:1.5rem;
+    max-width: 8rem;
+    margin-right:2rem;
+    padding: 0.5rem 1.5rem;
+  }
+  .productDetails{
+    gap:4px;
+  }
+  .units{
+    font-size:12px;
+  }
+  .picture{
+    width:1.5rem;
+    height:1.5rem;
+  }
+  .discount{
+    font-size:8px;
+    padding:2px;
+    top:100%;
+  }
+  .removeButton, .addButton{
+    font-size:10px;
+    padding: 2px 4px;
+  }
+  .footer {
+    height:3rem;
+  }
+  .footer>*{
+    flex-grow:1;
+  }
+  .quantity:after{
+    display:none;
+  }
+
+}
