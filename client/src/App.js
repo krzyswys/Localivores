@@ -18,6 +18,8 @@ import ShopReviewsPage from "./components/SingleShopPage/ShopReviewsPage/ShopRev
 import ShopAboutPage from "./components/SingleShopPage/ShopAboutShopPage/ShopAboutPage";
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import Checkout from "./components/CheckoutPage/Checkout" 
+import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
+
 
 const App = () => {
 
@@ -84,7 +86,9 @@ const App = () => {
         <Route path='/after' element={<AfterSearch />}></Route>
         <Route path='/auth' element={<AuthForm />}></Route>
         <Route path='/checkout' element={<Checkout />}></Route>
+        <Route path='/cart' element={<ShoppingCart />}></Route>
         <Route path='/single' element={<SingleShopPage />}></Route>
+
       </Routes>
     </Router>
   
