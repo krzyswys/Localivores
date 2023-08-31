@@ -19,7 +19,20 @@ import styles from "./ShoppingCart.module.css";
 //     shop_latitude: "52.2297",
 //   }
 
-const CartItem = ({ item, removeFromCart }) => {
+const CartItem = ({ item, removeFromCart, addToCart, infoColumn }) => {
+  let productInfo =
+    infoColumn === "weight"
+      ? item.product_weight + "g"
+      : item.product_price + " zl";
+  //When we want to display total price of product we need to multiply product price by quantity and doscount per unit price matter too
+  let totalPrice =
+    (+item.product_price * +item.quantity -
+    (+item.product_price * +item.quantity * +item.product_discount) / 100).toFixed(2);
+  let totalProductInfo =
+    infoColumn === "weight"
+      ? +item.product_weight * +item.quantity + "g"
+      : totalPrice + " zl";
+
   return (
     <div className={styles.cartItem}>
       <div className={styles.productDetails}>
@@ -32,7 +45,13 @@ const CartItem = ({ item, removeFromCart }) => {
       </div>
 
       <span>{item.shop_name}</span>
-      <span>{item.product_price} zl</span>
+      <span className={styles.productInfo}>
+        {productInfo}
+        {infoColumn === "price" && <span className={styles.discount}>
+          discount: {item.product_discount}%
+        </span>}
+      </span>
+      <span>{totalProductInfo}</span>
       <div className={styles.quantity}>
         <span>{item.quantity}</span>
         <button
@@ -40,6 +59,12 @@ const CartItem = ({ item, removeFromCart }) => {
           onClick={() => removeFromCart(item.product_id)}
         >
           Remove
+        </button>
+        <button
+          className={styles.addButton}
+          onClick={() => addToCart(item.product_id)}
+        >
+          Add
         </button>
       </div>
     </div>

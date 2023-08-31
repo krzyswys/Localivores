@@ -10,9 +10,9 @@ const dummyData = [
     product_name: "Apple",
     product_description: "Tasty apple",
     product_price: "2.99",
-    product_weight: "150g",
+    product_weight: "150",
     production_date: "2023-05-10",
-    product_discount: "0%",
+    product_discount: "0",
     product_origin: "Poland",
     product_expiration_date: "2023-08-10",
     shop_name: "Local Farmer",
@@ -29,9 +29,9 @@ const dummyData = [
     product_name: "Apple",
     product_description: "Super Apple",
     product_price: "3.99",
-    product_weight: "150g",
+    product_weight: "150",
     production_date: "2023-05-12",
-    product_discount: "15%",
+    product_discount: "15",
     product_origin: "Ecuador",
     product_expiration_date: "2023-08-15",
     shop_name: "Health Mart",
@@ -48,9 +48,9 @@ const dummyData = [
     product_name: "Apple",
     product_description: "Fresh Apple",
     product_price: "3.59",
-    product_weight: "150g",
+    product_weight: "150",
     production_date: "2023-06-01",
-    product_discount: "5%",
+    product_discount: "5",
     product_origin: "Spain",
     quantity: "1",
     shop_rate: "5",
@@ -67,12 +67,12 @@ const dummyData = [
     product_name: "Applee",
     product_description: "Fresh Apple",
     product_price: "3.59",
-    product_weight: "150g",
+    product_weight: "150",
     production_date: "2023-06-01",
-    product_discount: "5%",
+    product_discount: "5",
     product_origin: "Spain",
     shop_rate: "5",
-    quantity: "1",
+    quantity: "2",
     product_expiration_date: "2023-08-30",
     shop_name: "Biedronka",
     picture: "https://picsum.photos/300",
@@ -86,6 +86,8 @@ const dummyData = [
 const ShoppingCart = () => {
   const [cart, setCart] = useState(dummyData);
   const [totalAmount, setTotalAmount] = useState(0);
+  //changing the state of the column - weight to price and vice versa
+  const [infoColumn, setInfoColumn] = useState("weight");
 
   const addToCart = (product) => {
     // Logika dodawania do koszyka
@@ -99,22 +101,42 @@ const ShoppingCart = () => {
     // Obliczanie sumy
   };
 
+  const toggleColumn = () => {
+    //zmiana kolumny
+    setInfoColumn(infoColumn === "weight" ? "price" : "weight");
+  };
+
   return (
     <section className={styles.shoppingCartSection}>
       <div className={styles.shoppingCart}>
         <div className={styles.header}>
           <span>Product</span>
           <span>Shop</span>
-          <span>Price</span>
+          <span className={styles.units}>
+            unit {infoColumn}
+            <span className={styles.toggler} onClick={() => toggleColumn()}>
+              Show {infoColumn === "weight" ? "price" : "weight"}
+            </span>
+          </span>
+          <span className={styles.productInfo}>
+            {infoColumn}
+            <span className={styles.toggler} onClick={() => toggleColumn()}>
+              Show {infoColumn === "weight" ? "price" : "weight"}
+            </span>
+          </span>
           <span>Quantity</span>
         </div>
+        
         {cart.map((item) => (
           <CartItem
             key={item.product_id}
             item={item}
             removeFromCart={removeFromCart}
+            addToCart={addToCart}
+            infoColumn={infoColumn}
           />
         ))}
+
         <div className={styles.footer}>
           <span className={styles.total}>Total: {totalAmount}</span>
           <button className={styles.purchaseButton}>PURCHASE</button>
