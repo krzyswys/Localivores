@@ -65,7 +65,7 @@ const SingleShopPage = () => {
                     <Link to="/about-shop" className={`${classes.about_shop_link} ${isActive('/about-shop') ? classes.about_shop_link_active : ''}`}>
                         <span className={classes.actual_text}>&nbsp;About Shop&nbsp;</span>
                         <span aria-hidden="true" className={`${classes.hover_text} ${isActive('/about-shop') ? classes.hover_text_active : ''}`}>
-                            &nbsp;About Shop&nbsp;
+                            &nbsp;About&nbsp;Shop&nbsp;
                         </span>
                     </Link>
                 </div>

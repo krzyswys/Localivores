@@ -74,6 +74,7 @@ const ShopProductsPage = () => {
                     ))}
 
                 </div>
+
             </div>
             <div className={classes.main_items_container} ref={containerRef}>
                 {categories.map((category, index) => (

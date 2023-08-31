@@ -15,6 +15,7 @@ import ShopProductsPage from "./components/SingleShopPage/ShopProductsPage/ShopP
 import ShopGalleryPage from "./components/SingleShopPage/ShopGalleryPage/ShopGalleryPage";
 import { ImageProvider } from "./components/SingleShopPage/ShopGalleryPage/ImageContext";
 import ShopReviewsPage from "./components/SingleShopPage/ShopReviewsPage/ShopReviewsPage";
+import ShopAboutPage from "./components/SingleShopPage/ShopAboutShopPage/ShopAboutPage";
 
 const App = () => {
 
@@ -39,7 +40,10 @@ const App = () => {
             <ShopReviewsPage
             />
           } />
-
+          <Route path='/about-shop' element={
+            <ShopAboutPage
+            />
+          } />
 
         </Route>
         <Route path='/' element={<MainPage />}>

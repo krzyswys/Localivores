@@ -207,6 +207,9 @@
     -webkit-text-stroke: 1px var(--text-stroke-color);
     width: fit-content;
     color: rgb(0, 0, 0);
+    transition: 0.2s;
+
+
 
 }
 
@@ -234,6 +237,12 @@
 
 }
 
+.about_shop_link:hover {
+    color: #ffffff;
+    -webkit-text-stroke: 1px #ffffff;
+
+
+}
 
 .router_page {
     width: 100%;
