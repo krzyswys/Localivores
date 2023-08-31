@@ -44,25 +44,25 @@ const SingleShopPage = () => {
 
                 </div>
                 <div className={classes.about_shop_links}>
-                    <Link to="/shop-products" className={classes.about_shop_link}>
+                    <Link to="/single-shop/shop-products" className={classes.about_shop_link}>
                         <span className={classes.actual_text}>&nbsp;Products&nbsp;</span>
                         <span aria-hidden="true" className={`${classes.hover_text} ${isActive('/shop-products') ? classes.hover_text_active : ''}`}>
                             &nbsp;Products&nbsp;
                         </span>
                     </Link>
-                    <Link to="/shop-reviews" className={`${classes.about_shop_link} ${isActive('/shop-reviews') ? classes.about_shop_link_active : ''}`}>
+                    <Link to="/single-shop/shop-reviews" className={`${classes.about_shop_link} ${isActive('/shop-reviews') ? classes.about_shop_link_active : ''}`}>
                         <span className={classes.actual_text}>&nbsp;Reviews&nbsp;</span>
                         <span aria-hidden="true" className={`${classes.hover_text} ${isActive('/shop-reviews') ? classes.hover_text_active : ''}`}>
                             &nbsp;Reviews&nbsp;
                         </span>
                     </Link>
-                    <Link to="/shop-gallery" className={`${classes.about_shop_link} ${isActive('/shop-gallery') ? classes.about_shop_link_active : ''}`}>
+                    <Link to="/single-shop/shop-gallery" className={`${classes.about_shop_link} ${isActive('/shop-gallery') ? classes.about_shop_link_active : ''}`}>
                         <span className={classes.actual_text}>&nbsp;Gallery&nbsp;</span>
                         <span aria-hidden="true" className={`${classes.hover_text} ${isActive('/shop-gallery') ? classes.hover_text_active : ''}`}>
                             &nbsp;Gallery&nbsp;
                         </span>
                     </Link>
-                    <Link to="/about-shop" className={`${classes.about_shop_link} ${isActive('/about-shop') ? classes.about_shop_link_active : ''}`}>
+                    <Link to="/single-shop/about-shop" className={`${classes.about_shop_link} ${isActive('/about-shop') ? classes.about_shop_link_active : ''}`}>
                         <span className={classes.actual_text}>&nbsp;About Shop&nbsp;</span>
                         <span aria-hidden="true" className={`${classes.hover_text} ${isActive('/about-shop') ? classes.hover_text_active : ''}`}>
                             &nbsp;About&nbsp;Shop&nbsp;

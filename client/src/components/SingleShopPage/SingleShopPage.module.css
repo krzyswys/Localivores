@@ -4,6 +4,8 @@
     flex-direction: column;
     background-color: rgb(245, 241, 157);
     background-color: rgb(255, 255, 255);
+    /* overflow-y: auto;
+    overflow-x: hidden; */
 }
 
 

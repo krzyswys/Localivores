@@ -1,40 +1,53 @@
 .main-header-container {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     z-index: 3;
     display: flex;
     width: 100vw;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
 }
 
 .searchBar-container {
-    background: linear-gradient(177deg, #a3f09c 20%, #87ec89 75%);
+    /* background: linear-gradient(177deg, #a3f09c 20%, #87ec89 75%); */
+    background: #87ec89;
     z-index: 3;
-    padding-top: 2vh;
-    padding-bottom: 15vh;
+    /* padding-top: 2vh;
+    padding-bottom: 15vh; */
+    /* height: 40vh; */
     display: flex;
     width: 100vw;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     box-shadow: 0px 0px 40px 4px #87ec89;
+    /* position: relative; */
+    position: sticky;
+    top: 20px;
+
 }
 
 .searchBar-container h3 {
     color: #00a082;
-    margin: 4vh;
+    margin: 0 0 1% 0;
     font-size: 46px;
 }
 
 .header {
+    background: #87ec89;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
-    margin-bottom: 3vh;
+    /* margin-bottom: 3vh; */
     padding: 0 4% 0 3%;
-
+    position: sticky;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    /* margin-bottom: 1%; */
+    top: 0%;
+    /* align-self: flex-start; */
 }
 
 .logo {
@@ -47,12 +60,14 @@
 .account-wrapper {
     position: relative;
     width: 20vw;
+
 }
 
 .account-container {
     position: fixed;
     width: 25vw;
     top: 0;
+    right: 0;
     padding-top: 2vh;
     display: flex;
     justify-content: center;
@@ -69,7 +84,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 14%;
+    /* padding-right: 14%; */
 }
 
 .open-account-menu-button:hover {
@@ -90,6 +105,7 @@
     align-items: flex-start;
     box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.508);
     background-color: rgba(0, 0, 0, 0.373);
+    z-index: 5;
 }
 
 .account-menu-container {
@@ -100,12 +116,13 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    z-index: 5;
 }
 
 
 
 .account {
-    margin-right: -14%;
+    /* margin-right: -14%; */
     width: 30%;
 }
 
@@ -143,6 +160,7 @@
     clip-path: polygon(30% 0, 100% 0%, 100% 100%, 0 100%);
 }
 
+/* TODO: */
 .search-bar {
     background: rgb(255, 255, 255);
     width: 90%;
@@ -150,6 +168,9 @@
     display: flex;
     padding: 5px;
     border-radius: 4px;
+    position: sticky;
+    /* top: 2%; */
+    z-index: -1;
 }
 
 .select-location,
@@ -252,6 +273,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    z-index: -2;
+    margin: 1% 0 1% 0;
 }
 
 .address-input {
