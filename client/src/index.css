@@ -2,8 +2,7 @@
 
 html,
 body {
-    background-color: #2C916C;
-    height: 100%;
+    background-color: #55b692;
 }
 
 :root {
@@ -11,9 +10,9 @@ body {
     --common-padding: 20px;
     --common-font-size: 14px;
     --common-transition: all 0.3s ease;
-    --common-bg-color: #1B5044;
-    --common-lighter-bg-color: #0c8267;
+    --common-bg-color: rgb(27, 80, 68);
+    --common-lighter-bg-color: rgb(12, 130, 103);
     --common-text-color: #FFFFFF;
-    --common-border-color: #1b5044a7;
+    --common-border-color: rgba(27, 80, 68, 0.655);
     --common-font-weight: 700;
 }

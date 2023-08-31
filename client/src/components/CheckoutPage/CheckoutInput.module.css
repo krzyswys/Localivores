@@ -1,0 +1,42 @@
+.inputBox {
+  position: relative;
+}
+
+.inputBox input {
+  width: 100%;
+    padding: 8px;
+    margin-bottom: 2px;
+    border: 1px solid rgb(50,50,50);
+    border-radius: 4px;
+  
+}
+
+.inputBox span {
+  position: absolute;
+  left: 0;
+  padding:8px;
+  pointer-events: none;
+  font-size: 1em;
+  transition: 0.4s cubic-bezier(0.05, 0.81, 0, 0.93);
+  color: black;
+  letter-spacing: 0.1em;
+}
+/* dla inputa typu textarea tez tak ma byc, i dla select*/
+.inputBox textarea ~ span,.inputBox select ~ span ,.inputBox input:focus ~ span {
+  font-size: 0.6em;
+  transform: translateX(14px) translateY(-7.5px);
+  padding: 0 5px;
+  border: 1px solid rgb(50,50,50);
+    border-radius: 4px;
+  background: white;
+  letter-spacing: 0em;
+}
+
+.inputBox textarea,.inputBox select{
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 2px;
+  border: 1px solid rgb(50,50,50);
+  border-radius: 4px;
+  resize: none;
+}

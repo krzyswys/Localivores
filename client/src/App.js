@@ -16,10 +16,13 @@ import ShopGalleryPage from "./components/SingleShopPage/ShopGalleryPage/ShopGal
 import { ImageProvider } from "./components/SingleShopPage/ShopGalleryPage/ImageContext";
 import ShopReviewsPage from "./components/SingleShopPage/ShopReviewsPage/ShopReviewsPage";
 import ShopAboutPage from "./components/SingleShopPage/ShopAboutShopPage/ShopAboutPage";
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import Checkout from "./components/CheckoutPage/Checkout" 
 
 const App = () => {
 
   return (
+  
     <Router>
 
       <Routes>
@@ -80,10 +83,11 @@ const App = () => {
 
         <Route path='/after' element={<AfterSearch />}></Route>
         <Route path='/auth' element={<AuthForm />}></Route>
+        <Route path='/checkout' element={<Checkout />}></Route>
         <Route path='/single' element={<SingleShopPage />}></Route>
       </Routes>
     </Router>
-
+  
   );
 }
 

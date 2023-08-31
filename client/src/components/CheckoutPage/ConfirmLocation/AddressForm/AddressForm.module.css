@@ -1,0 +1,25 @@
+.address-form-container {
+   max-width:15rem;
+    
+  }
+  
+  
+  
+  .address-form-container .input {
+    display: block;
+    width: 12rem;
+    outline: none;
+    margin-top:10px;
+    margin-bottom: 15px;
+    background-color: rgb(243, 255, 252);
+  }
+
+  textarea{
+  max-width:12rem;
+  resize: none;
+  }
+  
+  .address-form-container .input:focus {
+    border-color: rgb(50, 50, 50);
+  }
+  
