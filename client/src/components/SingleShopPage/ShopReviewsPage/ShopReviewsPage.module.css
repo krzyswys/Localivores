@@ -1,0 +1,290 @@
+.SSP {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding-top: 2%;
+    position: relative;
+}
+
+.header_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+
+
+.pinned_comment_container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: static;
+    width: 40vw;
+    height: 30vh;
+    margin-bottom: 1.5%;
+    z-index: 1;
+
+
+}
+
+.pinned_comment_container .text {
+    font-size: 1.5rem;
+    color: #00a082;
+    font-weight: 700;
+    position: relative;
+    top: 0.8rem;
+    margin: 0 0 0 7px;
+    padding: 0 3px;
+    background: #ffffff3f;
+    backdrop-filter: blur(10px);
+    width: fit-content;
+    z-index: 2;
+
+}
+
+.pinned_comment_container .pinned_comment {
+    font-size: 0.75rem;
+    border: 2px #00a082 solid;
+    border-radius: 5px;
+    /* background: #a62c2c; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-image: url('../../../assets/Stars/symbol-scatter-haikei.svg');
+    background-position: center;
+    background-size: cover;
+}
+
+.review_graph_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 2% 0 2%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px 2px rgba(94, 94, 94, 0.315);
+    padding: 3%;
+}
+
+.number_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 4em;
+    margin: 0 2% 0 2%;
+    color: #ead247;
+}
+
+.number_info_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 2% 0 2%;
+    color: #00a082;
+    font-weight: bold;
+}
+
+.number_info_container>p {
+    font-size: 0.2em;
+    padding: 0;
+    margin: 0;
+    font-weight: 100;
+}
+
+
+/* ------------------graph--------------- */
+.SPP {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ReviewBar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.BarContainer {
+    width: 10vw;
+    background-color: rgba(241, 241, 241, 0.635);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
+    height: 10px;
+    font-size: 0.8em;
+    padding: 2px 0 2px 0;
+    line-height: 0.8em;
+
+}
+
+.BarFill {
+    height: 10px;
+    background-color: #ead247;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+
+.RatingLabel {
+    margin-left: 10px;
+    z-index: 2;
+}
+
+/* ----------------------------------- */
+.reviews_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.filters_container {
+    width: 60%;
+    border-top: 2px solid #cccccc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 0.5%;
+    color: #666666;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 2%;
+    transition: 0.2 all ease-in;
+}
+
+.filter_element:hover {
+    color: black;
+    cursor: pointer;
+}
+
+/* --------------------------------------- */
+.single_review_container {
+    margin: 1% 0 1% 0;
+    width: 80%;
+    background-color: #ffffff;
+    padding: 2%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px 2px rgba(103, 103, 103, 0.271);
+}
+
+.avatar_container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.avatar {
+    font-size: 6em;
+    color: #cccccc;
+    margin-right: 5%;
+}
+
+.main_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.user_name {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #00a082;
+}
+
+.user_rating {
+    color: gold;
+    font-size: 1.3em;
+}
+
+.review_content {
+    color: #434343;
+    padding: 1%;
+    font-size: 1.1em;
+}
+
+.photos_container {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.image_item {
+    width: 40px;
+    height: 40px;
+    background-position: center center;
+    background-size: cover;
+    margin: 0 1% 0 0;
+    border-radius: 3px;
+    transition: 0.2s all ease;
+}
+
+.image_item:hover {
+    cursor: pointer;
+    transform: scale(104%);
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20%;
+}
+
+.footer_element {
+    margin: 0 2% 0 2%;
+}
+
+.footer_element:hover {
+    cursor: pointer;
+}
+
+.footer_element:first-child {
+    color: #00a013;
+}
+
+.footer_element:last-child {
+    color: #a01800;
+}
+
+.date_holder {
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    color: #a0a0a0;
+}

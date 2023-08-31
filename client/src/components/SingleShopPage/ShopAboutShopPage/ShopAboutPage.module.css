@@ -1,0 +1,413 @@
+.SAP {
+    /* background-color: rgb(255, 255, 255); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../../assets/Waves/wave-haikei-page.svg');
+    background-image: url('../../../assets/Waves/stacked-waves-haikei-page.svg');
+    background-size: cover;
+
+}
+
+.aboutus_container {
+    margin: 3% 0 2% 0;
+    width: 80vw;
+    height: 70vh;
+    position: relative;
+}
+
+.shop_photo_container {
+    width: 60%;
+    height: 80%;
+    background-image: url('../../../assets/StockImages/nrd-D6Tu_L3chLE-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+
+.shop_aboutus_container {
+    border-radius: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: -1em;
+    z-index: 2;
+    right: 50%;
+    padding: 1% 3% 1% 3%;
+    background-color: rgba(24, 176, 133, 0.744);
+    color: white;
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.242);
+
+}
+
+.shop_description_container {
+    width: 60%;
+    padding: 2%;
+    border-radius: 15px;
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 5%;
+    right: 2%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: rgba(255, 255, 255, 0.582);
+    backdrop-filter: blur(15px);
+    text-align: center;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.242);
+}
+
+.special_container {
+    width: 60vw;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3%;
+    /* backdrop-filter: blur(15px); */
+}
+
+.special_image {
+    width: 90%;
+    height: 100%;
+    padding: 2%;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-image: url('../../../assets/StockImages/alex-hudson-m3I92SgM3Mk-unsplash.jpg');
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.242);
+
+}
+
+.lists_container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.special_delivery_list_container {
+    padding: 2%;
+    padding-bottom: 5%;
+    border-radius: 10px;
+    font-size: 1.2em;
+    position: absolute;
+    top: 12%;
+    right: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255);
+    /* backdrop-filter: blur(15px); */
+    text-align: center;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.242);
+}
+
+.special_delivery_header {
+    width: 80%;
+    border-radius: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: -1em;
+    z-index: 2;
+    right: 10%;
+    padding: 1% 3% 1% 3%;
+    background-color: rgba(24, 176, 133);
+    color: white;
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.242);
+}
+
+.special_delivery_item_container,
+.special_item_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1% 0 1% 0;
+}
+
+.special_list_container {
+    padding: 10%;
+    width: 120%;
+    border-radius: 10px;
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 6%;
+    transform: translateY(100%);
+    right: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgba(232, 232, 232);
+    text-align: center;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.242);
+}
+
+.special_header {
+    width: fit-content;
+    border-radius: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: -1em;
+    z-index: 2;
+    right: 0%;
+    padding: 1% 3% 1% 3%;
+    background-color: rgba(24, 176, 133);
+    color: white;
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.242);
+}
+
+.special_description {
+    width: 35%;
+    padding: 2%;
+    border-radius: 15px;
+    font-size: 1.2em;
+    position: absolute;
+    left: 2%;
+    top: -4%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: rgba(255, 255, 255);
+    text-align: center;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.242);
+
+}
+
+.aboutus_footer {
+    width: 60vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.contact_container {
+    /* width: 40vw; */
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 8px rgba(0, 0, 0, 0.242);
+
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.group {
+    position: relative;
+}
+
+.form .group label {
+    font-size: 14px;
+    color: rgb(99, 102, 102);
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background-color: #fff;
+    transition: all .3s ease;
+}
+
+.form .group input,
+.form .group textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    outline: 0;
+    width: 100%;
+    background-color: transparent;
+}
+
+.form .group input:placeholder-shown+label,
+.form .group textarea:placeholder-shown+label {
+    top: 10px;
+    background-color: transparent;
+}
+
+.form .group input:focus,
+.form .group textarea:focus {
+    border-color: #3366cc;
+}
+
+.form .group input:focus+label,
+.form .group textarea:focus+label {
+    top: -10px;
+    left: 10px;
+    background-color: #fff;
+    color: #3366cc;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form .group textarea {
+    resize: none;
+    height: 100px;
+}
+
+.form button {
+    background-color: #3366cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 60%;
+}
+
+.form button:hover {
+    background-color: #27408b;
+}
+
+.contact_type_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.call {
+    /* background-color: #3366cc; */
+    color: #00a082;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 20%;
+    text-align: center;
+}
+
+.call:hover {
+    color: #046e5a;
+    cursor: pointer;
+}
+
+.discount_holder {
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, rgba(25, 189, 10, 0.2), rgba(146, 205, 28, 0.1), rgba(208, 87, 22, 0.2));
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 8px rgba(0, 0, 0, 0.242);
+    background-size: 200% 200%;
+}
+
+
+
+
+
+.discountForm {
+    width: 250px;
+    height: 380px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
+    gap: 20px;
+    position: relative;
+}
+
+.DiscountHeading {
+    font-size: 1.5em;
+    color: rgb(15, 15, 15);
+    font-weight: 700;
+}
+
+.DiscountSubheading {
+    font-size: 0.8em;
+    color: black;
+    text-align: center;
+}
+
+.inputContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#email_address {
+    height: 30px;
+    width: 100%;
+    border: 1px solid rgb(228, 228, 228);
+    background-color: transparent;
+    padding: 0px 10px;
+    outline: none;
+    text-align: center;
+}
+
+.submitButton {
+    width: 100%;
+    height: 30px;
+    border: none;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: rgb(36, 36, 36);
+}
+
+.exitBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.171);
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    border: none;
+    color: black;
+    font-size: 1.1em;
+    cursor: pointer;
+}

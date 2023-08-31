@@ -3,16 +3,19 @@
     display: flex;
     flex-direction: column;
     background-color: rgb(245, 241, 157);
+    background-color: rgb(255, 255, 255);
 }
+
 
 
 .shop_header_container {
     width: 100vw;
-    height: 30vh;
+    height: 35vh;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: -1%;
 }
 
 
@@ -20,7 +23,7 @@
     position: absolute;
     top: 0;
     width: 100%;
-    height: 80%;
+    height: 100%;
     background-image: url('../../assets/StockImages/josh-wilburne-KZuX70oDBKA-unsplash.jpg');
     background-position: center;
     background-size: cover;
@@ -28,7 +31,7 @@
 
 .shop_info_container {
     position: absolute;
-    bottom: 0px;
+    bottom: 25%;
     width: 90%;
     height: 70%;
     display: flex;
@@ -153,92 +156,96 @@
     margin-top: 1%;
     width: 100vw;
     height: 70vh;
-    display: grid;
-    grid-gap: 0px;
-    grid-template-columns: 0fr 1fr;
-    grid-template-rows: 1fr 30fr;
-    grid-template-areas:
-        "categories_info_block about-shop-links"
-        "categories-list-column router-page";
+    display: flex;
+    flex-direction: column;
+
 }
 
 .about_shop_links {
-    grid-area: about-shop-links;
     display: flex;
     flex-direction: row;
     height: fit-content;
     justify-content: space-around;
     align-items: center;
-    border-bottom: 1px solid gray;
+    position: absolute;
+    bottom: -10%;
+    padding: 1% 0 1% 0;
+    width: 60%;
+    border-radius: 15px;
+    background-color: #00a08342;
+    /* background-color: #a0000051; */
 
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.327);
+    z-index: 4;
+
+}
+
+
+.about_shop_link {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
 }
 
 .about_shop_link {
-    max-width: 200px;
-    padding: 1%;
-    text-align: center;
-}
+    --border-right: 6px;
+    --text-stroke-color: rgba(0, 0, 0, 0.6);
+    --animation-color: #37FF8B;
+    --animation-color: #ffffff;
+    --animation-color: #ffffff;
+    --fs-size: 1.3em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+    width: fit-content;
+    color: rgb(0, 0, 0);
+    transition: 0.2s;
 
-.categories_info_block {
-    grid-area: categories_info_block;
-    width: 10vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2%;
-    border-right: 1px solid gray;
 
-}
-
-.categories_info_block>p {
-    width: 80%;
-    text-align: start;
-    font-size: 1.3em;
-    color: #00a082;
-    padding-bottom: 1%;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.542);
 
 }
 
-.categories_list_column {
-    grid-area: categories-list-column;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    text-align: start;
-    width: 10vw;
-    padding-bottom: 60%;
-    height: 100%;
-    font-size: 1.0em;
-    border-right: 1px solid gray;
+.hover_text {
+    position: absolute;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    /* -webkit-text-stroke: 1px var(--animation-color); */
+}
+
+.hover_text_active {
+    width: 100%;
+    -webkit-filter: drop-shadow(0 0 23px var(--animation-color));
+    filter: drop-shadow(0 0 23px var(--animation-color));
+    -webkit-text-stroke: 1px #ffffff;
+    color: #ffffff;
 
 }
 
-.categories_list_block {
-    width: 80%;
-    padding: 4%;
-    border-radius: 5px 10px 10px 5px;
-    transition: all 0.2s ease;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
+.about_shop_link:hover {
+    color: #ffffff;
+    -webkit-text-stroke: 1px #ffffff;
 
-.categories_list_block>p {
-    margin: 0 2% 0 1%;
-}
-
-.categories_list_block:hover {
-    background-color: #00a082;
-    color: white;
-    cursor: pointer;
 
 }
 
 .router_page {
-    grid-area: router-page;
     width: 100%;
     height: 100%;
+
 }

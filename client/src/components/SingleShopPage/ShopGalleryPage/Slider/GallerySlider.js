@@ -1,12 +1,18 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import './ShopSlider.css';
-import { AiFillStar } from "react-icons/ai"
-import { BiMap, BiSearchAlt } from "react-icons/bi"
+import classes from './GallerySlider.module.css';
+import { useImageContext } from '../ImageContext';
+import { IoMdClose } from 'react-icons/io'
 
 const TRANSITION_DURATION = 500;
 
-const AnimatedSlider = ({ items }) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+const GallerySlider = (props) => {
+    const { selectedImage, handleImageClick } = useImageContext();
+
+    const [currentIndex, setCurrentIndex] = useState(useImageContext());
+    const items = props.imageLinks;
+    useEffect(() => {
+        setCurrentIndex(selectedImage)
+    }, [selectedImage]);
     const [isDragging, setIsDragging] = useState(false);
     const sliderContainerRef = useRef(null);
     const startXRef = useRef(0);
@@ -64,46 +70,49 @@ const AnimatedSlider = ({ items }) => {
             window.removeEventListener('resize', handleResize);
         };
     }, [currentIndex]);
+    const handleExit = () => {
+        handleImageClick(null);
+    };
 
     return (
         <div
-            className='SliderWrapper'
+            className={classes.SliderWrapper}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
         >
+            <IoMdClose className={classes.close_icon} onClick={handleExit} />
+
             <div
-                className='SliderContainer'
+                className={classes.SliderContainer}
                 ref={sliderContainerRef}
             >
                 {items.map((item, index) => (
-                    <div className='SliderItem' key={index}>
-                        <div className='map-link'><BiMap /></div>
-                        <div className='shop-link'><BiSearchAlt /></div>
-                        <div className='image-container'>
-                            <div className='shop-info-container'>
-                                <p className='info-element'>Last order value: 37$</p>
-                                <p className='info-element'>Average ETA: 22min</p>
-                                <p className='info-element'>Shop review: 4.2 <AiFillStar /> </p>
-                                <p className='info-element'>Localization: Jana Pawała II 21/37</p>
-
-                            </div>
+                    <div className={classes.SliderItem} key={index}>
+                        <div
+                            className={classes.SliderPhoto}
+                            style={{ backgroundImage: `url(${item})` }}
+                        >
                         </div>
-
-                        <div className='last-review-container'>
-                            <div className='last-review-text'>"GroceryShop is a fantastic one-stop destination for all your grocery needs! With a wide variety of fresh produce, pantry essentials, and household items, this store offers a delightful shopping experience. The layout is well-organized, making it easy to navigate through the aisles"</div>
-                            <div className='last-review-stars'>Adam <AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /></div>
-                        </div>
-
-
 
                     </div>
+
                 ))}
 
+
+            </div>
+            <div className={classes.NavigationDots}>
+                {items.map((_, index) => (
+                    <div
+                        key={index}
+                        className={`${classes.Dot} ${index === currentIndex ? classes.ActiveDot : ''}`}
+                        onClick={() => setCurrentIndex(index)}
+                    ></div>
+                ))}
             </div>
         </div>
     );
 };
 
-export default AnimatedSlider;
+export default GallerySlider;
