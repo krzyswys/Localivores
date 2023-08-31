@@ -1,0 +1,51 @@
+.parent {
+    height: 100%;
+    width: 100%;
+    /* min-width: 100px; */
+    /* min-height: 100px; */
+    overflow: hidden;
+    position: relative;
+    float: left;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.child {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+
+}
+
+.parent:hover .child,
+.parent:focus .child {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.parent:hover .child:before,
+.parent:focus .child:before {
+    display: block;
+}
+
+.parent:hover a,
+.parent:focus a {
+    display: block;
+}
+
+.child:before {
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

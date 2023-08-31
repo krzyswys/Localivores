@@ -3,27 +3,13 @@
     
   }
   
-  .address-form-container label {
-    display: block;
-    width:100%;
-    font-weight:bold;
-    margin-bottom: 5px;
-    font-size:10px;
-    color:black;
-  }
-  select.input{
-    color:rgb(50, 50, 50);
-    font-weight:bold;
-  }
+  
   
   .address-form-container .input {
     display: block;
     width: 12rem;
-    
-    padding: 8px;
-    border: 2px solid rgb(50, 50, 50);
     outline: none;
-    border-radius: 8px;
+    margin-top:10px;
     margin-bottom: 15px;
     background-color: rgb(243, 255, 252);
   }

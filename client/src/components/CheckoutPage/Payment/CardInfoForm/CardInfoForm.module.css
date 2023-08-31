@@ -26,8 +26,8 @@
     font-weight:bold;
   }
   
-  .payment-input,.payment-button {
-    width: 100%;
+  .payment-button {
+    width: 45%;
     padding: 8px;
     margin-bottom: 2px;
     border: 1px solid rgb(50,50,50);
@@ -36,9 +36,14 @@
   .payment-input::placeholder{
     color: var(--common-lighter-bg-color);
   }
+  .payment-input{
+    width: 45%;
+    margin-bottom: 2px;
+    
+  }
   
   .payment-button {
-    width:48%;
+    width:45%;
     background-color: #4CAF50;
     color: black;
     font-weight:bold;

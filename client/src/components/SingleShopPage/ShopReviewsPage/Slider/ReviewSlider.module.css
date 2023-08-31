@@ -1,0 +1,81 @@
+.SliderWrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #040404ac;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    z-index: 4;
+}
+
+.SliderContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+}
+
+.close_icon {
+    position: absolute;
+    font-size: 2em;
+    top: 2%;
+    right: 2%;
+    z-index: 3;
+    color: white;
+}
+
+.close_icon:hover {
+    cursor: pointer;
+}
+
+.SliderItem {
+    flex: 0 0 100%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+
+}
+
+.SliderItem:hover {
+    cursor: grab;
+}
+
+.SliderPhoto {
+    height: 100%;
+    width: 100%;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.NavigationDots {
+    position: absolute;
+    width: 100%;
+
+    bottom: -2%;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
+
+.Dot {
+    width: 8px;
+    height: 8px;
+    background-color: #cccccc67;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.ActiveDot {
+    background-color: #00a082;
+}
