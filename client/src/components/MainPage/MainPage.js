@@ -21,7 +21,9 @@ const MainPage = () => {
             <CookiesComponent />
             <Header />
             <Outlet></Outlet>
-            {isOnHomePage() && <StartPage />}
+            {/* {isOnHomePage() &&  */}
+            <StartPage />
+            {/* } */}
             <Footer />
             <p className='disclaimer'>@Loalivores2023</p>
             <div className='spacerr'>

@@ -9,7 +9,7 @@ import { BsFillGearFill } from 'react-icons/bs';
 import { useSpring, animated } from 'react-spring';
 import { Link } from 'react-router-dom';
 
-const AccountSettings = () => {
+const AccountSettings = ({ handleMenuClick }) => {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -103,7 +103,7 @@ const AccountSettings = () => {
 
     return (
         <div className='account-settings-menu-container' onClick={(e) => e.stopPropagation()}>
-            <Link to='/menu' className='go-back-icon'><AiOutlineArrowLeft /></Link>
+            <div className='go-back-icon' onClick={() => handleMenuClick("main")}><AiOutlineArrowLeft /></div>
             <div className='account-settings-inner-menu-container'>
                 <h2 className='account-settings-headline'>
                     <p className='account-settings-name'><BsFillGearFill /></p> Settings

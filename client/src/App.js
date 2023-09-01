@@ -31,8 +31,7 @@ const App = () => {
       <Routes>
 
         <Route path='/' element={<MainPage />}>
-          {/* <Route index element={<StartPage />} /> */}
-          <Route path='/menu' element={
+          {/* <Route path='/menu' element={
             <AccountLinksList
             />
           }>
@@ -57,7 +56,7 @@ const App = () => {
           <Route path='/account-promos' element={
             <AccountPromos
             />
-          } />
+          } /> */}
           <Route path='/single-shop' element={<SingleShopPage />}>
             <Route path='/single-shop/shop-products' element={
               <ShopProductsPage
