@@ -4,3 +4,7 @@
     color: #00a082;
     text-shadow: 5px 10px 2px white;
 }
+
+.logo :hover {
+    cursor: pointer;
+}

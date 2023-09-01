@@ -15,22 +15,27 @@ const MainPage = () => {
     const isOnHomePage = () => {
         return location.pathname === '/';
     };
-
+    const headerAllowed = () => {
+        return location.pathname === '/' || location.pathname === '/single-shop' || location.pathname === '/after';
+    };
     return (
         <div className='body' >
             <CookiesComponent />
-            <Header />
+            {headerAllowed() && <Header />}
             <Outlet></Outlet>
-            {/* {isOnHomePage() &&  */}
-            <StartPage />
-            {/* } */}
-            <Footer />
-            <p className='disclaimer'>@Loalivores2023</p>
-            <div className='spacerr'>
-                <div className='wave5'>
+            {isOnHomePage() &&
+                <StartPage />
+            }
+            {headerAllowed() && (
+                <>
+                    <Footer />
+                    <p className='disclaimer'>@Loalivores2023</p>
+                    <div className='spacerr'>
+                        <div className='wave5'></div>
+                    </div>
+                </>
+            )}
 
-                </div>
-            </div>
 
         </div >
     );

@@ -70,16 +70,16 @@ const SingleShopPage = () => {
                     </Link>
                 </div>
             </div>
-            <div className={classes.menu_products_container}>
+            {/* <div className={classes.menu_products_container}> */}
 
 
 
 
-                <Outlet className={classes.router_page}>
+            <Outlet className={classes.router_page}>
 
-                </Outlet>
+            </Outlet>
 
-            </div>
+            {/* </div> */}
 
         </div >
     );

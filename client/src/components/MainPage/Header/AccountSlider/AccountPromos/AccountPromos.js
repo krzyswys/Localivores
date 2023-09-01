@@ -11,7 +11,7 @@ import PromoView from './PromoView';
 
 
 
-const AccountPromos = () => {
+const AccountPromos = ({ handleMenuClick }) => {
     const [promoCode, setPromoCode] = useState('');
     const [promoCodeEntered, setPromoCodeEntered] = useState(false);
     const handlePromoCodeEnter = () => {
@@ -39,7 +39,7 @@ const AccountPromos = () => {
     };
     return (
         <div className='account-promo-menu-container' onClick={(e) => e.stopPropagation()}>
-            <Link to='/menu' className='go-back-icon'><AiOutlineArrowLeft /></Link>
+            <div onClick={() => handleMenuClick("main")} className='go-back-icon'><AiOutlineArrowLeft /></div>
             <div className='account-promo-inner-menu-container'>
                 <h2 className='account-promo-headline'>
                     <p className='account-promo-name'><TbShoppingCartDiscount /></p> Your promo <p className='account-promo-name'>codes</p> </h2>
