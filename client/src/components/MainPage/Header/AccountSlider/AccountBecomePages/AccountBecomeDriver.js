@@ -5,11 +5,11 @@ import { VscDebugStart } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
 
 
-const AccountBecomeDriver = () => {
+const AccountBecomeDriver = ({ handleMenuClick }) => {
 
     return (
         <div className='account-become-menu-container' onClick={(e) => e.stopPropagation()}>
-            <Link to='/menu' className='go-back-icon'><AiOutlineArrowLeft /></Link>
+            <div onClick={() => handleMenuClick("main")} className='go-back-icon'><AiOutlineArrowLeft /></div>
             <div className='account-become-inner-menu-container'>
                 <h2 className='account-become-headline'>
                     <p className='account-become-name'><VscDebugStart /></p> Become <p className='account-become-name'>driver</p> </h2>

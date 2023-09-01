@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineStar, AiOutlineCar, AiOutlineShop } from 'react-icons/ai';
 import { GoHistory } from 'react-icons/go';
@@ -8,7 +8,8 @@ import { CiDiscount1 } from 'react-icons/ci';
 import { BiLogOutCircle } from 'react-icons/bi';
 import './AccountLinksList.css';
 
-const AccountLinksList = () => {
+
+const AccountLinksList = ({ handleMenuClick }) => {
 
 
     return (
@@ -19,44 +20,45 @@ const AccountLinksList = () => {
                 </h2>
                 <span className='account-line'></span>
                 <div className='account-options-container'>
-                    <Link to='/order-history' className='account-option-container'>
+                    <div className={`account-option-container `} onClick={() => handleMenuClick('main')}>
                         <p>
                             <GoHistory className='account-options-icon' />
                             Order history
                         </p>
                         <div className='account-option-hover-underline'></div>
-                    </Link>
-                    <Link to='/account-settings' className='account-option-container' exact>
+                    </div>
+                    <div className={`account-option-container `} onClick={() => handleMenuClick('settings')}
+                    >
                         <p>
                             <MdOutlineManageAccounts className='account-options-icon' />
                             Account settings
                         </p>
                         <div className='account-option-hover-underline'></div>
-                    </Link>
-                    <Link className='account-option-container'>
+                    </div>
+                    <div className='account-option-container' onClick={() => handleMenuClick('main')}>
                         <p><BsCardChecklist className='account-options-icon' />Your lists</p>
                         <div className='account-option-hover-underline'></div>
-                    </Link>
-                    <Link className='account-option-container'>
+                    </div>
+                    <div className='account-option-container' >
                         <p><AiOutlineStar className='account-options-icon' />Favourites</p>
                         <div className='account-option-hover-underline'></div>
-                    </Link>
-                    <Link to="/account-become-driver" className='account-option-container'>
+                    </div>
+                    <div className='account-option-container' onClick={() => handleMenuClick('become-driver')}>
                         <p><AiOutlineCar className='account-options-icon' />Become driver</p>
                         <div className='account-option-hover-underline'></div>
-                    </Link>
-                    <Link to="/account-start-shop" className='account-option-container'>
+                    </div>
+                    <div className='account-option-container' onClick={() => handleMenuClick('start-shop')}>
                         <p><AiOutlineShop className='account-options-icon' />Start shop</p>
                         <div className='account-option-hover-underline'></div>
-                    </Link>
-                    <Link to="/account-promos" className='account-option-container'>
+                    </div>
+                    <div className='account-option-container' onClick={() => handleMenuClick('promos')}>
                         <p><CiDiscount1 className='account-options-icon' />Your promos</p>
                         <div className='account-option-hover-underline'></div>
-                    </Link>
-                    <Link to="/account-report-problem" className='account-option-container'>
+                    </div>
+                    <div className='account-option-container' onClick={() => handleMenuClick('report-problem')}>
                         <p><BsSendExclamation className='account-options-icon' />Report problem</p>
                         <div className='account-option-hover-underline'></div>
-                    </Link>
+                    </div>
                 </div>
             </div>
             <p className='logout-account' >

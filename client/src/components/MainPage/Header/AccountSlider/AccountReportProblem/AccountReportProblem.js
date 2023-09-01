@@ -5,7 +5,7 @@ import { GoTriangleRight } from 'react-icons/go';
 import { Link } from 'react-router-dom';
 
 
-const AccountReportProblem = () => {
+const AccountReportProblem = ({ handleMenuClick }) => {
     const [problemDescription, setproblemDescription] = useState('');
     const topics = ['UI', 'Data', 'Delivery', 'Account', 'Payments'];
     const [selectedTopic, setSelectedTopic] = useState('Topics');
@@ -48,7 +48,7 @@ const AccountReportProblem = () => {
 
     return (
         <div className='account-report-menu-container' onClick={(e) => e.stopPropagation()}>
-            <Link to='/menu' className='go-back-icon'><AiOutlineArrowLeft /></Link>
+            <div onClick={() => handleMenuClick("main")} className='go-back-icon'><AiOutlineArrowLeft /></div>
             <div className='account-report-inner-menu-container'>
                 <h2 className='account-report-headline'>
                     <p className='account-report-name'><AiOutlineWarning /></p> Report <p className='account-report-name'>problem</p> </h2>

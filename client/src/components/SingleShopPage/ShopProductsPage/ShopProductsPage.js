@@ -54,31 +54,29 @@ const ShopProductsPage = () => {
         <div className={classes.SAP}>
 
 
-            <div className={classes.categories_list_column}>
 
 
-                <div className={classes.categories_list_inner_column}>
-                    <div className={classes.categories_info_block}>
-                        <p>Categories</p>
-                    </div>
-
-                    {categories.map((category, index) => (
-                        <div
-                            className={`${classes.categories_list_block} ${activeCategory === category.title ? classes.categories_list_block_active : ''}`}
-                            key={index}
-                            onClick={() => scrollToCategory(category.title)}
-                        >
-                            {category.icon}
-                            <p>{category.title}</p>
-                        </div>
-                    ))}
-
+            <div className={classes.categories_list_inner_column}>
+                <div className={classes.categories_info_block}>
+                    <p>Categories</p>
                 </div>
 
+                {categories.map((category, index) => (
+                    <div
+                        className={`${classes.categories_list_block} ${activeCategory === category.title ? classes.categories_list_block_active : ''}`}
+                        key={index}
+                        onClick={() => scrollToCategory(category.title)}
+                    >
+                        {category.icon}
+                        <p>{category.title}</p>
+                    </div>
+                ))}
+
             </div>
+
             <div className={classes.main_items_container} ref={containerRef}>
                 {categories.map((category, index) => (
-                    <div id={category.title.replace(/ /g, '_')} key={index} >
+                    <div id={category.title.replace(/ /g, '_')} key={index} className={classes.Category_holder}>
                         <Category style={{ width: '100%' }} title={category.title} categoryIcon={category.icon} items={category.items} />
                     </div>
                 ))}
