@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../Header.css';
-
+import { MdLocationOn } from 'react-icons/md'
 
 
 const AdressInput = () => {
@@ -127,6 +127,7 @@ const AdressInput = () => {
                     <label class="placeholder-text" for="cityInput">City</label>
                 </div>
             </div>
+            <MdLocationOn size={20} style={{ color: 'gray' }} className="localization-pin" />
         </div>
 
 

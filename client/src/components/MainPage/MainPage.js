@@ -23,9 +23,9 @@ const MainPage = () => {
             <CookiesComponent />
             {headerAllowed() && <Header />}
             <Outlet></Outlet>
-            {isOnHomePage() &&
-                <StartPage />
-            }
+            {/* {isOnHomePage() && */}
+            {/* <StartPage /> */}
+            {/* } */}
             {headerAllowed() && (
                 <>
                     <Footer />

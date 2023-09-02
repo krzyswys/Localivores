@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from "./SingleShopPage.module.css";
 import { TbTruckDelivery, TbPlantOff, TbShoppingCartDiscount } from 'react-icons/tb'
 import { LuVegan, LuWheatOff, LuWheat, LuMilk } from 'react-icons/lu'
@@ -6,15 +6,47 @@ import { GiPlantWatering, GiFruitTree, GiSteak } from 'react-icons/gi'
 import { AiOutlineStar } from 'react-icons/ai'
 import { BsCalendar2Week } from 'react-icons/bs'
 import { Link, Outlet, useLocation } from 'react-router-dom';
-
+import ShopProductsPage from "./ShopProductsPage/ShopProductsPage";
+import ShopGalleryPage from "./ShopGalleryPage/ShopGalleryPage";
+import { ImageProvider } from "./ShopGalleryPage/ImageContext";
+import ShopReviewsPage from "./ShopReviewsPage/ShopReviewsPage";
+import ShopAboutPage from "./ShopAboutShopPage/ShopAboutPage";
 
 
 const SingleShopPage = () => {
-    const location = useLocation();
 
     const isActive = (path) => {
-        return location.pathname === path;
+        return activeComponent === path;
     };
+
+    const [activeComponent, setActiveComponent] = useState("shop-products");
+    const [componentToRender, setComponentToRender] = useState(null);
+    const handleMenuClick = (component) => {
+        setActiveComponent(component);
+
+    };
+
+    useEffect(() => {
+        switch (activeComponent) {
+            case 'shop-products':
+                setComponentToRender(<ShopProductsPage />);
+                break;
+            case 'shop-reviews':
+                setComponentToRender(<ShopReviewsPage />);
+                break;
+            case 'shop-gallery':
+                setComponentToRender(<ImageProvider >
+                    <ShopGalleryPage />
+                </ImageProvider>);
+                break;
+            case 'about-shop':
+                setComponentToRender(<ShopAboutPage />);
+                break;
+            default:
+                setComponentToRender(null);
+        }
+    }, [activeComponent]);
+
     return (
         <div className={classes.SSP}>
             <div className={classes.shop_header_container}>
@@ -44,30 +76,30 @@ const SingleShopPage = () => {
 
                 </div>
                 <div className={classes.about_shop_links}>
-                    <Link to="/single-shop/shop-products" className={classes.about_shop_link}>
+                    <div onClick={() => handleMenuClick('shop-products')} className={classes.about_shop_link}>
                         <span className={classes.actual_text}>&nbsp;Products&nbsp;</span>
-                        <span aria-hidden="true" className={`${classes.hover_text} ${isActive('/shop-products') ? classes.hover_text_active : ''}`}>
+                        <span aria-hidden="true" className={`${classes.hover_text} ${isActive('shop-products') ? classes.hover_text_active : ''}`}>
                             &nbsp;Products&nbsp;
                         </span>
-                    </Link>
-                    <Link to="/single-shop/shop-reviews" className={`${classes.about_shop_link} ${isActive('/shop-reviews') ? classes.about_shop_link_active : ''}`}>
+                    </div>
+                    <div onClick={() => handleMenuClick('shop-reviews')} className={`${classes.about_shop_link} ${isActive('shop-reviews') ? classes.about_shop_link_active : ''}`}>
                         <span className={classes.actual_text}>&nbsp;Reviews&nbsp;</span>
-                        <span aria-hidden="true" className={`${classes.hover_text} ${isActive('/shop-reviews') ? classes.hover_text_active : ''}`}>
+                        <span aria-hidden="true" className={`${classes.hover_text} ${isActive('shop-reviews') ? classes.hover_text_active : ''}`}>
                             &nbsp;Reviews&nbsp;
                         </span>
-                    </Link>
-                    <Link to="/single-shop/shop-gallery" className={`${classes.about_shop_link} ${isActive('/shop-gallery') ? classes.about_shop_link_active : ''}`}>
+                    </div>
+                    <div onClick={() => handleMenuClick('shop-gallery')} className={`${classes.about_shop_link} ${isActive('shop-gallery') ? classes.about_shop_link_active : ''}`}>
                         <span className={classes.actual_text}>&nbsp;Gallery&nbsp;</span>
-                        <span aria-hidden="true" className={`${classes.hover_text} ${isActive('/shop-gallery') ? classes.hover_text_active : ''}`}>
+                        <span aria-hidden="true" className={`${classes.hover_text} ${isActive('shop-gallery') ? classes.hover_text_active : ''}`}>
                             &nbsp;Gallery&nbsp;
                         </span>
-                    </Link>
-                    <Link to="/single-shop/about-shop" className={`${classes.about_shop_link} ${isActive('/about-shop') ? classes.about_shop_link_active : ''}`}>
+                    </div>
+                    <div onClick={() => handleMenuClick('about-shop')} className={`${classes.about_shop_link} ${isActive('about-shop') ? classes.about_shop_link_active : ''}`}>
                         <span className={classes.actual_text}>&nbsp;About Shop&nbsp;</span>
-                        <span aria-hidden="true" className={`${classes.hover_text} ${isActive('/about-shop') ? classes.hover_text_active : ''}`}>
+                        <span aria-hidden="true" className={`${classes.hover_text} ${isActive('about-shop') ? classes.hover_text_active : ''}`}>
                             &nbsp;About&nbsp;Shop&nbsp;
                         </span>
-                    </Link>
+                    </div>
                 </div>
             </div>
             {/* <div className={classes.menu_products_container}> */}
@@ -75,9 +107,10 @@ const SingleShopPage = () => {
 
 
 
-            <Outlet className={classes.router_page}>
+            <div className={classes.router_page}>
+                {componentToRender}
 
-            </Outlet>
+            </div>
 
             {/* </div> */}
 

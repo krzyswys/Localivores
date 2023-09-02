@@ -186,6 +186,10 @@
     border: none;
 }
 
+.about_shop_link:hover {
+    cursor: pointer;
+}
+
 .about_shop_link {
     --border-right: 6px;
     --text-stroke-color: rgba(0, 0, 0, 0.6);
