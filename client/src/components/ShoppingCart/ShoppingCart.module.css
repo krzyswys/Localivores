@@ -234,9 +234,6 @@
   transition: var(--common-transition);
 }
 
-.purchaseButton {
-  /* puste miejsce na indywidualne style */
-}
 
 .closeButton {
   background: rgb(40, 40, 40);

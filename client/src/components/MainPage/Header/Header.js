@@ -27,7 +27,9 @@ const Header = () => {
   };
   const handleCartToggle = () => {
     setIsCartShown(!isCartShown);
+    
   };
+  
 
   const bottomLeftRadius = 150 - scrollValue * 0.8 + "px";
   const bottomRightRadius = 150 - scrollValue * 0.8 + "px";
