@@ -1,26 +1,15 @@
 import styles from "./ShoppingCart.module.css";
+import {calculatePrice,discountedPrice} from '../../utility/price-calculator';
 
-const calculatePrice = (item) => {
-  const pricePerUnit = parseFloat(item.pricePerUnit.split("/")[0]);
-  const weightUnit = parseInt(item.pricePerUnit.split("/")[1]);
-  const price = (pricePerUnit / weightUnit) * +item.selectedWeight;
-  const discountedPrice = price - (price * +item.product_discount) / 100;
-  return discountedPrice.toFixed(2);
-};
+
 const CartItem = ({
   item,
   updateQuantity,
   infoColumn,
   updateSelectedWeight,
 }) => {
-  const productInfo =
-    infoColumn === "weight"
-      ? item.selectedWeight + "g"
-      : calculatePrice(item) + " zl";
-
-  const totalPrice = (parseFloat(calculatePrice(item)) * item.quantity).toFixed(
-    2
-  );
+  const basicPrice = calculatePrice(item);
+  const totalPrice = (parseFloat(discountedPrice(basicPrice,item))).toFixed(2);
 
   const totalProductInfo =
     infoColumn === "weight"
@@ -40,7 +29,7 @@ const CartItem = ({
 
       <span>{item.shop_name}</span>
       <span className={styles.productInfo}>
-        {infoColumn === "price" && productInfo}
+        {infoColumn === "price" && basicPrice + " zl"}
         {infoColumn === "price" && (
           <span className={styles.discount}>
             discount: {item.product_discount}%

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
 import CartItem from "./CartItem";
 import styles from "./ShoppingCart.module.css";
 import "./Animations.css";
 import CSSTransition from "react-transition-group/CSSTransition";
-
+import {unitPrice,discountedPrice,calculatePrice} from '../../utility/price-calculator';
 const dummyData = [
   {
     product_id: "g1",
@@ -115,13 +115,23 @@ const animationTiming = {
 const ShoppingCart = (props) => {
   const [cart, setCart] = useState(dummyData);
   const [totalAmount, setTotalAmount] = useState(0);
-  //changing the state of the column - weight to price and vice versa
-  const [infoColumn, setInfoColumn] = useState("weight");
+ 
+  const [infoColumn, setInfoColumn] = useState("price");
 
-
-  const calculateTotal = (id) => {
-    // Obliczanie sumy
+  
+  
+  const calculateTotal = () => {
+    const total = cart.reduce((acc, item) => {
+      const basicPrice = calculatePrice(item);
+      const totalPrice = parseFloat(discountedPrice(basicPrice,item)).toFixed(2);
+      return acc + parseFloat(totalPrice);
+    }, 0);
+    return total.toFixed(2);
   };
+  useEffect(() => {
+    setTotalAmount(calculateTotal());
+  }, [cart]);
+  
 
   const toggleColumn = () => {
     //zmiana kolumny
@@ -139,23 +149,20 @@ const ShoppingCart = (props) => {
   };
 
   const updateQuantity = (productId, amount) => {
-    let needToRemove = false;
-    const updatedCart = cart.map((item) => {
-      if (item.product_id === productId) {
-        //checking if +newQuantity - amount is greater than 0 and logic for that and else
-        const newQuantity = +item.quantity + amount;
-        
-        if(newQuantity > 0){
-          return { ...item, quantity: newQuantity };
-        }else{
-          
+    let newCart;
+    const product = cart.find((item) => item.product_id === productId);
+    if ((+product.quantity) + amount === 0) {
+      newCart = cart.filter((item) => item.product_id !== productId);
+    }else{
+      newCart = cart.map((item) => {
+        if (item.product_id === productId) {
+          return { ...item, quantity: (+item.quantity) + amount };
         }
-        
-        
-      }
-      return item;
-    });
-    setCart(updatedCart);
+        return item;
+      });
+    }
+    
+    setCart(newCart);
   };
 
   return (
@@ -182,13 +189,13 @@ const ShoppingCart = (props) => {
             <span>Product</span>
             <span>Shop</span>
             <span className={styles.units}>
-              unit {infoColumn}
+               {infoColumn === "weight" ? "unit weight" : " basic price"}
               <span className={styles.toggler} onClick={() => toggleColumn()}>
                 Show {infoColumn === "weight" ? "price" : "weight"}
               </span>
             </span>
-            <span className={styles.productInfo}>
-              {infoColumn}
+            <span className={styles.units}>
+              total {infoColumn}
               <span className={styles.toggler} onClick={() => toggleColumn()}>
                 Show {infoColumn === "weight" ? "price" : "weight"}
               </span>
