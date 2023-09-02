@@ -82,16 +82,27 @@
     background: none;
     transition: 0.1s ease-in-out;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    gap:1em;
+    padding: 0 10px;
+    margin-left:1em;
+    margin-right:10px;
+    
     /* padding-right: 14%; */
 }
 
-.open-account-menu-button:hover {
-    scale: 102%;
+.icon{
+    scale: 1;
+    color: #00a082;
+    transition: 0.16s ease-in-out;
+}
+.icon:hover{
+    scale: 1.15;
     color: #ffffff;
     cursor: pointer;
 }
+
 
 .animated-div {
     overflow: hidden;
@@ -374,3 +385,4 @@
     filter: blur(10px);
     transition: opacity 300ms, filter 300ms;
 }
+

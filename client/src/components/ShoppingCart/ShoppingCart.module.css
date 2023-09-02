@@ -2,19 +2,7 @@
     --green-background: rgba(126, 246, 136, 0.242);
     --light-green-background: rgba(37, 249, 55, 0.242);
   }
-  .shoppingCartSection{
-    display:flex;   
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    width:100vw;
-    height:100vh;
-    background-image:url('../../assets/Cart/grocery-cart-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
+  
   .shoppingCart {
     display: grid;
     justify-items: center;

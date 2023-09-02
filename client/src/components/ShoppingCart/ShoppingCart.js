@@ -126,7 +126,7 @@ const ShoppingCart = () => {
   };
 
   return (
-    <section className={styles.shoppingCartSection}>
+    
       <div className={styles.shoppingCart}>
         <div className={styles.header}>
           <span>Product</span>
@@ -161,7 +161,7 @@ const ShoppingCart = () => {
           <button className={styles.purchaseButton}>PURCHASE</button>
         </div>
       </div>
-    </section>
+    
   );
 };
 

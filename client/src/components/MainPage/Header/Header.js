@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { RiAccountCircleFill } from 'react-icons/ri';
+import { FaShoppingCart } from 'react-icons/fa';
 import './Header.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Logo from '../../../UI/Logo/Logo';
@@ -53,13 +54,16 @@ const Header = () => {
             top: isOnHomePage ? 'auto' : 0,
         }}>
             <AccountSlider handleMenuToggle={handleMenuToggle} isMenuOpen={isMenuOpen} />
+            
             <div className='searchBar-container ' style={divStyle}>
                 <header className='header'>
                     <Logo onClick={navigateHandler} />
                     {/* <div className='account'> */}
                     <SearchBar />
-                    <div className='open-account-menu-button' onClick={handleMenuToggle}>
-                        <RiAccountCircleFill />
+                    
+                    <div className='open-account-menu-button' >
+                    <FaShoppingCart className="icon" />
+                    <RiAccountCircleFill className="icon" onClick={handleMenuToggle} />
                     </div>
 
                     {/* <button className='login-button'>Log in</button> */}
