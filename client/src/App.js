@@ -30,7 +30,8 @@ const App = () => {
             <Route path='/single-shop/shop-products' element={
               <ShopProductsPage
               />
-            } />
+            }
+            />
             <Route
               path='/single-shop/shop-gallery'
               element={

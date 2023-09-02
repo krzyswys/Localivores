@@ -16,7 +16,7 @@ const MainPage = () => {
         return location.pathname === '/';
     };
     const headerAllowed = () => {
-        return location.pathname === '/' || location.pathname === '/single-shop' || location.pathname === '/after';
+        return location.pathname === '/' || location.pathname.startsWith('/single-shop') || location.pathname === '/after';
     };
     return (
         <div className='body' >
