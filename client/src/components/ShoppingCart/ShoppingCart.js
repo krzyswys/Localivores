@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 import CartItem from "./CartItem";
 import styles from "./ShoppingCart.module.css";
-import groceryImage from "../../assets/Cart/grocery-cart-background.jpg";
+import './Animations.css'
+import CSSTransition from "react-transition-group/CSSTransition";
 
 const dummyData = [
   {
@@ -102,7 +103,11 @@ const dummyData = [
   },
 ];
 
-const ShoppingCart = () => {
+const animationTiming = {
+  enter: 400,
+  exit: 1000,
+}
+const ShoppingCart = (props) => {
   const [cart, setCart] = useState(dummyData);
   const [totalAmount, setTotalAmount] = useState(0);
   //changing the state of the column - weight to price and vice versa
@@ -126,7 +131,22 @@ const ShoppingCart = () => {
   };
 
   return (
-    
+   <>
+   {props.show && <div className={styles.backdrop}></div>}
+    <CSSTransition
+    mountOnEnter
+    unmountOnExit
+    in={props.show}
+    timeout={animationTiming}
+    classNames={{
+        enter: '',
+        enterActive: 'ModalOpen',
+        exit: '',
+        exitActive: 'ModalClosed',
+        // appear: '',//used for the first time the component is rendered
+        // appearActive: '', //used for the first time the component is rendered
+    }}>
+      
       <div className={styles.shoppingCart}>
         <div className={styles.header}>
           <span>Product</span>
@@ -158,10 +178,13 @@ const ShoppingCart = () => {
         </div>
         <div className={styles.footer}>
           <span className={styles.total}>Total: {totalAmount}</span>
-          <button className={styles.purchaseButton}>PURCHASE</button>
+          <button className={`${styles.buttonBase} ${styles.purchaseButton}`}>PURCHASE</button>
+          <button className={`${styles.buttonBase} ${styles.closeButton}`} onClick={props.onClick}>Close</button>
         </div>
       </div>
-    
+      
+      </CSSTransition>
+      </>
   );
 };
 
