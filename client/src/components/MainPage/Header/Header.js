@@ -68,7 +68,7 @@ const Header = () => {
         isMenuOpen={isMenuOpen}
       />
       
-      <ShoppingCart show={isCartShown} onClick={handleCartToggle}/>
+      <ShoppingCart show={isCartShown} onClose={handleCartToggle}/>
       
 
       <div className="searchBar-container " style={divStyle}>

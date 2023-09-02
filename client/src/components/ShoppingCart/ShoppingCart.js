@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import CartItem from "./CartItem";
 import styles from "./ShoppingCart.module.css";
-import './Animations.css'
+import "./Animations.css";
 import CSSTransition from "react-transition-group/CSSTransition";
 
 const dummyData = [
@@ -104,9 +104,9 @@ const dummyData = [
 ];
 
 const animationTiming = {
-  enter: 400,
+  enter: 800,
   exit: 1000,
-}
+};
 const ShoppingCart = (props) => {
   const [cart, setCart] = useState(dummyData);
   const [totalAmount, setTotalAmount] = useState(0);
@@ -131,60 +131,70 @@ const ShoppingCart = (props) => {
   };
 
   return (
-   <>
-   {props.show && <div className={styles.backdrop}></div>}
-    <CSSTransition
-    mountOnEnter
-    unmountOnExit
-    in={props.show}
-    timeout={animationTiming}
-    classNames={{
-        enter: '',
-        enterActive: 'ModalOpen',
-        exit: '',
-        exitActive: 'ModalClosed',
-        // appear: '',//used for the first time the component is rendered
-        // appearActive: '', //used for the first time the component is rendered
-    }}>
-      
-      <div className={styles.shoppingCart}>
-        <div className={styles.header}>
-          <span>Product</span>
-          <span>Shop</span>
-          <span className={styles.units}>
-            unit {infoColumn}
-            <span className={styles.toggler} onClick={() => toggleColumn()}>
-              Show {infoColumn === "weight" ? "price" : "weight"}
+    <>
+      {props.show && (
+        <div className={styles.backdrop} onClick={props.onClose}></div>
+      )}
+      <CSSTransition
+        mountOnEnter
+        unmountOnExit
+        in={props.show}
+        timeout={animationTiming}
+        classNames={{
+          enter: "",
+          enterActive: "ModalOpen",
+          exit: "",
+          exitActive: "ModalClosed",
+          // appear: '',//used for the first time the component is rendered
+          // appearActive: '', //used for the first time the component is rendered
+        }}
+      >
+        <div className={styles.shoppingCart}>
+          <div className={styles.header}>
+            <span>Product</span>
+            <span>Shop</span>
+            <span className={styles.units}>
+              unit {infoColumn}
+              <span className={styles.toggler} onClick={() => toggleColumn()}>
+                Show {infoColumn === "weight" ? "price" : "weight"}
+              </span>
             </span>
-          </span>
-          <span className={styles.productInfo}>
-            {infoColumn}
-            <span className={styles.toggler} onClick={() => toggleColumn()}>
-              Show {infoColumn === "weight" ? "price" : "weight"}
+            <span className={styles.productInfo}>
+              {infoColumn}
+              <span className={styles.toggler} onClick={() => toggleColumn()}>
+                Show {infoColumn === "weight" ? "price" : "weight"}
+              </span>
             </span>
-          </span>
-          <span className={styles.quantityHeader}>Quantity</span>
+            <span className={styles.quantityHeader}>Quantity</span>
+          </div>
+          <div className={styles.cartContent}>
+            <div className={styles.cartInfo}>
+              {cart.map((item) => (
+                <CartItem
+                  key={item.product_id}
+                  item={item}
+                  removeFromCart={removeFromCart}
+                  addToCart={addToCart}
+                  infoColumn={infoColumn}
+                />
+              ))}
+            </div>
+          </div>
+          <div className={styles.footer}>
+            <span className={styles.total}>Total: {totalAmount}</span>
+            <button className={`${styles.buttonBase} ${styles.purchaseButton}`}>
+              PURCHASE
+            </button>
+            <button
+              className={`${styles.buttonBase} ${styles.closeButton}`}
+              onClick={props.onClose}
+            >
+              Close
+            </button>
+          </div>
         </div>
-        <div className={styles.cartInfo}>
-          {cart.map((item) => (
-            <CartItem
-              key={item.product_id}
-              item={item}
-              removeFromCart={removeFromCart}
-              addToCart={addToCart}
-              infoColumn={infoColumn}
-            />
-          ))}
-        </div>
-        <div className={styles.footer}>
-          <span className={styles.total}>Total: {totalAmount}</span>
-          <button className={`${styles.buttonBase} ${styles.purchaseButton}`}>PURCHASE</button>
-          <button className={`${styles.buttonBase} ${styles.closeButton}`} onClick={props.onClick}>Close</button>
-        </div>
-      </div>
-      
       </CSSTransition>
-      </>
+    </>
   );
 };
 

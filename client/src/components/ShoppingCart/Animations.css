@@ -1,6 +1,6 @@
 
 .ModalOpen{
-    animation: openModal 0.4s ease-out forwards;
+    animation: openModal 0.8s ease-out forwards;
   }
   
   .ModalClosed{
@@ -10,7 +10,7 @@
   
   
   .fade-slide-enter-active{
-    animation: openModal 0.4s ease-out forwards;
+    animation: openModal 0.8s ease-out forwards;
     
   }
   

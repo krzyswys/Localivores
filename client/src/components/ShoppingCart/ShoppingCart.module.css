@@ -3,6 +3,24 @@
   --light-green-background: rgba(37, 249, 55, 0.242);
 }
 
+.cartContent::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.cartContent::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.cartContent::-webkit-scrollbar-thumb
+{
+	background-color: var(--common-lighter-bg-color);
+  border-radius: 30px;
+} 
+
 
 .backdrop{
   position: fixed;
@@ -42,7 +60,13 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  transition: all 0.3s ease-out;
+  transition: all 0.8s ease-out;
+}
+
+.cartContent{
+  width: 100%;
+  overflow-y:scroll;
+  max-height:20em;
 }
 
 .cartInfo {
@@ -251,6 +275,10 @@
   background-color: var(--common-lighter-bg-color);
 }
 
+
+
+
+
 @media screen and (max-width: 800px) {
   /*everywhere where font-size was used before, it should be smaller*/
 
@@ -330,3 +358,4 @@
     display: none;
   }
 }
+
