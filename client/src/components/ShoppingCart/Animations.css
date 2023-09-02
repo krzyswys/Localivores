@@ -1,0 +1,53 @@
+
+.ModalOpen{
+    animation: openModal 0.8s ease-out forwards;
+  }
+  
+  .ModalClosed{
+     animation: closeModal 1s ease-out forwards; 
+    
+  }
+  
+  
+  .fade-slide-enter-active{
+    animation: openModal 0.8s ease-out forwards;
+    
+  }
+  
+  
+  .fade-slide-exit-active{
+   animation: closeModal 1s ease-out forwards; 
+  }
+  
+  
+  
+  @keyframes openModal {
+    0% {
+        transform: translate(-50%,-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity:1;
+        transform: translate(-50%,90%);
+    }
+    100% {
+        opacity:1;
+        transform: translate(-50%,-50%);
+    }
+  }
+  
+  @keyframes closeModal  {
+    0% {
+        opacity: 1;
+        transform: translate(-50%,-50%);
+    }
+    50% {
+        opacity:0.8;
+        transform: translate(-50%,60%);
+    }
+    100% {
+        opacity:0;
+        transform: translate(-50%,-100vh);
+    }
+    
+  }

@@ -12,6 +12,7 @@ body {
     --common-transition: all 0.3s ease;
     --common-bg-color: rgb(27, 80, 68);
     --common-lighter-bg-color: rgb(12, 130, 103);
+    --common-lightest-bg-color:rgb(8, 154, 120);
     --common-text-color: #FFFFFF;
     --common-border-color: rgba(27, 80, 68, 0.655);
     --common-font-weight: 700;
