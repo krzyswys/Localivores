@@ -5,6 +5,7 @@
     background-color: rgb(245, 241, 157);
     background-color: rgb(255, 255, 255);
     height: 100%;
+    z-index: 1;
     /* overflow-y: auto;
     overflow-x: hidden; */
 }
@@ -183,6 +184,10 @@
     background: transparent;
     padding: 0;
     border: none;
+}
+
+.about_shop_link:hover {
+    cursor: pointer;
 }
 
 .about_shop_link {

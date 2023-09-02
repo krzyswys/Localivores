@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import '../Header.css';
+import { Link } from 'react-router-dom';
 
 import { GoTriangleRight } from "react-icons/go"
 import { FaMapMarkerAlt } from "react-icons/fa"
+import { AiOutlineSearch } from "react-icons/ai"
+
+
 
 const SearchBar = () => {
     const locations = ["Kraków", "Warszawa", "Wrocław", "Gdańsk"]
@@ -55,7 +59,7 @@ const SearchBar = () => {
                     ))}
                 </ul>
             </div>
-            <div className='localization-pin-container'><FaMapMarkerAlt /></div>
+            <Link to="/after" className='search-pin-container'><AiOutlineSearch /></Link>
         </div>
 
 

@@ -73,7 +73,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: flex-end;
-    z-index: 5;
+    z-index: 9;
 }
 
 .open-account-menu-button {
@@ -251,7 +251,7 @@
     rotate: 90deg;
 }
 
-.localization-pin-container {
+.search-pin-container {
     background-color: rgb(232, 189, 32);
     color: white;
     font-size: 20px;
@@ -263,7 +263,7 @@
     transition: 0.3s;
 }
 
-.localization-pin-container:hover {
+.search-pin-container:hover {
     color: black;
     cursor: pointer;
 }
@@ -272,9 +272,10 @@
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    flex-direction: row;
     z-index: -2;
-    margin: 1% 0 1% 0;
+    margin: 1% 0 3% 0;
 }
 
 .address-input {
@@ -342,7 +343,15 @@
 
 }
 
+.localization-pin {
+    transition: all 0.2s;
+    text-align: center;
+}
 
+.localization-pin:hover {
+    cursor: pointer;
+    scale: 102%;
+}
 
 .content-transition-enter {
     opacity: 0;
