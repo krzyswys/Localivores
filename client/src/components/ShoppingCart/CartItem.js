@@ -36,14 +36,14 @@ const CartItem = ({
           </span>
         )}
         {infoColumn === "weight" && (
-          <select
+          <select className={styles.weightSelect}
             value={item.selectedWeight}
             onChange={(e) => {
               updateSelectedWeight(item.product_id, e.target.value);
             }}
           >
             {item.weight.map((w, i) => (
-              <option key={i} value={w}>
+              <option key={i} value={w}  className={styles.weightOption}>
                 {w}g
               </option>
             ))}

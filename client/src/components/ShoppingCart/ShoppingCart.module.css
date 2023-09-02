@@ -22,6 +22,8 @@
 } 
 
 
+
+
 .backdrop{
   position: fixed;
   top: 0;
@@ -276,7 +278,30 @@
 }
 
 
+.weightSelect{
+  font-size: 14px;
+  background: var(--common-lightest-bg-color);
+  outline:none;
+  border:2px solid var(--common-bg-color);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  color:white;
+  font-weight:bold;
+  position:relative;
+  top:-3px;
+}
 
+.weightOption {
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  color:white;
+  font-weight:bold;
+  background-color:var(--common-lightest-bg-color);
+  border:none;
+  outline:none;
+
+}
 
 
 @media screen and (max-width: 800px) {
