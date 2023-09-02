@@ -80,6 +80,7 @@ const AuthForm = () => {
   };
 
   return (
+    <section className={classes.authSection}>
     <main className="auth-form">
       <Logo className={classes.logo} onClick={navigateHandler} />
       <div className="form-structor">
@@ -122,6 +123,7 @@ const AuthForm = () => {
             changeAuth={changeAuth}/>
       </div>
     </main>
+    </section>
   );
 };
 

@@ -152,12 +152,8 @@ const AfterSearch = () => {
   }`;
   const filterMess = !isFilterActive ? `Show filters` : `Hide filters`;
   return (
-    <React.Fragment>
-        <div className={classes.backIcon}>
-            <Link to="..">
-                <IoIosReturnLeft size={30} /> {/* You can change the size as you like */}
-            </Link>
-        </div>
+    <section className={classes.afterSearchSection}>
+        
 
       <div className={classes.count}>
         Found {filteredProducts.length} results
@@ -237,7 +233,7 @@ const AfterSearch = () => {
           ))}
         </div>
       </div>
-    </React.Fragment>
+    </section>
   );
 };
 
