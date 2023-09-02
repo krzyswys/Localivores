@@ -10,8 +10,9 @@ const dummyData = [
     product_id: "g1",
     product_name: "Apple",
     product_description: "Tasty apple",
-    product_price: "2.99",
-    product_weight: "150",
+    pricePerUnit: "5/100",
+    selectedWeight: "200",
+    weight: ["100", "200", "250"],
     production_date: "2023-05-10",
     product_discount: "0",
     product_origin: "Poland",
@@ -29,8 +30,9 @@ const dummyData = [
     product_id: "g2",
     product_name: "Apple",
     product_description: "Super Apple",
-    product_price: "3.99",
-    product_weight: "150",
+    pricePerUnit: "4/300",
+    selectedWeight: "550",
+    weight: ["300", "450", "550"],
     production_date: "2023-05-12",
     product_discount: "15",
     product_origin: "Ecuador",
@@ -48,8 +50,9 @@ const dummyData = [
     product_id: "g3",
     product_name: "Apple",
     product_description: "Fresh Apple",
-    product_price: "3.59",
-    product_weight: "150",
+    pricePerUnit: "3/100",
+    selectedWeight: "300",
+    weight: ["100", "300", "650"],
     production_date: "2023-06-01",
     product_discount: "5",
     product_origin: "Spain",
@@ -67,8 +70,9 @@ const dummyData = [
     product_id: "g4",
     product_name: "Applee",
     product_description: "Fresh Apple",
-    product_price: "3.59",
-    product_weight: "150",
+    selectedWeight: "300",
+    pricePerUnit: "6/100",
+    weight: ["100", "150", "650"],
     production_date: "2023-06-01",
     product_discount: "5",
     product_origin: "Spain",
@@ -86,8 +90,9 @@ const dummyData = [
     product_id: "g5",
     product_name: "Appleeuiu",
     product_description: "Fresh Apple",
-    product_price: "3.59",
-    product_weight: "150",
+    pricePerUnit: "6/100",
+    selectedWeight: "150",
+    weight: ["100", "150", "250"],
     production_date: "2023-06-01",
     product_discount: "5",
     product_origin: "Spain",
@@ -113,21 +118,44 @@ const ShoppingCart = (props) => {
   //changing the state of the column - weight to price and vice versa
   const [infoColumn, setInfoColumn] = useState("weight");
 
-  const addToCart = (product) => {
-    // Logika dodawania do koszyka
-  };
 
-  const removeFromCart = (id) => {
-    // Logika usuwania z koszyka
-  };
-
-  const calculateTotal = () => {
+  const calculateTotal = (id) => {
     // Obliczanie sumy
   };
 
   const toggleColumn = () => {
     //zmiana kolumny
     setInfoColumn(infoColumn === "weight" ? "price" : "weight");
+  };
+
+  const updateSelectedWeight = (productId, newWeight) => {
+    const updatedCart = cart.map((item) => {
+      if (item.product_id === productId) {
+        return { ...item, selectedWeight: newWeight };
+      }
+      return item;
+    });
+    setCart(updatedCart);
+  };
+
+  const updateQuantity = (productId, amount) => {
+    let needToRemove = false;
+    const updatedCart = cart.map((item) => {
+      if (item.product_id === productId) {
+        //checking if +newQuantity - amount is greater than 0 and logic for that and else
+        const newQuantity = +item.quantity + amount;
+        
+        if(newQuantity > 0){
+          return { ...item, quantity: newQuantity };
+        }else{
+          
+        }
+        
+        
+      }
+      return item;
+    });
+    setCart(updatedCart);
   };
 
   return (
@@ -173,9 +201,9 @@ const ShoppingCart = (props) => {
                 <CartItem
                   key={item.product_id}
                   item={item}
-                  removeFromCart={removeFromCart}
-                  addToCart={addToCart}
                   infoColumn={infoColumn}
+                  updateSelectedWeight={updateSelectedWeight} 
+                  updateQuantity={updateQuantity}
                 />
               ))}
             </div>

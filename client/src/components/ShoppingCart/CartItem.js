@@ -1,36 +1,30 @@
 import styles from "./ShoppingCart.module.css";
-// {
-//     product_id: "g1",
-//     product_name: "Apple",
-//     product_description: "Tasty apple",
-//     product_price: "2.99",
-//     product_weight: "150g",
-//     production_date: "2023-05-10",
-//     product_discount: "0%",
-//     product_origin: "Poland",
-//     product_expiration_date: "2023-08-10",
-//     shop_name: "Local Farmer",
-//     quantity:"1",
-//     shop_rate: "4.5",
-//     picture: "https://picsum.photos/300",
-//     shop_address: "Green Street 12, Warsaw",
-//     shop_opening_hours: "8:00-20:00",
-//     shop_longitude: "21.0118",
-//     shop_latitude: "52.2297",
-//   }
 
-const CartItem = ({ item, removeFromCart, addToCart, infoColumn }) => {
-  let productInfo =
+const calculatePrice = (item) => {
+  const pricePerUnit = parseFloat(item.pricePerUnit.split("/")[0]);
+  const weightUnit = parseInt(item.pricePerUnit.split("/")[1]);
+  const price = (pricePerUnit / weightUnit) * +item.selectedWeight;
+  const discountedPrice = price - (price * +item.product_discount) / 100;
+  return discountedPrice.toFixed(2);
+};
+const CartItem = ({
+  item,
+  updateQuantity,
+  infoColumn,
+  updateSelectedWeight,
+}) => {
+  const productInfo =
     infoColumn === "weight"
-      ? item.product_weight + "g"
-      : item.product_price + " zl";
-  //When we want to display total price of product we need to multiply product price by quantity and doscount per unit price matter too
-  let totalPrice =
-    (+item.product_price * +item.quantity -
-    (+item.product_price * +item.quantity * +item.product_discount) / 100).toFixed(2);
-  let totalProductInfo =
+      ? item.selectedWeight + "g"
+      : calculatePrice(item) + " zl";
+
+  const totalPrice = (parseFloat(calculatePrice(item)) * item.quantity).toFixed(
+    2
+  );
+
+  const totalProductInfo =
     infoColumn === "weight"
-      ? +item.product_weight * +item.quantity + "g"
+      ? item.selectedWeight * item.quantity + "g"
       : totalPrice + " zl";
 
   return (
@@ -46,23 +40,39 @@ const CartItem = ({ item, removeFromCart, addToCart, infoColumn }) => {
 
       <span>{item.shop_name}</span>
       <span className={styles.productInfo}>
-        {productInfo}
-        {infoColumn === "price" && <span className={styles.discount}>
-          discount: {item.product_discount}%
-        </span>}
+        {infoColumn === "price" && productInfo}
+        {infoColumn === "price" && (
+          <span className={styles.discount}>
+            discount: {item.product_discount}%
+          </span>
+        )}
+        {infoColumn === "weight" && (
+          <select
+            value={item.selectedWeight}
+            onChange={(e) => {
+              updateSelectedWeight(item.product_id, e.target.value);
+            }}
+          >
+            {item.weight.map((w, i) => (
+              <option key={i} value={w}>
+                {w}g
+              </option>
+            ))}
+          </select>
+        )}
       </span>
       <span>{totalProductInfo}</span>
       <div className={styles.quantity}>
         <span>{item.quantity}</span>
         <button
           className={styles.removeButton}
-          onClick={() => removeFromCart(item.product_id)}
+          onClick={() => updateQuantity(item.product_id, -1)}
         >
           Remove
         </button>
         <button
           className={styles.addButton}
-          onClick={() => addToCart(item.product_id)}
+          onClick={() => updateQuantity(item.product_id, 1)}
         >
           Add
         </button>
