@@ -1,11 +1,15 @@
 package server.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.time.Instant;
 import java.util.List;
 
 @jakarta.persistence.Entity
@@ -36,9 +40,12 @@ public class User implements Model {
     private String lastName;
 
     @Column(name = "email")
+    @Email
+    @NotEmpty(message = "Email is required")
     private String email;
 
     @Column(name = "password")
+    @NotBlank(message = "Password is required")
     private String password;
 
     @Column(name = "phone_number")
@@ -56,4 +63,7 @@ public class User implements Model {
     @Column(name = "postal_code")
     private String postalCode;
 
+    private Instant created;
+
+    private boolean enabled;
 }
