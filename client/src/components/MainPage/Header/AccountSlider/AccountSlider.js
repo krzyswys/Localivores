@@ -7,7 +7,8 @@ import AccountStartShop from './AccountBecomePages/AccountStartShop';
 import AccountBecomeDriver from './AccountBecomePages/AccountBecomeDriver';
 import AccountReportProblem from './AccountReportProblem/AccountReportProblem';
 import AccountPromos from './AccountPromos/AccountPromos';
-
+import AccountOrderHistory from './AccountOrderHistory/AccountOrderHistory';
+import AccountHistoryDetailsModal from './AccountOrderHistory/AccountHistoryDetailsModal';
 
 const AccountSlider = ({ handleMenuToggle, isMenuOpen }) => {
     const menuAnimation = useSpring({
@@ -16,6 +17,10 @@ const AccountSlider = ({ handleMenuToggle, isMenuOpen }) => {
     });
 
     const [activeComponent, setActiveComponent] = useState("main");
+    const [currentOrder, setCurrentOrder] = useState(null);
+    const handleOrderSet = (order) => {
+        setCurrentOrder(order);
+    };
     const handleMenuClick = (component) => {
         if (component == null) {
             handleMenuToggle();
@@ -32,6 +37,9 @@ const AccountSlider = ({ handleMenuToggle, isMenuOpen }) => {
         case 'main':
             componentToRender = <AccountLinksList handleMenuClick={handleMenuClick} />;
             break;
+        case 'order-history':
+            componentToRender = <AccountOrderHistory handleMenuClick={handleMenuClick} handleOrderSet={handleOrderSet} />;
+            break;
         case 'settings':
             componentToRender = <AccountSettings handleMenuClick={handleMenuClick} />;
             break;
@@ -46,6 +54,9 @@ const AccountSlider = ({ handleMenuToggle, isMenuOpen }) => {
             break;
         case 'promos':
             componentToRender = <AccountPromos handleMenuClick={handleMenuClick} />;
+            break;
+        case 'history-details':
+            componentToRender = <AccountHistoryDetailsModal order={currentOrder} handleMenuClick={handleMenuClick} />;
             break;
         default:
             componentToRender = null;
