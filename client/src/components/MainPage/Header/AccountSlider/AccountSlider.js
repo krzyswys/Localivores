@@ -9,6 +9,7 @@ import AccountReportProblem from './AccountReportProblem/AccountReportProblem';
 import AccountPromos from './AccountPromos/AccountPromos';
 import AccountOrderHistory from './AccountOrderHistory/AccountOrderHistory';
 import AccountHistoryDetailsModal from './AccountOrderHistory/AccountHistoryDetailsModal';
+import AccountFavourites from './AccountFavourites/AccountFavourites';
 
 const AccountSlider = ({ handleMenuToggle, isMenuOpen }) => {
     const menuAnimation = useSpring({
@@ -57,6 +58,9 @@ const AccountSlider = ({ handleMenuToggle, isMenuOpen }) => {
             break;
         case 'history-details':
             componentToRender = <AccountHistoryDetailsModal order={currentOrder} handleMenuClick={handleMenuClick} />;
+            break;
+        case 'favourites':
+            componentToRender = <AccountFavourites handleMenuClick={handleMenuClick} />;
             break;
         default:
             componentToRender = null;
