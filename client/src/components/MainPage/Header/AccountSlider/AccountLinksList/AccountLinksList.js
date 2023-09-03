@@ -20,7 +20,7 @@ const AccountLinksList = ({ handleMenuClick }) => {
                 </h2>
                 <span className='account-line'></span>
                 <div className='account-options-container'>
-                    <div className={`account-option-container `} onClick={() => handleMenuClick('main')}>
+                    <div className={`account-option-container `} onClick={() => handleMenuClick('order-history')}>
                         <p>
                             <GoHistory className='account-options-icon' />
                             Order history
