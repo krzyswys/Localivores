@@ -1,0 +1,134 @@
+.account_settings_menu_container {
+    background-color: white;
+    width: 25vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.459);
+    overflow-x: hidden;
+    position: relative;
+}
+
+.go_back_icon {
+    position: absolute;
+    left: 2%;
+    top: 1%;
+    font-size: 1.5em;
+    z-index: 5;
+    color: rgb(0, 0, 0);
+}
+
+.go_back_icon:hover {
+    cursor: pointer;
+}
+
+.account_settings_inner_menu_container {
+    background-color: white;
+    width: 25vw;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.459);
+}
+
+.account_settings_headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    padding: 2%;
+    margin-top: 10%;
+    font-size: 1.9em;
+}
+
+.account_settings_name {
+    margin-right: 2%;
+    color: #00a082;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.account_settings_line {
+    width: 90%;
+    height: 2px;
+    background-color: #00a082;
+    margin: 2% 0% 2% 0%;
+    padding: 1px;
+}
+
+/* -------------------------------------------- */
+.favourites_container {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image_container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    border-radius: 15px;
+    /* background-image: url('../../../../../assets/StockImages/nrd-D6Tu_L3chLE-unsplash.jpg'); */
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+}
+
+.icon {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: rgb(232, 118, 118);
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+.single_favourite_container {
+    margin: 2% 0 2% 0;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 5px rgba(69, 69, 69, 0.392);
+    color: black;
+}
+
+.items_container {
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+    border-radius: 15px;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.items_container>h2 {
+    color: #00a082;
+}
+
+.items_container>p {
+    color: gray;
+
+}
+
+.items_container>h3 {
+    color: gray;
+}

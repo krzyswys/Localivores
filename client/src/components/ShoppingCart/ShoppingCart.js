@@ -1,10 +1,11 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'
 
 import CartItem from "./CartItem";
 import styles from "./ShoppingCart.module.css";
 import "./Animations.css";
 import CSSTransition from "react-transition-group/CSSTransition";
-import {unitPrice,discountedPrice,calculatePrice} from '../../utility/price-calculator';
+import { unitPrice, discountedPrice, calculatePrice } from '../../utility/price-calculator';
 const dummyData = [
   {
     product_id: "g1",
@@ -115,15 +116,15 @@ const animationTiming = {
 const ShoppingCart = (props) => {
   const [cart, setCart] = useState(dummyData);
   const [totalAmount, setTotalAmount] = useState(0);
- 
+
   const [infoColumn, setInfoColumn] = useState("price");
 
-  
-  
+
+
   const calculateTotal = () => {
     const total = cart.reduce((acc, item) => {
       const basicPrice = calculatePrice(item);
-      const totalPrice = parseFloat(discountedPrice(basicPrice,item)).toFixed(2);
+      const totalPrice = parseFloat(discountedPrice(basicPrice, item)).toFixed(2);
       return acc + parseFloat(totalPrice);
     }, 0);
     return total.toFixed(2);
@@ -131,7 +132,7 @@ const ShoppingCart = (props) => {
   useEffect(() => {
     setTotalAmount(calculateTotal());
   }, [cart]);
-  
+
 
   const toggleColumn = () => {
     //zmiana kolumny
@@ -153,7 +154,7 @@ const ShoppingCart = (props) => {
     const product = cart.find((item) => item.product_id === productId);
     if ((+product.quantity) + amount === 0) {
       newCart = cart.filter((item) => item.product_id !== productId);
-    }else{
+    } else {
       newCart = cart.map((item) => {
         if (item.product_id === productId) {
           return { ...item, quantity: (+item.quantity) + amount };
@@ -161,7 +162,7 @@ const ShoppingCart = (props) => {
         return item;
       });
     }
-    
+
     setCart(newCart);
   };
 
@@ -189,7 +190,7 @@ const ShoppingCart = (props) => {
             <span>Product</span>
             <span>Shop</span>
             <span className={styles.units}>
-               {infoColumn === "weight" ? "unit weight" : " basic price"}
+              {infoColumn === "weight" ? "unit weight" : " basic price"}
               <span className={styles.toggler} onClick={() => toggleColumn()}>
                 Show {infoColumn === "weight" ? "price" : "weight"}
               </span>
@@ -209,7 +210,7 @@ const ShoppingCart = (props) => {
                   key={item.product_id}
                   item={item}
                   infoColumn={infoColumn}
-                  updateSelectedWeight={updateSelectedWeight} 
+                  updateSelectedWeight={updateSelectedWeight}
                   updateQuantity={updateQuantity}
                 />
               ))}
@@ -217,9 +218,9 @@ const ShoppingCart = (props) => {
           </div>
           <div className={styles.footer}>
             <span className={styles.total}>Total: {totalAmount}</span>
-            <button className={`${styles.buttonBase} ${styles.purchaseButton}`}>
+            <Link to="checkout" className={`${styles.buttonBase} ${styles.purchaseButton}`}>
               PURCHASE
-            </button>
+            </Link>
             <button
               className={`${styles.buttonBase} ${styles.closeButton}`}
               onClick={props.onClose}

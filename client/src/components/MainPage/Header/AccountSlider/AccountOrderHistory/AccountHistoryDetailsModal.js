@@ -1,22 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classes from './AccountOrderHistory.module.css';
 import { AiOutlineArrowLeft, AiOutlineShop } from 'react-icons/ai';
-
-
 import { BsFillClipboardCheckFill } from 'react-icons/bs';
 import { PiPersonArmsSpreadFill } from 'react-icons/pi';
 
-
-
-
-
-
-
-
-
-
 const AccountHistoryDetailsModal = ({ order, handleMenuClick }) => {
-
     return (
         <div className={classes.account_settings_menu_container} onClick={(e) => e.stopPropagation()}>
             <div className={classes.go_back_icon} onClick={() => handleMenuClick("order-history")}><AiOutlineArrowLeft /></div>
@@ -70,8 +58,6 @@ const AccountHistoryDetailsModal = ({ order, handleMenuClick }) => {
                             ))}
 
                     </div>
-
-
                     <div className={classes.delivery_details}>
                         <h2>Delivery:&nbsp;{order.time}</h2>
                         <div className={classes.delivery_from}><AiOutlineShop size={35} className={classes.delivery_icon} /> <p>Jana pawła 2<br /> 33,<br /> Kraków, Poland</p></div>

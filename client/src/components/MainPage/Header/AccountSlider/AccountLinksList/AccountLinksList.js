@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AiOutlineStar, AiOutlineCar, AiOutlineShop } from 'react-icons/ai';
+import { AiOutlineHeart, AiOutlineCar, AiOutlineShop } from 'react-icons/ai';
 import { GoHistory } from 'react-icons/go';
 import { MdOutlineManageAccounts } from 'react-icons/md';
 import { BsCardChecklist, BsSendExclamation } from 'react-icons/bs';
@@ -39,8 +39,8 @@ const AccountLinksList = ({ handleMenuClick }) => {
                         <p><BsCardChecklist className='account-options-icon' />Your lists</p>
                         <div className='account-option-hover-underline'></div>
                     </div>
-                    <div className='account-option-container' >
-                        <p><AiOutlineStar className='account-options-icon' />Favourites</p>
+                    <div className='account-option-container' onClick={() => handleMenuClick('favourites')}>
+                        <p><AiOutlineHeart className='account-options-icon' />Favourites</p>
                         <div className='account-option-hover-underline'></div>
                     </div>
                     <div className='account-option-container' onClick={() => handleMenuClick('become-driver')}>

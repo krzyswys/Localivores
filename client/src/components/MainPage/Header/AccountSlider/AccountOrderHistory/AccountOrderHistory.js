@@ -1,17 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classes from './AccountOrderHistory.module.css';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
-
-
 import { LuHistory } from 'react-icons/lu';
-import { BiTime } from 'react-icons/bi';
 import OrderHistorySummaryBlock from './OrderHistorySummaryBlock';
-
-
-
-
-
-
 
 const AccountOrderHistory = ({ handleMenuClick, handleOrderSet }) => {
     const order = {
