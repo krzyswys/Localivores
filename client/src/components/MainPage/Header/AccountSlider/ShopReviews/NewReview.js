@@ -1,5 +1,6 @@
 // NewReview.js
 import React, { useState } from "react";
+import ReactStars from "react-rating-stars-component";
 import AutoExpandTextArea from "../../../../../UI/TextArea/AutoExpandTextArea"; // Ensure the path is correct
 import styles from "./NewReview.module.css"; // Ensure the path is correct
 const NewReview = (props) => {
@@ -19,14 +20,19 @@ const NewReview = (props) => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      <input
-        placeholder="Author"
-        value={review.author}
-        className={styles.author}
-        onChange={(e) =>
-          setReview((prev) => ({ ...prev, author: e.target.value }))
-        }
-      />
+      <h2>Submit Your Review</h2>
+      <div className={styles.rating}>
+        <p className={styles.p}>Rate</p>
+        <ReactStars
+          count={5}
+          size={32}
+          value={review.rating ? review.rating : 0}
+          edit={true}
+          isHalf={true}
+          activeColor="#ffd700"
+         
+        />
+        </div>
       <AutoExpandTextArea
         placeholder="Content"
         value={review.content}

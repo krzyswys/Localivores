@@ -20,14 +20,14 @@ const ShopReviews = (props) => {
             <div className={classes.go_back_icon} onClick={() => props.handleMenuClick("history-details")}><AiOutlineArrowLeft /></div>
             <h1>Shop reviews</h1>
             
+            <NewReview onSubmit={handleReviewSubmit} />
             <ul className={styles.reviewList}>
                 {reviews.map((review, index) => (
                     <ReviewItem key={index} review={review} />
                 ))}
             </ul>
 
-            <h2>Submit Your Review</h2>
-            <NewReview onSubmit={handleReviewSubmit} />
+            
 
         </div>
     )

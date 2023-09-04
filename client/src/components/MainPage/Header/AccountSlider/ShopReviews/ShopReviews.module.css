@@ -1,38 +1,42 @@
-
-:root{
-    --color: #08a386;
+:root {
+  --color: #08a386;
 }
-.container{
-    height:100vh;
+.container {
+  height: 100vh;
+  overflow-y: scroll;
 }
 
-.reviewList{
-    max-height:60vh;
-    width:100%;
-    list-style-type: none;
-    display:flex;
-    flex-direction:column;
-    gap:1.8em;
-    box-sizing:border-box;
-    padding:1em;
-    overflow-y: scroll;
-    padding: 0 1rem;
+.reviewList {
+  max-height: 60vh;
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8em;
+  box-sizing: border-box;
+  padding: 1em;
+  overflow-y: scroll;
+  padding: 0 1rem;
 }
 /* For webkit browsers like Chrome, Safari */
-.reviewList::-webkit-scrollbar {
-    width: 10px; /* Adjust scrollbar width */
+.reviewList::-webkit-scrollbar,
+.container::-webkit-scrollbar {
+  width: 10px; /* Adjust scrollbar width */
 }
 
-.reviewList::-webkit-scrollbar-track {
-    background: #f1f1f1;  /* Track color */
-    border-radius: 10px;  /* Adding border-radius to track */
+.reviewList::-webkit-scrollbar-track,
+.container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+  border-radius: 10px; /* Adding border-radius to track */
 }
 
-.reviewList::-webkit-scrollbar-thumb {
-    background: var(--color);  /* Thumb color */
-    border-radius: 10px;  /* Adding border-radius to thumb */
+.reviewList::-webkit-scrollbar-thumb,
+.container::-webkit-scrollbar-thumb {
+  background: var(--color); /* Thumb color */
+  border-radius: 10px; /* Adding border-radius to thumb */
 }
 
-.reviewList::-webkit-scrollbar-thumb:hover {
-    background: #555;  /* Change color when hovering over the thumb */
+.reviewList::-webkit-scrollbar-thumb:hover,
+.container::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Change color when hovering over the thumb */
 }
