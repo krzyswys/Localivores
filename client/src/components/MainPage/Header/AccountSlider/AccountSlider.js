@@ -10,7 +10,8 @@ import AccountPromos from './AccountPromos/AccountPromos';
 import AccountOrderHistory from './AccountOrderHistory/AccountOrderHistory';
 import AccountHistoryDetailsModal from './AccountOrderHistory/AccountHistoryDetailsModal';
 import AccountFavourites from './AccountFavourites/AccountFavourites';
-
+import ShopReviews from '../ShopReviews/ShopReviews'
+import shopReviewsData from '../ShopReviews/ShopReviewsData';
 const AccountSlider = ({ handleMenuToggle, isMenuOpen }) => {
     const menuAnimation = useSpring({
         right: isMenuOpen ? '0' : '-102vw',
@@ -19,6 +20,7 @@ const AccountSlider = ({ handleMenuToggle, isMenuOpen }) => {
 
     const [activeComponent, setActiveComponent] = useState("main");
     const [currentOrder, setCurrentOrder] = useState(null);
+    const [currentShop, setCurrentShop] = useState(null);
     const handleOrderSet = (order) => {
         setCurrentOrder(order);
     };
@@ -30,6 +32,12 @@ const AccountSlider = ({ handleMenuToggle, isMenuOpen }) => {
         else {
             setActiveComponent(component);
         }
+    };
+
+    const handleReviewClick = (shop) => {
+        handleMenuClick("shop-reviews");
+        setCurrentShop(shopReviewsData[shop]);
+
     };
 
     let componentToRender;
@@ -57,10 +65,13 @@ const AccountSlider = ({ handleMenuToggle, isMenuOpen }) => {
             componentToRender = <AccountPromos handleMenuClick={handleMenuClick} />;
             break;
         case 'history-details':
-            componentToRender = <AccountHistoryDetailsModal order={currentOrder} handleMenuClick={handleMenuClick} />;
+            componentToRender = <AccountHistoryDetailsModal order={currentOrder} handleMenuClick={handleMenuClick} handleReviewClick={handleReviewClick} />;
             break;
         case 'favourites':
             componentToRender = <AccountFavourites handleMenuClick={handleMenuClick} />;
+            break;
+        case 'shop-reviews':
+            componentToRender = <ShopReviews shop={currentShop}  handleMenuClick={handleMenuClick}  />;
             break;
         default:
             componentToRender = null;

@@ -4,7 +4,11 @@ import { AiOutlineArrowLeft, AiOutlineShop } from 'react-icons/ai';
 import { BsFillClipboardCheckFill } from 'react-icons/bs';
 import { PiPersonArmsSpreadFill } from 'react-icons/pi';
 
-const AccountHistoryDetailsModal = ({ order, handleMenuClick }) => {
+const AccountHistoryDetailsModal = ({ order, handleMenuClick,handleReviewClick }) => {
+    
+
+    
+
     return (
         <div className={classes.account_settings_menu_container} onClick={(e) => e.stopPropagation()}>
             <div className={classes.go_back_icon} onClick={() => handleMenuClick("order-history")}><AiOutlineArrowLeft /></div>
@@ -31,8 +35,8 @@ const AccountHistoryDetailsModal = ({ order, handleMenuClick }) => {
                             .slice(0, 2)
                             .map(([shopName, products]) => (
                                 <div key={shopName} className={classes.single_product_container}>
-                                    <h2>
-                                        <button>Review</button>
+                                    <h2 onClick={()=>handleReviewClick(shopName)}>
+                                        <button type="button">Review</button>
                                         <p>{shopName}</p>
                                     </h2>
                                     {products.slice(0, 5).map((product, index) => (
