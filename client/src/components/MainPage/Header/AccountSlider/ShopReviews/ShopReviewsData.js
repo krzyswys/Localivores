@@ -12,7 +12,7 @@ const shopReviewsData = {
             {
                 author: "Anna Nowak",
                 date: "03.09.2023",
-                content: "Miła obsługa, ale trochę drogo.",
+                content: "Miła obsługa, ale trochę drogo.Miła obsługa, ale trochę drogo.Miła obsługa, ale trochę drogo.Miła obsługa, ale trochę drogo.Miła obsługa, ale trochę drogo.Miła obsługa, ale trochę drogo.Miła obsługa, ale trochę drogo.",
                 rating: 3,
                 thumbsUp: 10,
                 thumbsDown: 5
