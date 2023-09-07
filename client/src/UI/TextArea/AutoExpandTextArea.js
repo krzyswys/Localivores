@@ -1,7 +1,7 @@
 // AutoExpandTextArea.js
 import React, { useRef, useEffect } from "react";
 
-const AutoExpandTextArea = ({ value, onChange, className, maxLength, type }) => {
+const AutoExpandTextArea = ({ value, onChange, className, maxLength, type,placeholder }) => {
   const textareaRef = useRef(null);
 
   const resizeTextArea = () => {
@@ -31,6 +31,7 @@ const AutoExpandTextArea = ({ value, onChange, className, maxLength, type }) => 
       value={value}
       onChange={onChange}
       maxLength={maxLength}
+      placeholder={placeholder}
       type={type}
       className={className}
       style={{ overflow: "hidden", resize: "none" }}
