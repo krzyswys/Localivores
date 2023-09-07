@@ -13,7 +13,7 @@ const shopReviewsData = {
                 author: "Anna Nowak",
                 date: "03.09.2023",
                 content: "Miła obsługa, ale trochę drogo.Miła obsługa, ale trochę drogo.Miła obsługa, ale trochę drogo.Miła obsługa, ale trochę drogo.Miła obsługa, ale trochę drogo.Miła obsługa, ale trochę drogo.Miła obsługa, ale trochę drogo.",
-                rating: 3,
+                rating: 4,
                 thumbsUp: 10,
                 thumbsDown: 5
             },
@@ -21,7 +21,7 @@ const shopReviewsData = {
                 author: "Jan Kowalski",
                 date: "05.09.2023",
                 content: "Bardzo dobre warzywa!",
-                rating: 5,
+                rating: 3,
                 thumbsUp: 23,
                 thumbsDown: 2
             },
@@ -29,7 +29,7 @@ const shopReviewsData = {
                 author: "Anna Nowak",
                 date: "03.09.2023",
                 content: "Miła obsługa, ale trochę drogo.",
-                rating: 3,
+                rating: 2,
                 thumbsUp: 10,
                 thumbsDown: 5
             },
@@ -37,7 +37,7 @@ const shopReviewsData = {
                 author: "Marta Kaczmarek",
                 date: "10.08.2023",
                 content: "Świetne miejsce na zakupy, zawsze świeże produkty.",
-                rating: 4,
+                rating: 1,
                 thumbsUp: 18,
                 thumbsDown: 1
             },
@@ -45,7 +45,7 @@ const shopReviewsData = {
                 author: "Tomasz Nowicki",
                 date: "27.07.2023",
                 content: "Duży wybór, konkurencyjne ceny.",
-                rating: 4,
+                rating: 0,
                 thumbsUp: 12,
                 thumbsDown: 0
             }

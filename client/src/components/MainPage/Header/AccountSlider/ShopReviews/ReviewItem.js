@@ -15,9 +15,9 @@ import {hexToRgba} from "../../../../../utility/color-converter";
 const ReviewItem = ({ review }) => {
   
     const { label, color } = getRatingLabel(review.rating);
-    console.log(color);
+   
     const rgbaColor = hexToRgba(color, 0.2);  // 0.5 to poziom przezroczystości
-    console.log(rgbaColor);
+   
     return (
     <li className={styles.reviewItem}>
       <div className={styles.reviewHeader}>
@@ -33,7 +33,7 @@ const ReviewItem = ({ review }) => {
       <div className={styles.rating}>
         <ReactStars
           count={5}
-          size={32}
+          size={24}
           value={review.rating ? review.rating : 0}
           edit={false}
           isHalf={true}

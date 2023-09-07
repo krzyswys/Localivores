@@ -43,7 +43,7 @@ const NewReview = (props) => {
       />
       
       <button className={styles.button} type="button">
-        Add Review
+        Submit Review
       </button>
     </form>
   );
