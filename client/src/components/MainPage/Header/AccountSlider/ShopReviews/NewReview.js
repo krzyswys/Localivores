@@ -14,7 +14,7 @@ const NewReview = (props) => {
     thumbsDown: 0,
     reviewImages: [],
   });
-
+  console.log(review.reviewImages);
   const handleSubmit = (e) => {
     e.preventDefault();
     props.onSubmit(review);
@@ -23,6 +23,13 @@ const NewReview = (props) => {
     const updatedImages = [...review.reviewImages, ...files];
     setReview((prev) => ({ ...prev, reviewImages: updatedImages }));
   };
+
+  const handleImagesRemove = (indexToRemove) => {
+    const updatedImages = review.reviewImages.filter(
+      (_, index) => index !== indexToRemove
+    );
+    setReview((prev) => ({ ...prev, reviewImages: updatedImages }));
+  }
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <h2>Submit Your Review</h2>
@@ -30,7 +37,7 @@ const NewReview = (props) => {
         <p className={styles.p}>Add images</p>
         <input type="file" multiple />
        </div> */}
-       <ImageUpload onImagesAdded={handleImagesAdded} />
+       <ImageUpload onImagesAdded={handleImagesAdded} onImageRemoved={handleImagesRemove} />
       <div className={styles.rating}>
         <p className={styles.p}>Rate</p>
         <ReactStars

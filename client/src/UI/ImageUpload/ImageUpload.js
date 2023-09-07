@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import styles from "./ImageUpload.module.css";
 
-const ImageUpload = ({ onImagesAdded }) => {
+const ImageUpload = ({ onImagesAdded ,onImageRemoved}) => {
   const fileInputRef = useRef(null);
   const [dragOver, setDragOver] = useState(false);
   const [previewImages, setPreviewImages] = useState([]);
@@ -46,7 +46,10 @@ const ImageUpload = ({ onImagesAdded }) => {
     setPreviewImages((prevImages) =>
       prevImages.filter((_, index) => index !== indexToRemove)
     );
-    // Inform parent component about removed image if needed
+    
+    if(onImageRemoved) {
+      onImageRemoved(indexToRemove);
+    }
   };
   return (
     <div className={styles.imageUploader}>
