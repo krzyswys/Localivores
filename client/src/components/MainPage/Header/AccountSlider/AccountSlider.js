@@ -10,8 +10,8 @@ import AccountPromos from './AccountPromos/AccountPromos';
 import AccountOrderHistory from './AccountOrderHistory/AccountOrderHistory';
 import AccountHistoryDetailsModal from './AccountOrderHistory/AccountHistoryDetailsModal';
 import AccountFavourites from './AccountFavourites/AccountFavourites';
-import ShopReviews from '../ShopReviews/ShopReviews'
-import shopReviewsData from '../ShopReviews/ShopReviewsData';
+import ShopReviews from './ShopReviews/ShopReviews'
+import shopReviewsData from './ShopReviews/ShopReviewsData';
 const AccountSlider = ({ handleMenuToggle, isMenuOpen }) => {
     const menuAnimation = useSpring({
         right: isMenuOpen ? '0' : '-102vw',
