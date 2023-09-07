@@ -15,7 +15,7 @@ import ImageModal from "../../../../../UI/Modal/ImageModal/ImageModal";
 const ReviewItem = ({ review }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const { label, color } = getRatingLabel(review.rating);
+  const { label, color } = getRatingLabel(+review.rating);
 
   const rgbaColor = hexToRgba(color, 0.2); // 0.5 to poziom przezroczystości
 
@@ -50,7 +50,7 @@ const ReviewItem = ({ review }) => {
         <ReactStars
           count={5}
           size={24}
-          value={review.rating ? review.rating : 0}
+          value={+review.rating}
           edit={false}
           isHalf={true}
           activeColor="#ffd700"
