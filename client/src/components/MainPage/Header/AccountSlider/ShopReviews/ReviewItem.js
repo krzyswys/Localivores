@@ -6,23 +6,28 @@ import {
   FaStar,
   FaRegStar,
   FaRegCalendarAlt,
-  FaUser,
 } from "react-icons/fa";
 import styles from "./ReviewItem.module.css";
 import { TimeAgo } from "../../../../../utility/time-ago";
-import {getRatingLabel} from "../../../../../utility/rating";
-import {hexToRgba} from "../../../../../utility/color-converter";
+import { getRatingLabel } from "../../../../../utility/rating";
+import { hexToRgba } from "../../../../../utility/color-converter";
 const ReviewItem = ({ review }) => {
-  
-    const { label, color } = getRatingLabel(review.rating);
-   
-    const rgbaColor = hexToRgba(color, 0.2);  // 0.5 to poziom przezroczystości
-   
-    return (
+  const { label, color } = getRatingLabel(review.rating);
+
+  const rgbaColor = hexToRgba(color, 0.2); // 0.5 to poziom przezroczystości
+  console.log(review.profileImage);
+  console.log(review);
+  return (
     <li className={styles.reviewItem}>
       <div className={styles.reviewHeader}>
         <div className={styles.author}>
-          <FaUser className={styles.icon} />
+          <picture className={styles.picture}>
+            <img
+              src={review.profileImage}
+              alt={review.author}
+              className={styles.profileImage}
+            />
+          </picture>
           <h3>{review.author}</h3>
         </div>
         <div className={styles.calendar}>
@@ -39,20 +44,37 @@ const ReviewItem = ({ review }) => {
           isHalf={true}
           activeColor="#ffd700"
         />
-        <span className={styles.labelRating} style={{ color: color, "border":`1px solid ${color}`, backgroundColor: `${rgbaColor}` }}>{label}</span>
+        <span
+          className={styles.labelRating}
+          style={{
+            color: color,
+            border: `1px solid ${color}`,
+            backgroundColor: `${rgbaColor}`,
+          }}
+        >
+          {label}
+        </span>
       </div>
       <p className={styles.content}>{review.content}</p>
-
-      <div className={styles.thumbs}>
-        <div className={styles.thumbsUp}>
-          <FaThumbsUp className={styles.icon} />
-          <p>{review.thumbsUp}</p>
+      
+       
+        <div className={styles.reviewImages}>
+          {review.reviewImages.map((image, index) => (
+            <picture className={styles.reviewImageWrapper} key={index}>
+              <img src={image} alt={review.author} key={index} />
+            </picture>
+          ))}
         </div>
-        <div className={styles.thumbsDown}>
-          <FaThumbsDown className={styles.icon} />
-          <p>{review.thumbsDown}</p>
+        <div className={styles.thumbs}>
+          <div className={styles.thumbsUp}>
+            <FaThumbsUp className={styles.icon} />
+            <p>{review.thumbsUp}</p>
+          </div>
+          <div className={styles.thumbsDown}>
+            <FaThumbsDown className={styles.icon} />
+            <p>{review.thumbsDown}</p>
+          </div>
         </div>
-      </div>
     </li>
   );
 };
