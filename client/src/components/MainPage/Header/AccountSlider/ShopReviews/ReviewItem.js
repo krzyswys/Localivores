@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import ReactStars from "react-rating-stars-component";
 import {
   FaThumbsUp,
@@ -11,12 +11,23 @@ import styles from "./ReviewItem.module.css";
 import { TimeAgo } from "../../../../../utility/time-ago";
 import { getRatingLabel } from "../../../../../utility/rating";
 import { hexToRgba } from "../../../../../utility/color-converter";
+import ImageModal from "../../../../../UI/Modal/ImageModal/ImageModal";
 const ReviewItem = ({ review }) => {
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { label, color } = getRatingLabel(review.rating);
 
   const rgbaColor = hexToRgba(color, 0.2); // 0.5 to poziom przezroczystości
-  console.log(review.profileImage);
-  console.log(review);
+
+  const handleImageClick = (index) => {
+    console.log(index);
+    setCurrentImageIndex(index);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
   return (
     <li className={styles.reviewItem}>
       <div className={styles.reviewHeader}>
@@ -56,25 +67,29 @@ const ReviewItem = ({ review }) => {
         </span>
       </div>
       <p className={styles.content}>{review.content}</p>
-      
-       
-        <div className={styles.reviewImages}>
-          {review.reviewImages.map((image, index) => (
-            <picture className={styles.reviewImageWrapper} key={index}>
-              <img src={image} alt={review.author} key={index} />
-            </picture>
-          ))}
+
+      <div className={styles.reviewImages}>
+        {review.reviewImages.map((image, index) => (
+          <picture
+            className={styles.reviewImageWrapper}
+            key={index}
+            onClick={() => handleImageClick(index)}
+          >
+            <img src={image} alt={review.author} />
+          </picture>
+        ))}
+      </div>
+      <div className={styles.thumbs}>
+        <div className={styles.thumbsUp}>
+          <FaThumbsUp className={styles.icon} />
+          <p>{review.thumbsUp}</p>
         </div>
-        <div className={styles.thumbs}>
-          <div className={styles.thumbsUp}>
-            <FaThumbsUp className={styles.icon} />
-            <p>{review.thumbsUp}</p>
-          </div>
-          <div className={styles.thumbsDown}>
-            <FaThumbsDown className={styles.icon} />
-            <p>{review.thumbsDown}</p>
-          </div>
+        <div className={styles.thumbsDown}>
+          <FaThumbsDown className={styles.icon} />
+          <p>{review.thumbsDown}</p>
         </div>
+      </div>
+      {isModalOpen && <ImageModal images={review.reviewImages} initialIndex={currentImageIndex} onClose={handleCloseModal} />}
     </li>
   );
 };

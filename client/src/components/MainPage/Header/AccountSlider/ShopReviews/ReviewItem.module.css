@@ -109,6 +109,7 @@
     overflow:hidden;
     margin-right:10px;
     display:flex;
+    cursor:pointer;
 }
 
 .reviewImageWrapper > *{
