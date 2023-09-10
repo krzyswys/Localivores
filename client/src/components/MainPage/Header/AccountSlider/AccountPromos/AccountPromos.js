@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { TbShoppingCartDiscount } from 'react-icons/tb';
 import { GiCheckMark } from 'react-icons/gi';
 import PromoView from './PromoView';
-
+import {handleInputFocus , handleInputBlur} from '../../../../../utility/handleInput'
 
 
 
@@ -20,23 +20,7 @@ const AccountPromos = ({ handleMenuClick }) => {
     const handlePromoCodeChange = (e) => {
         setPromoCode(e.target.value);
     };
-    const handleInputFocus = (event) => {
-        const inputContainer = event.currentTarget.parentElement;
-        const placeholder = inputContainer.querySelector('.placeholder');
 
-        if (placeholder) {
-            placeholder.classList.add('focused');
-        }
-    };
-
-    const handleInputBlur = (event) => {
-        const inputContainer = event.currentTarget.parentElement;
-        const placeholder = inputContainer.querySelector('.placeholder');
-
-        if (placeholder && !event.target.value) {
-            placeholder.classList.remove('focused');
-        }
-    };
     return (
         <div className='account-promo-menu-container' onClick={(e) => e.stopPropagation()}>
             <div onClick={() => handleMenuClick("main")} className='go-back-icon'><AiOutlineArrowLeft /></div>

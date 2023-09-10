@@ -3,7 +3,7 @@ import './AccountSettings.css';
 import { AiOutlinePlus, AiOutlineEye, AiOutlineEyeInvisible, AiOutlineArrowLeft } from 'react-icons/ai';
 import { GoTriangleRight, GoLinkExternal } from 'react-icons/go';
 import { BsFillGearFill } from 'react-icons/bs';
-
+import {handleInputFocus , handleInputBlur} from '../../../../../utility/handleInput'
 
 
 import { useSpring, animated } from 'react-spring';
@@ -68,24 +68,6 @@ const AccountSettings = ({ handleMenuClick }) => {
     };
     const toggleExpandedAddress = () => {
         setAddressExpanded(!isAddressExpanded);
-    };
-
-    const handleInputFocus = (event) => {
-        const inputContainer = event.currentTarget.parentElement;
-        const placeholder = inputContainer.querySelector('.placeholder');
-
-        if (placeholder) {
-            placeholder.classList.add('focused');
-        }
-    };
-
-    const handleInputBlur = (event) => {
-        const inputContainer = event.currentTarget.parentElement;
-        const placeholder = inputContainer.querySelector('.placeholder');
-
-        if (placeholder && !event.target.value) {
-            placeholder.classList.remove('focused');
-        }
     };
 
     const dropdownAnimationPayments = useSpring({
