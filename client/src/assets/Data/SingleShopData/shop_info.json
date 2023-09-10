@@ -1,0 +1,19 @@
+{
+    "imageUrl": "",
+    "reviewAVG": 4.8,
+    "reviewCount": 359,
+    "shopName": "LOCAL SHOP",
+    "OPEN_MO_FRI": "6:00-15:00",
+    "OPEN_SAT": "9:00-13:00",
+    "PRED_deliveryTime": "15 min",
+    "PRED_deliveryCost": "10 $",
+    "shopDescription": "Discover the freshest flavors at our local vegetable shop, where vibrant produce sourced from nearby farms paints a colorful palette. Savor the essence of nature's bounty as you explore a diverse selection of seasonal vegetables, all carefully curated to bring the essence of our region's harvest to your table...",
+    "specials": [
+        "Vegan",
+        "PlantWatering",
+        "PlantOff",
+        "NoGluten",
+        "Gluten",
+        "Tree"
+    ]
+}

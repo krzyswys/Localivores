@@ -1,0 +1,78 @@
+{
+  "reviewGraphData": {
+    "reviewsPercentage": {
+      "1": 1,
+      "2": 9,
+      "3": 5,
+      "4": 30,
+      "5": 55
+    },
+    "AVGReview": 4.7,
+    "reviewCount": 369
+  },
+  "pinnedReview": {
+    "images": "",
+    "userName": "Jan",
+    "userRating": 5,
+    "reviewDescription": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec turpis lacus. Praesent et fringilla orci. Maecenas eleifend nisl a libero tincidunt, a semper tellus ultrices. Ut lectus orci, consequat in est quis, sollicitudin elementum lectus. Duis lectus nunc, egestas at massa at, consequat ornare tortor.",
+    "upVotes": 10,
+    "downVotes": 1,
+    "creationDate": "21.37.1969"
+  },
+  "reviews": [
+    {
+      "images": "",
+      "userName": "Jan",
+      "userRating": 5,
+      "reviewDescription": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec turpis lacus. Praesent et fringilla orci. Maecenas eleifend nisl a libero tincidunt, a semper tellus ultrices. Ut lectus orci, consequat in est quis, sollicitudin elementum lectus. Duis lectus nunc, egestas at massa at, consequat ornare tortor.",
+      "upVotes": 10,
+      "downVotes": 1,
+      "creationDate": "21.37.1969"
+    },
+    {
+      "images": "",
+      "userName": "Jan",
+      "userRating": 5,
+      "reviewDescription": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec turpis lacus. Praesent et fringilla orci. Maecenas eleifend nisl a libero tincidunt, a semper tellus ultrices. Ut lectus orci, consequat in est quis, sollicitudin elementum lectus. Duis lectus nunc, egestas at massa at, consequat ornare tortor.",
+      "upVotes": 10,
+      "downVotes": 1,
+      "creationDate": "21.37.1969"
+    },
+    {
+      "images": "",
+      "userName": "Jan",
+      "userRating": 5,
+      "reviewDescription": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec turpis lacus. Praesent et fringilla orci. Maecenas eleifend nisl a libero tincidunt, a semper tellus ultrices. Ut lectus orci, consequat in est quis, sollicitudin elementum lectus. Duis lectus nunc, egestas at massa at, consequat ornare tortor.",
+      "upVotes": 10,
+      "downVotes": 1,
+      "creationDate": "21.37.1969"
+    },
+    {
+      "images": "",
+      "userName": "Jan",
+      "userRating": 5,
+      "reviewDescription": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec turpis lacus. Praesent et fringilla orci. Maecenas eleifend nisl a libero tincidunt, a semper tellus ultrices. Ut lectus orci, consequat in est quis, sollicitudin elementum lectus. Duis lectus nunc, egestas at massa at, consequat ornare tortor.",
+      "upVotes": 10,
+      "downVotes": 1,
+      "creationDate": "21.37.1969"
+    },
+    {
+      "images": "",
+      "userName": "Jan",
+      "userRating": 5,
+      "reviewDescription": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec turpis lacus. Praesent et fringilla orci. Maecenas eleifend nisl a libero tincidunt, a semper tellus ultrices. Ut lectus orci, consequat in est quis, sollicitudin elementum lectus. Duis lectus nunc, egestas at massa at, consequat ornare tortor.",
+      "upVotes": 10,
+      "downVotes": 1,
+      "creationDate": "21.37.1969"
+    },
+    {
+      "images": "",
+      "userName": "Jan",
+      "userRating": 5,
+      "reviewDescription": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec turpis lacus. Praesent et fringilla orci. Maecenas eleifend nisl a libero tincidunt, a semper tellus ultrices. Ut lectus orci, consequat in est quis, sollicitudin elementum lectus. Duis lectus nunc, egestas at massa at, consequat ornare tortor.",
+      "upVotes": 10,
+      "downVotes": 1,
+      "creationDate": "21.37.1969"
+    }
+  ]
+}

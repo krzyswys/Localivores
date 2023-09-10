@@ -3,7 +3,7 @@ import './AccountReportProblem.css';
 import { AiOutlineArrowLeft, AiOutlineWarning } from 'react-icons/ai';
 import { GoTriangleRight } from 'react-icons/go';
 import { Link } from 'react-router-dom';
-
+import {handleInputFocus , handleInputBlur} from '../../../../../utility/handleInput'
 
 const AccountReportProblem = ({ handleMenuClick }) => {
     const [problemDescription, setproblemDescription] = useState('');
@@ -13,23 +13,6 @@ const AccountReportProblem = ({ handleMenuClick }) => {
 
     const handleproblemDescriptionChange = (e) => {
         setproblemDescription(e.target.value);
-    };
-    const handleInputFocus = (event) => {
-        const inputContainer = event.currentTarget.parentElement;
-        const placeholder = inputContainer.querySelector('.placeholder');
-
-        if (placeholder) {
-            placeholder.classList.add('focused');
-        }
-    };
-
-    const handleInputBlur = (event) => {
-        const inputContainer = event.currentTarget.parentElement;
-        const placeholder = inputContainer.querySelector('.placeholder');
-
-        if (placeholder && !event.target.value) {
-            placeholder.classList.remove('focused');
-        }
     };
 
     const handleTopicChange = (topic) => {

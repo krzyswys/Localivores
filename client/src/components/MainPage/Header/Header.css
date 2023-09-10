@@ -244,11 +244,15 @@
 }
 
 .open {
+    display: flex;
+    flex-direction: column;
     max-height: 1000px;
     transition: max-height 0.5s ease-in-out;
 }
 
 .closed {
+    display: flex;
+    flex-direction: column;
     max-height: 0;
     transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 }
