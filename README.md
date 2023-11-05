@@ -72,7 +72,7 @@ https://github.com/krzyswys/Localivores/assets/110239601/3014f549-1846-4111-9562
 ###
 
 <div align="center">
-  <img height="400" src="https://i.imgur.com/WL6biTY.jpg"  />
+  <img height="600" src="https://i.imgur.com/WL6biTY.jpg"  />
 </div>
 
 ###
