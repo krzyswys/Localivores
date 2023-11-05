@@ -53,7 +53,7 @@ https://github.com/krzyswys/Localivores/assets/110239601/6e130d86-ea32-421e-80fd
 
 ###
 
-<p align="center">Individual market page where information about shop is displayed, all reviews, products and photos.</p>
+<h4 align="center">Individual market page where information about shop is displayed, all reviews, products and photos.</h4>
 
 ###
 
@@ -67,7 +67,7 @@ https://github.com/krzyswys/Localivores/assets/110239601/3014f549-1846-4111-9562
 
 ###
 
-<p align="center">Slider available from anywhere in app. Managing account settings, viewing order history, checking recepits adding reviews to completed orders, redeeming promocodes etc.</p>
+<h4 align="center">Slider available from anywhere in app. Managing account settings, viewing order history, checking recepits adding reviews to completed orders, redeeming promocodes etc.</h4>
 
 ###
 
@@ -77,11 +77,13 @@ https://github.com/krzyswys/Localivores/assets/110239601/3014f549-1846-4111-9562
 
 ###
 
-<p align="center">SLIDER VIDEO</p>
+
+https://github.com/krzyswys/Localivores/assets/110239601/5e30511d-0450-46f4-b535-5924fb0e7fa1
+
 
 ###
 
-<p align="center">Login page with data check</p>
+<h4 align="center">Login page with data check</h4>
 
 ###
 
@@ -91,7 +93,7 @@ https://github.com/krzyswys/Localivores/assets/110239601/3950a183-af09-4751-b9aa
 
 ###
 
-<p align="center">Product display seccion seen after searching for product, allows for filtering through results, adding to cart and finalizing purchase</p>
+<h4 align="center">Product display seccion seen after searching for product, allows for filtering through results, adding to cart and finalizing purchase</h4>
 
 ###
 
@@ -120,7 +122,7 @@ https://github.com/krzyswys/Localivores/assets/110239601/14e317db-5b33-4674-85d6
 
 ###
 
-<p align="center">Our spring backend implements mailing service :</p>
+<h4 align="center">Our spring backend implements mailing service :</h4>
 
 ###
 
@@ -130,7 +132,7 @@ https://github.com/krzyswys/Localivores/assets/110239601/14e317db-5b33-4674-85d6
 
 ###
 
-<p align="center">and activating user account via email</p>
+<h4 align="center">and activating user account via email</h4>
 
 ###
 
