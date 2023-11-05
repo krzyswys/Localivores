@@ -43,7 +43,11 @@
 <h4 align="center">Main page with general idea information and searchbar</h4>
 
 ###
-  https://github.com/krzyswys/Localivores/assets/110239601/ed9878e6-6336-4bda-ba98-7c37e5f08e80
+
+
+
+https://github.com/krzyswys/Localivores/assets/110239601/6e130d86-ea32-421e-80fd-524060cf3dab
+
 
 
 
@@ -87,11 +91,16 @@ https://github.com/krzyswys/Localivores/assets/110239601/3950a183-af09-4751-b9aa
 
 ###
 
-<p align="center">Product display seccion seen after searching for product, allows for filtering through results</p>
+<p align="center">Product display seccion seen after searching for product, allows for filtering through results, adding to cart and finalizing purchase</p>
 
 ###
 
-<p align="left">AFTERSEARCH VIDEO</p>
+
+https://github.com/krzyswys/Localivores/assets/110239601/840f170d-5068-4d5d-a9e6-1cd723808f8c
+
+
+https://github.com/krzyswys/Localivores/assets/110239601/14e317db-5b33-4674-85d6-72ed0c34516c
+
 
 ###
 
