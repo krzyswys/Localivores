@@ -44,12 +44,9 @@
 
 ###
 <div align="center">
-  <video controls>
-    <source src="https://github.com/krzyswys/Localivores/assets/110239601/ed9878e6-6336-4bda-ba98-7c37e5f08e80.mp4" type="video/mp4">
-
-  </video>
+  https://github.com/krzyswys/Localivores/assets/110239601/ed9878e6-6336-4bda-ba98-7c37e5f08e80
 </div>
-https://github.com/krzyswys/Localivores/assets/110239601/ed9878e6-6336-4bda-ba98-7c37e5f08e80
+
 
 
 ###
