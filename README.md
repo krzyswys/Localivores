@@ -40,27 +40,30 @@
 
 ###
 
-<p align="left">Main page with general idea information and searchbar</p>
+<h4 align="center">Main page with general idea information and searchbar</h4>
 
 ###
 
-<p align="left">MAIN PAGE VIDEO</p>
-
-https://github.com/krzyswys/Localivores/assets/110239601/6cd54afb-bb2d-4792-8154-24df3d54b3a5
-
+https://github.com/krzyswys/Localivores/assets/110239601/ed9878e6-6336-4bda-ba98-7c37e5f08e80
 
 
 ###
 
-<p align="left">Individual market page where information about shop is displayed, all reviews, products and photos.</p>
+<p align="center">Individual market page where information about shop is displayed, all reviews, products and photos.</p>
 
 ###
 
-<p align="left">SSP VIDEO</p>
+
+https://github.com/krzyswys/Localivores/assets/110239601/ec63d4ba-a7a5-409e-a8be-5934ca5485e8
+
+
+
+https://github.com/krzyswys/Localivores/assets/110239601/3014f549-1846-4111-9562-e214ef18e8eb
+
 
 ###
 
-<p align="left">Slider available from anywhere in app. Managing account settings, viewing order history, checking recepits adding reviews to completed orders, redeeming promocodes etc.</p>
+<p align="center">Slider available from anywhere in app. Managing account settings, viewing order history, checking recepits adding reviews to completed orders, redeeming promocodes etc.</p>
 
 ###
 
@@ -70,19 +73,21 @@ https://github.com/krzyswys/Localivores/assets/110239601/6cd54afb-bb2d-4792-8154
 
 ###
 
-<p align="left">SLIDER VIDEO</p>
+<p align="center">SLIDER VIDEO</p>
 
 ###
 
-<p align="left">Login page with data check</p>
+<p align="center">Login page with data check</p>
 
 ###
 
-<p align="left">LOGIN VIDEO</p>
+
+https://github.com/krzyswys/Localivores/assets/110239601/3950a183-af09-4751-b9aa-480a2767e1bb
+
 
 ###
 
-<p align="left">Product display seccion seen after searching for product, allows for filtering through results</p>
+<p align="center">Product display seccion seen after searching for product, allows for filtering through results</p>
 
 ###
 
@@ -106,7 +111,7 @@ https://github.com/krzyswys/Localivores/assets/110239601/6cd54afb-bb2d-4792-8154
 
 ###
 
-<p align="left">Our spring backend implements mailing service :</p>
+<p align="center">Our spring backend implements mailing service :</p>
 
 ###
 
@@ -116,7 +121,7 @@ https://github.com/krzyswys/Localivores/assets/110239601/6cd54afb-bb2d-4792-8154
 
 ###
 
-<p align="left">And activating user account via email</p>
+<p align="center">and activating user account via email</p>
 
 ###
 
